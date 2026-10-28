@@ -1,0 +1,201 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\newfontfamily\headfont{Inter}[UprightFont=*-ExtraBold,BoldFont=*-ExtraBold,Extension=.otf,Path=/usr/share/fonts/opentype/inter/]
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{graphicx,booktabs,float,caption,array,xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{setspace}
+\setstretch{1.05}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\titleformat{\section}{\headfont\Large}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\headfont\large}{\thesubsection}{0.8em}{}
+\captionsetup{font=small,labelfont=bf}
+\urlstyle{same}
+\hypersetup{pdftitle={Signature Sports: Where the World's Niche Games Are Unusually Popular},pdfauthor={Tristan Hotham}}
+
+\begin{document}
+\begin{center}
+{\Large\bfseries Signature Sports: Where the World's Niche Games Are Unusually Popular\\[2pt] Location Quotients of Sports Clubs in Wikidata and OpenStreetMap, by Country, Region and UK County\par}
+\vspace{1.2em}
+{\large Tristan Hotham\par}
+\vspace{0.3em}
+{\small Independent researcher\\
+ORCID: 0000-0003-4931-9349\\
+DOI: \href{https://doi.org/10.5281/zenodo.23748256}{https://doi.org/10.5281/zenodo.23748256}\par}
+\vspace{0.8em}
+2026
+\end{center}
+
+\begin{quote}
+\small
+\begin{center}\textbf{Abstract}\end{center}
+Football dominates almost every country's sporting life, so asking which sport a country plays most says little. I ask instead which sport each country plays unusually much. From Wikidata I take {{meta.clubs|int}} sports clubs and club teams in {{meta.countries_all|int}} present-day countries, after removing national sides, delegations, team seasons and school and college teams, and compute for every sport and country a location quotient: the sport's share of the country's clubs divided by its share of the world's. Because each country is compared with itself, differences in how thoroughly countries are recorded cancel out. To stop small counts producing false heartlands, a country needs {{thr.country|int}} clubs, a sport {{thr.cell|int}} clubs in the country, and the signature sport is chosen by a cautious ratio that uses the lower end of a 90\% Poisson interval. {{signature.n_signature|int}} of {{signature.n_countries_mapped|int}} countries have a signature sport, spread over {{signature.n_sports|int}} sports: pesäpallo in Finland ({{sig.FIN.lq|x}} the world average), tchoukball in Switzerland, hurling in Ireland, speedway in Poland, korfball in the Netherlands. A check using only the {{wp.clubs|int}} clubs with a Wikipedia article keeps the same signature in {{wp.same_sig|int}} of {{wp.both|int}} countries and exposes bulk imports, such as target shooting clubs in the United Kingdom. Olympic medal tables agree only loosely with the club data (Spearman's $\rho$ = {{medals.spearman|f2}}). Inside the United Kingdom I repeat the method with {{uk.sites|int}} places to play mapped in OpenStreetMap, by county.
+
+\textbf{Keywords:} sport geography; location quotient; Wikidata; OpenStreetMap; sports clubs; regional specialisation; Olympic medals; Wikipedia pageviews; United Kingdom; data visualisation
+\end{quote}
+
+\section{Introduction}
+
+Every country plays football, and in most countries more people play and watch it than anything else. A map of each country's most popular sport is therefore mostly one colour, and it hides what makes national sporting cultures different: the games that a country plays far more than its neighbours do. Finland's pesäpallo, Ireland's hurling, Poland's speedway and the Netherlands' korfball are known as national quirks, but there is no simple, open, global measure of how strongly a country leans towards a sport.
+
+This note builds one. It asks three questions. Which sport does each country over-index on most, and by how much? Where, inside countries, are the heartlands of particular sports? And do other signals of a sport's grip, Olympic medals and how much people read about it, agree with the club counts? The answer comes as an interactive page, with a world map of signature sports, a heat map for any sport, first-level regions where the data allow, and a county map of the United Kingdom.
+
+The measure is the location quotient, long used in regional economics to show which industries a region specialises in (Isard 1960). Applied to sports clubs, it compares a sport's share of a country's clubs with its share of all clubs. Its key property for open data is that each country is compared with itself. Wikidata, the collaborative knowledge base behind Wikipedia (Vrandečić and Krötzsch 2014), records clubs very unevenly: there are {{countries.DEU.clubs|int}} clubs for Germany in the data and {{countries.NGA.clubs|int}} for Nigeria. Raw counts would mostly map recording effort. Shares within a country do not, as long as the gaps are not specific to one sport. That condition is the main weakness of the method, and I test it below.
+
+\section{Data}
+
+\subsection{Clubs in Wikidata}
+
+I queried Wikidata through the QLever SPARQL engine (Bast and Buchhold 2017) on {{meta.retrieved|raw}} for every item that is an instance of sports club (Q847017) or sports team (Q12973014), or of any of their subclasses, and that has both a sport (P641) and a country (P17), together with its coordinates (P625) or the coordinates of its headquarters location (P159). This gave {{meta.wikidata_items_all|int}} items. The class tree is broad, so I removed {{meta.excluded_items|int}} items whose classes mark them as something other than a club: national teams of all kinds, Olympic and Paralympic delegations, ``nation at'' competition entries, cycling team seasons, youth, reserve and age-group sides, school, college and university teams, and commercial motor-racing and esports teams. Items recorded only under former states (the Soviet Union, East Germany, Czechoslovakia and others; {{meta.dropped_former|int}} items) or without a country code ({{meta.dropped_no_iso|int}}) were also dropped, and the four nations of the United Kingdom were folded into it.
+
+Sport values were cleaned. Variants were merged into one sport: women's and men's football into football, camogie into hurling, ladies' Gaelic football into Gaelic football, all skiing disciplines into skiing, road, track and mountain cycling into cycling, rugby sevens into rugby union, and so on. Umbrella values (``winter sport'', ``water sport'', ``martial arts'') and mind sports such as chess and esports were left out. A club listed under $k$ sports counts $1/k$ for each, so every club counts once. The result is {{meta.clubs|int}} clubs in {{meta.countries_all|int}} countries across {{meta.sports_all|int}} sports, of which {{meta.sports_listed|int}} have at least {{thr.sport|int}} clubs worldwide and are analysed. Football alone is {{meta.football_share|pct}} of all clubs. {{meta.located_share|pct}} of clubs have usable coordinates.
+
+\subsection{Second signals}
+
+Olympic medals come from the all-time medal tables in the English Wikipedia articles ``\emph{Sport} at the Summer Olympics'' and ``at the Winter Olympics'' for {{medals.articles|int}} sports (CC BY-SA 4.0), parsed from the articles' medal-table templates and matched to present-day countries through their IOC codes in Wikidata (P984). Countries that no longer exist (the Soviet Union, West and East Germany and others) hold {{medals.medals_former|int}} of the medals and are left out of the comparison; {{medals.medals_current|int}} remain.
+
+Interest is measured with Wikipedia page views. For the main article of each of the {{pageviews.sports|int}} analysed sports I took 2025 user views in 60 language editions from the Wikimedia pageviews API, keeping the {{pageviews.langs|int}} editions with at least 200,000 views a year across these articles ({{pageviews.views|int}} views in all; {{pageviews.failed|int}} of {{pageviews.requests|int}} requests failed and count as missing).
+
+\subsection{OpenStreetMap for the United Kingdom}
+
+Wikidata is too thin for small sports inside one country, so for the United Kingdom I used OpenStreetMap (Haklay and Weber 2008), where volunteers tag pitches, courts, greens, clubs and sports centres with a sport. Through the Overpass API I collected every node, way and relation with a \texttt{sport} tag in tiles covering the United Kingdom ({{uk.features|int}} features inside the UK), and assigned each to a county: ceremonial counties in England, preserved counties in Wales, council areas in Scotland and districts in Northern Ireland, built from Office for National Statistics boundaries. Tag values were normalised (\texttt{soccer} to football, \texttt{rugby\_union} and \texttt{rugby} to rugby union, \texttt{eton\_fives} and \texttt{rugby\_fives} to fives, and so on), and multi-valued tags split. Because one playing field often carries several mapped pitches, I merged features of the same sport that fall in the same grid square of 0.002 degrees of latitude by 0.003 of longitude (about 220 by 200 metres) into one place to play, leaving {{uk.sites|int}} places in {{uk.areas|int}} counties and districts.
+
+\section{Methods}
+
+\subsection{Location quotient}
+
+For sport $s$ in place $c$, with $n_{cs}$ clubs of sport $s$ in $c$, $N_c$ clubs in $c$, $N_s$ clubs of $s$ worldwide and $N$ clubs in all,
+\[ LQ_{cs} = \frac{n_{cs}/N_c}{N_s/N}. \]
+A value of 1 means the sport has exactly its world share in that place; 6 means its share is six times the world's. I report it in words as ``times the world average''.
+
+\subsection{Minimum counts and the cautious ratio}
+
+Ratios built on small counts are unstable: a single croquet club in a country with 150 clubs would score far above any real heartland. Three rules guard against this. A country must have at least {{thr.country|int}} clubs to be mapped. A sport must have at least {{thr.cell|int}} clubs in a country before that country can count as its heartland, and at least {{thr.sport|int}} clubs worldwide to be analysed. Finally, the signature sport is not chosen by the plain quotient but by a cautious ratio, in which $n_{cs}$ is replaced by the lower limit of an exact two-sided 90\% Poisson interval (Garwood 1936). With 10 clubs that lower limit is {{thr.lo10|f1}}; with 100 it is {{thr.lo100|f1}}, so a small count is discounted heavily and a large one hardly at all. A country's signature sport is the sport with the highest cautious ratio among those passing the minimum count, provided that ratio exceeds 1. Otherwise the country has no clear heartland. Both the plain and the cautious figures are published.
+
+\subsection{Regions and colour}
+
+For clubs with coordinates I found the first-level administrative division (Natural Earth 1:10m states and provinces) and computed regional quotients against the world, with a minimum of {{thr.region|int}} located clubs in a region and {{thr.region_cell|int}} of the sport. On the maps, colour hue identifies the sport and colour strength the quotient, in five steps: 1.5, 2, 4, 8 and 16 times the world average.
+
+\subsection{Checks}
+
+To test whether sport-specific recording drives the results, I repeated the country analysis using only the {{wp.clubs|int}} clubs ({{wp.share|pct}}) that have at least one Wikipedia article. Bulk imports of club registries rarely come with articles, so this check removes most of them, at the price of a bias towards clubs that editors find notable. For medals I compared each country and sport's medal quotient (its share of the country's medals over the sport's share of all medals) with its club quotient, using Spearman's rank correlation over pairs with at least five medals and at least {{thr.cell|int}} clubs. For page views, a language edition's quotient for a sport is the sport's share of that edition's views across the analysed sports divided by its average share across all editions, with a missing article counting as zero views.
+
+\section{Results}
+
+\subsection{Signature sports}
+
+{{signature.n_countries_mapped|int}} countries have at least {{thr.country|int}} clubs. {{signature.n_signature|int}} of them have a signature sport, and {{signature.n_sports|int}} different sports are a signature somewhere (Figure \ref{fig:map}). Football is the signature in {{signature.football_signature|int}} countries, nearly all with few clubs of any other sport recorded and with weak leads; elsewhere the map is a patchwork of regional games. Table \ref{tab:lead} lists the largest leads. Several are sports confined to one country or region: pesäpallo in Finland ({{sig.FIN.lq|x}}), tchoukball in Switzerland ({{sig.CHE.lq|x}}), hurling and camogie in Ireland ({{sig.IRL.lq|x}}), Canadian football in Canada ({{sig.CAN.lq|x}}), cricket in Sri Lanka, Pakistan, Bangladesh and India, Australian rules football in Australia ({{sig.AUS.lq|x}}), speedway in Poland ({{sig.POL.lq|x}}) and korfball in the Netherlands ({{sig.NLD.lq|x}}).
+
+{{TABLE_LEAD}}
+
+\begin{figure}[tbp]\centering
+\includegraphics[width=\textwidth]{fig_signature_map.png}
+\caption{Signature sports: each country coloured by the sport with the highest cautious ratio among sports with at least {{thr.cell|int}} clubs there. Colour strength shows the plain location quotient (1.5, 2, 4, 8 and 16 times the world average). Mid grey: no sport stands out. Pale grey: fewer than {{thr.country|int}} clubs. Labels show the sport for a selection of countries.}\label{fig:map}
+\end{figure}
+
+\begin{figure}[tbp]\centering
+\includegraphics[width=\textwidth]{fig_leads.png}
+\caption{The 20 largest signature-sport leads, in times the world average share of clubs (log scale).}\label{fig:leads}
+\end{figure}
+
+The map has clear regional blocks. Handball is the signature across a band from Tunisia to Romania, Slovenia, North Macedonia, Bosnia and Herzegovina and Montenegro. Volleyball leads in Turkey, Cyprus, Bulgaria, Azerbaijan, Kazakhstan and Lebanon; futsal in Brazil, Iran, South Korea, Ukraine, Belarus and Thailand; cycling in Colombia, Venezuela, Ecuador, Uruguay and Costa Rica; baseball in the United States, Japan, Mexico and Taiwan. The Nordic countries split between sports of their own: pesäpallo in Finland, bandy in Russia, and in Sweden and Norway sports whose counts look inflated by bulk imports (minigolf and athletics; see below).
+
+\subsection{Single sports}
+
+Figure \ref{fig:six} shows six sports on their own. Handball's heartland is Tunisia ({{top.handball.0.lq|x}}), Montenegro and Denmark; bandy's is Sweden ({{top.bandy.0.lq|x}}), Russia and Finland; field hockey's the Netherlands ({{top.field hockey.0.lq|x}}), India and Argentina; cricket's Sri Lanka ({{top.cricket.0.lq|x}}) and Pakistan; water polo's Malta ({{top.water polo.0.lq|x}}), Hungary and Italy; futsal's South Korea ({{top.futsal.0.lq|x}}), Iran and Ukraine.
+
+\begin{figure}[tbp]\centering
+\includegraphics[width=\textwidth]{fig_six_sports.png}
+\caption{Six sports by country, coloured by times the world average share of clubs. Pale grey: fewer than {{thr.country|int}} clubs; mid grey: below the minimum count for the sport.}\label{fig:six}
+\end{figure}
+
+Of {{regions.n_regions|int}} first-level regions with any located clubs, {{regions.n_eligible|int}} have at least {{thr.region|int}}. Within them the method finds sharp local heartlands: rowing in Gipuzkoa ({{region_top.rowing.0.lq|x}}), Cantabria and Biscay, the home of the trainera boat races of the Cantabrian coast; hurling in Tipperary ({{region_top.hurling and camogie.0.lq|x}}), Galway and Cork; roller hockey in Barcelona ({{region_top.roller hockey.0.lq|x}}); Australian rules football in Victoria ({{region_top.Australian rules football.0.lq|x}}); field hockey in North Brabant and Utrecht.
+
+\subsection{The Wikipedia check}
+
+Using only clubs with a Wikipedia article, {{wp.n_signature|int}} countries have a signature sport, and {{wp.same_sig|int}} of the {{wp.both|int}} countries with a signature in both versions keep the same one (Figure \ref{fig:wp}). The changes are informative. The United Kingdom's signature moves from target shooting to cricket: {{caveat.uk_shooting|int}} of its clubs are target shooting clubs, nearly all with near-identical Wikidata descriptions and few with articles. Sweden's moves from minigolf ({{caveat.swe_minigolf|int}} clubs) to orienteering, Switzerland's from tchoukball to gymnastics, Hungary's from badminton to water polo, France's from canoeing to rugby union, and New Zealand's from netball to rugby league. Norway's {{caveat.nor_athletics|int}} athletics clubs are multi-sport local clubs recorded under athletics, and athletics survives the check there. The core heartlands (pesäpallo in Finland, hurling in Ireland, korfball in the Netherlands, speedway in Poland, bandy in Russia, cricket in South Asia, Canadian and Australian football) are stable.
+
+\begin{figure}[tbp]\centering
+\includegraphics[width=\textwidth]{fig_wikipedia_check.png}
+\caption{Signature sports from all clubs (left) and from clubs with a Wikipedia article only (right). Colours as in Figure \ref{fig:map}.}\label{fig:wp}
+\end{figure}
+
+\subsection{Medals and readers}
+
+Across {{medals.pairs|int}} country and sport pairs with at least five Olympic medals and {{thr.cell|int}} clubs, medal and club quotients are only weakly related (Spearman's $\rho$ = {{medals.spearman|f2}}; Figure \ref{fig:med}). The pairs high on both are the strongest evidence of a heartland: Finland in wrestling, Canada in curling and ice hockey, Norway in skiing and speed skating, Hungary in water polo, Colombia in cycling. Page views tell a similar story where they can: the Finnish Wikipedia reads about pesäpallo {{pageviews.top.pesäpallo.0.lq|x}} as much as the average edition, the Polish about speedway {{pageviews.top.speedway.0.lq|x}}, the Hindi about cricket {{pageviews.top.cricket.0.lq|x}}, the Swedish about bandy {{pageviews.top.bandy.0.lq|x}}, the Dutch about korfball {{pageviews.top.korfball.0.lq|x}} and the Korean about baseball {{pageviews.top.baseball.0.lq|x}}.
+
+\begin{figure}[tbp]\centering
+\includegraphics[width=0.92\textwidth]{fig_medals.png}
+\caption{Olympic medal quotient against club quotient for country and sport pairs with at least five medals and {{thr.cell|int}} clubs (log scales). Dotted lines mark the world average.}\label{fig:med}
+\end{figure}
+
+\subsection{The United Kingdom by county}
+
+{{UK_RESULTS}}
+
+\begin{figure}[tbp]\centering
+\includegraphics[width=\textwidth]{fig_uk_counties.png}
+\caption{UK counties coloured by the sport with the highest cautious ratio against the UK mix of places to play in OpenStreetMap (minimum {{uk.thr_cell|int}} places of the sport and {{uk.thr_area|int}} places in the county). Right: the largest leads.}\label{fig:uk}
+\end{figure}
+
+\section{Discussion}
+
+The location quotient turns an uneven open dataset into a fair comparison of national tastes, and the cautious ratio keeps it from being led by noise. The resulting map matches what is widely known about national sporting cultures where they are famous, and it surfaces less obvious leads where they are not: tchoukball in Switzerland, rowing on the Basque coast, roller hockey in Barcelona and Portugal. Its value is less in any single ranking than in letting a reader pick a sport and see its geography.
+
+The checks show where it misleads. A location quotient cancels differences in how much a country is recorded, but not differences in which sports are recorded. Wikidata's coverage of clubs grows through bulk imports of registries and through focused efforts by individual editors, and either can make a sport look like a national obsession. The UK's target shooting clubs, Sweden's minigolf clubs and Uganda's boxing clubs are examples. The Wikipedia-only version is a useful counterweight rather than a correction, since it has its own bias towards notable clubs, and the honest reading of a signature sport is the one that survives both. Medals and page views are weakly related to clubs because they measure different things: elite success depends on a handful of athletes and on investment, reading depends on media and language, and clubs reflect everyday organised play.
+
+\section{Limitations}
+
+First, these are counts of organised clubs as recorded in Wikidata, not of players, spectators or money. A sport played informally, in schools or in commercial leisure centres will be under-counted.
+
+Second, recording is uneven by sport. Bulk imports inflate some sports in some countries; multi-sport clubs are often recorded under football alone, hiding sports such as fencing that live in sections of larger clubs.
+
+Third, the sport classification follows Wikidata's, with my merges; different merges would move some results, especially for families of sports (skiing, cycling, bowling).
+
+Fourth, countries with fewer than {{thr.country|int}} clubs are not mapped, which leaves much of Africa, central Asia and the Pacific blank, and only {{regions.n_eligible|int}} regions are large enough for the regional view. Coordinates exist for {{meta.located_share|pct}} of clubs, and not at random.
+
+Fifth, medals use all-time tables that mix eras and leave out former states, and page views are by language, not country.
+
+Sixth, OpenStreetMap is mapped unevenly. Comparing counties with themselves removes overall differences in detail, but local enthusiasm for tagging one kind of facility remains, and a place to play is not a club.
+
+\section{Conclusion}
+
+Measured as a location quotient with a guard against small numbers, nearly every well-recorded country has a sport it plays far more than the world does, and {{signature.n_sports|int}} different sports hold that title somewhere. The strongest signatures, pesäpallo, hurling, speedway, korfball, bandy and cricket, are stable across checks and echoed by medals or by reading. Others are partly artefacts of how open data are built, and the interactive version lets a reader see the difference.
+
+\section*{Data and code availability}
+
+Data and code: \url{https://github.com/Tristan-Hotham/niche-sports}. Interactive version: \url{https://maps.tristanhotham.com/niche-sports/}. Archived release: \url{https://doi.org/10.5281/zenodo.23748256}. The repository holds the country, region and UK county tables with plain and cautious quotients, the signature tables for both versions, the medal and page view tables, and every number used here in \texttt{results.json}. Text, figures and derived data are released under CC BY 4.0, except data derived from OpenStreetMap (ODbL 1.0) and from Wikipedia medal tables (CC BY-SA 4.0); the code is under the MIT licence.
+
+\section*{AI statement}
+
+I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.
+
+\section*{References}
+\small
+Bast, H. and Buchhold, B. (2017) QLever: a query engine for efficient SPARQL+Text search. \emph{Proceedings of the 2017 ACM Conference on Information and Knowledge Management (CIKM)}. Endpoint: \url{https://qlever.cs.uni-freiburg.de}
+
+Garwood, F. (1936) Fiducial limits for the Poisson distribution. \emph{Biometrika} 28: 437 to 442.
+
+Haklay, M. and Weber, P. (2008) OpenStreetMap: user-generated street maps. \emph{IEEE Pervasive Computing} 7(4): 12 to 18.
+
+Isard, W. (1960) \emph{Methods of Regional Analysis: An Introduction to Regional Science}. Cambridge, MA: MIT Press.
+
+Natural Earth (2026) 1:50m Admin 0 countries and 1:10m Admin 1 states and provinces. Public domain. \url{https://www.naturalearthdata.com}
+
+Office for National Statistics (2025) Local authority district boundaries, via onsvisual/uk-topojson. Open Government Licence v3. \url{https://github.com/onsvisual/uk-topojson}
+
+OpenStreetMap contributors (2026) OpenStreetMap data, via the Overpass API. ODbL 1.0. \url{https://www.openstreetmap.org} and \url{https://overpass-api.de}
+
+Vrandečić, D. and Krötzsch, M. (2014) Wikidata: a free collaborative knowledgebase. \emph{Communications of the ACM} 57(10): 78 to 85.
+
+Wikimedia Foundation (2026) Pageviews API. \url{https://wikimedia.org/api/rest_v1/}
+
+Wikipedia contributors (2026) ``\emph{Sport} at the Summer Olympics'' and ``at the Winter Olympics'' articles, English Wikipedia, medal tables. CC BY-SA 4.0. \url{https://en.wikipedia.org}
+\end{document}

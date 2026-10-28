@@ -1,0 +1,155 @@
+<!-- wp:paragraph -->
+<p><em>Every country plays football. But which sport does each country play far more than the rest of the world? I counted {{meta.clubs|int}} sports clubs and coloured every country by its signature sport. Pesäpallo, tchoukball, hurling and speedway all have a country of their own.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/niche-sports/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.23748256">Read the paper</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:paragraph -->
+<p>Maps of "the most popular sport in each country" are nearly all one colour. Football wins almost everywhere, and in the data I used it is {{meta.football_share|pct}} of all the clubs in the world. That map is true and tells you nothing about what makes Finland different from Spain.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So I asked a different question: which sport does each country have <strong>more of than you would expect</strong>? If a sport is 1% of the world's clubs but 10% of one country's, that country plays it ten times as much as the world average. Geographers call this a location quotient. It has a lovely property for messy open data: because it compares each country with itself, it does not matter that Germany has {{countries.DEU.clubs|int}} clubs recorded and Nigeria {{countries.NGA.clubs|int}}.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full">{{IMG|b_signature_map.png|World map with each country coloured by its signature sport: dark green hurling in Ireland, blue bandy in Russia, deep blue pesäpallo in Finland, orange korfball in the Netherlands, red handball across north Africa and the Balkans, yellow volleyball in Turkey, gold cycling in Colombia, deep red baseball in the United States and Japan, green cricket across South Asia, orange Australian rules football in Australia. Grey countries have too few clubs or no clear lead.|Each country's signature sport: the sport it over-indexes on most among its clubs. Deeper colour, bigger lead. Data: Wikidata.}}</figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">A map of national quirks</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Of the {{signature.n_countries_mapped|int}} countries with at least {{thr.country|int}} clubs in Wikidata, {{signature.n_signature|int}} have a clear signature sport, and {{signature.n_sports|int}} different sports win somewhere. Some are exactly what you would guess: cricket in Sri Lanka, Pakistan, India and Bangladesh, Australian rules football in Australia ({{sig.AUS.lq|x}} the world average), Canadian football in Canada ({{sig.CAN.lq|x}}), hurling in Ireland ({{sig.IRL.lq|x}}).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Others were news to me. Finland's signature is pesäpallo, its own fast, zig-zagging version of baseball, at {{sig.FIN.lq|x}} the world average; every pesäpallo club in the data is Finnish. Switzerland's is tchoukball, a no-contact game played by bouncing a ball off a small rebound frame, devised in Switzerland around 1970. Poland's is speedway, motorbikes with no brakes sliding round shale ovals ({{sig.POL.lq|x}}). The Netherlands' is korfball ({{sig.NLD.lq|x}}), the mixed team game first played in Amsterdam in 1902.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Zoom out and blocks appear. Handball is the signature in a band from Tunisia through Romania to the former Yugoslavia. Volleyball rules from Turkey to Kazakhstan. Futsal is the signature in Brazil, Iran, South Korea and Ukraine. Cycling takes the Andes: Colombia, Ecuador and Venezuela.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full">{{IMG|b_leads.png|Horizontal bar chart of the 20 largest signature sport leads on a log scale, led by Uganda boxing, Switzerland tchoukball, Finland pesäpallo, Ireland hurling and camogie, Sri Lanka cricket and Pakistan cricket, with bars coloured by sport.|The biggest leads: how many times the world average share of clubs each country's signature sport has.}}</figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Small numbers, big ratios</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>There is a trap in ratios like these. One croquet club in a small country can make it look like the croquet capital of the world. So I set three rules. A country needs at least {{thr.country|int}} clubs to be mapped at all. A sport needs at least {{thr.cell|int}} clubs in a country before that country can be its heartland. And the winner is picked with a cautious version of the ratio, which pretends each count is a bit smaller than it is: the lower end of a 90% range for it. Ten clubs count as about {{thr.lo10|f1}}; a hundred count as about {{thr.lo100|f1}}. A small sport has to lead by a mile to win.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Pick a sport</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The interactive map lets you choose any of {{meta.sports_listed|int}} sports and see where it glows. Bandy, hockey with a ball on an ice rink the size of a football pitch, belongs to Sweden ({{top.bandy.0.lq|x}}), Russia and Finland. Field hockey's heartland is the Netherlands ({{top.field hockey.0.lq|x}}), then India and Argentina. Water polo's is Malta, Hungary and Italy. Where clubs have coordinates you can go inside countries too: rowing is Spain's signature sport, and it turns out to be a Basque affair, with Gipuzkoa at {{region_top.rowing.0.lq|x}} the world average, home of the trainera boat races. Hurling peaks in Tipperary ({{region_top.hurling and camogie.0.lq|x}}).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full">{{IMG|b_six_sports.png|Six small world maps, one each for handball, bandy, field hockey, cricket, water polo and futsal, with countries shaded in that sport's colour by how many times the world average they play it.|Six sports, six geographies. Deeper colour means a bigger share of the country's clubs than of the world's.}}</figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Where the data fools you</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Wikidata is built by volunteers, and sometimes by bulk imports of whole registries. The location quotient cancels out how much of a country is recorded, but not which sports. The United Kingdom's signature comes out as target shooting, because someone added {{caveat.uk_shooting|int}} British target shooting clubs with near-identical descriptions. Sweden's comes out as minigolf for the same reason.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So the page has a switch that counts only the {{wp.clubs|int}} clubs with a Wikipedia article. That removes most imports, though it has its own bias towards famous clubs. {{wp.same_sig|int}} of {{wp.both|int}} countries keep the same signature either way. The UK becomes cricket, Sweden orienteering, Hungary water polo, France rugby union. The heartlands that survive both versions, pesäpallo, hurling, speedway, korfball, bandy and cricket, are the ones I would bet on.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full">{{IMG|b_wikipedia_check.png|Two world maps side by side, signature sports from all clubs on the left and from clubs with a Wikipedia article on the right; most countries keep their colour, while the UK, Sweden, Switzerland, Hungary and France change.|The check: all clubs (left) against only clubs with a Wikipedia article (right).}}</figure>
+<!-- /wp:image -->
+
+<!-- wp:pullquote -->
+<figure class="wp-block-pullquote"><blockquote><p>Finnish Wikipedia reads about pesäpallo {{pageviews.top.pesäpallo.0.lq|x}} as much as the average language. Polish Wikipedia reads about speedway {{pageviews.top.speedway.0.lq|x}} as much.</p></blockquote></figure>
+<!-- /wp:pullquote -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Do medals agree?</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Only loosely. I compared the club figures with all-time Olympic medal tables for {{medals.articles|int}} sports. Across {{medals.pairs|int}} country and sport pairs the rank correlation is {{medals.spearman|f2}}: medals reward a few elite athletes, clubs measure everyday play. The pairs that are high on both are the real heartlands: Finland in wrestling, Canada in curling, Norway in skiing, Hungary in water polo and Colombia in cycling. Hungary has more Olympic water polo medals than any other country, and water polo is its signature sport once the imports are filtered out.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full">{{IMG|b_medals.png|Scatter chart on log scales of Olympic medal share against club share for country and sport pairs, with labelled points for Finland wrestling, Canada curling, Norway skiing, Hungary water polo, Colombia cycling and India field hockey in the upper right.|Olympic medals against clubs, each as times the world average. Dots up and to the right are heartlands on both counts.}}</figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">The UK, county by county</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Wikidata is too thin to go inside the UK for small sports, so for the last map I switched to OpenStreetMap, where volunteers have tagged {{uk.features|int}} pitches, courts, greens, clubs and sports centres with a sport. I merged features of one sport within about 200 metres of each other, so the four pitches on one field count once, which leaves {{uk.sites|int}} places to play.</p>
+<!-- /wp:paragraph -->
+
+{{UK_PARA}}
+
+<!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full">{{IMG|b_uk_counties.png|Map of UK counties coloured by the sport each over-indexes on most against the UK as a whole, with a list of the largest county leads beside it.|UK counties by signature sport, from places to play mapped in OpenStreetMap.}}</figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">How I did this</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I took every Wikidata item that is a sports club or team with a sport and a country ({{meta.wikidata_items_all|int}} items), removed national sides, Olympic delegations, team seasons and school and college teams, merged variants of each sport and split clubs listed under several sports so each counts once. That left {{meta.clubs|int}} clubs. For each sport and country I divided the sport's share of the country's clubs by its share of the world's, and picked each country's signature sport with the cautious ratio described above. Regions use clubs with coordinates ({{meta.located_share|pct}} of them). The UK map does the same with OpenStreetMap places to play against the UK mix. These are counts of organised clubs as recorded, not of players, and every number is in the data files linked below.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://maps.tristanhotham.com/niche-sports/">Explore the interactive version</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://doi.org/10.5281/zenodo.23748256">Read the paper</a></div>
+<!-- /wp:button -->
+<!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://github.com/Tristan-Hotham/niche-sports">Data and code</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Notes and sources</h3>
+<!-- /wp:heading -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li><a href="https://www.wikidata.org">Wikidata</a>: sports clubs and teams, queried through the <a href="https://qlever.cs.uni-freiburg.de">QLever</a> endpoint, {{meta.retrieved|raw}} (CC0).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>English Wikipedia, "<em>Sport</em> at the Summer Olympics" and "at the Winter Olympics" articles, all-time medal tables (CC BY-SA 4.0).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="https://wikimedia.org/api/rest_v1/">Wikimedia pageviews API</a>, user views in 2025.</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, features tagged sport, via the <a href="https://overpass-api.de">Overpass API</a> (ODbL 1.0).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>Boundaries: <a href="https://www.naturalearthdata.com">Natural Earth</a> (public domain); UK counties from Office for National Statistics boundaries via <a href="https://github.com/onsvisual/uk-topojson">onsvisual/uk-topojson</a> (Open Government Licence v3).</li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->

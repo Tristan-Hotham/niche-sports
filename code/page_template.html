@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Signature Sports</title>
+<meta name="description" content="Every country's signature sport: the sport it has most over-represented among its sports clubs, from {{meta.clubs|int}} clubs in Wikidata, with a pick-a-sport heat map, regions, Olympic medals and a UK county map from OpenStreetMap.">
+<meta property="og:title" content="Signature sports: where the world's niche games are unusually popular">
+<meta property="og:description" content="Pesäpallo in Finland, tchoukball in Switzerland, hurling in Ireland, speedway in Poland: each country coloured by the sport it over-indexes on most, and how strongly.">
+<meta property="og:image" content="https://maps.tristanhotham.com/niche-sports/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/niche-sports/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+:root{
+  --bg:#F6F4EF; --panel:#ECE8E0; --fg:#1D1B22; --muted:#66616E; --rule:#DCD6CB; --card:#FDFCFA; --border:#CBC4B7;
+  --hot:#E0362C; --cool:#1F6FD6; --gold:#F2B705; --nodata:#DDD8CF; --few:#EEEBE5;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#16151A; --panel:#211F26; --fg:#EFECE6; --muted:#A8A2AE; --rule:#36323C; --card:#1F1D24; --border:#4A4550;
+  --hot:#FF6A5C; --cool:#5FA2FF; --gold:#FFCF3D; --nodata:#3A3740; --few:#2A282F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#16151A; --panel:#211F26; --fg:#EFECE6; --muted:#A8A2AE; --rule:#36323C; --card:#1F1D24; --border:#4A4550;
+  --hot:#FF6A5C; --cool:#5FA2FF; --gold:#FFCF3D; --nodata:#3A3740; --few:#2A282F; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.62 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:700px;margin:0 auto;padding-block:28px 64px}
+.wrap .bleed{width:min(1180px,calc(100vw - 32px));margin-left:calc((100% - min(1180px,100vw - 32px))/2)}
+a{color:inherit;text-decoration-color:var(--hot);text-underline-offset:3px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.kicker b{background:var(--fg);color:var(--bg);padding:5px 8px;font-weight:500}
+header.hero{border-bottom:6px double var(--fg);padding-bottom:22px;margin-top:18px}
+h1{font:900 clamp(44px,11vw,98px)/.9 var(--display);letter-spacing:-.02em;margin:10px 0 0;text-wrap:balance}
+h1 .a{color:#1C9E5B} h1 .b{color:#E0362C} h1 .c{color:#1F6FD6}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+.chip{font:600 12px/1 var(--mono);color:#fff;padding:6px 8px;border-radius:2px;letter-spacing:.02em}
+.dek{font-size:21px;line-height:1.42;margin:12px 0 0;max-width:50ch}
+.byline{font:400 13px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+h2{font:800 34px/1.04 var(--display);letter-spacing:-.01em;margin:56px 0 10px;text-wrap:balance}
+h2 .n{font:500 13px/1 var(--mono);color:var(--hot);display:block;letter-spacing:.1em;margin-bottom:10px}
+h3{font:600 20px/1.25 var(--display);margin:28px 0 6px}
+p{margin:0 0 16px}
+.lede::first-letter{font:900 72px/.8 var(--display);float:left;margin:6px 10px 0 0;color:var(--hot)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 8px}
+.stats div{background:var(--card);padding:14px 12px}
+.stats b{display:block;font:900 clamp(22px,4.4vw,32px)/1 var(--display);letter-spacing:-.01em}
+.stats span{font:400 12px/1.35 var(--mono);color:var(--muted);display:block;margin-top:6px}
+@media (max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.figure{margin:26px 0 30px}
+.fig-h{font:600 19px/1.25 var(--display);margin:0 0 4px}
+.fig-sub{font:400 13px/1.45 var(--mono);color:var(--muted);margin:0 0 12px}
+.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:10px}
+.chart{width:100%;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:var(--mono);fill:var(--fg)}
+.lab{font-size:12px}.lab.m{fill:var(--muted)}.lab.b{font-weight:600}.lab.s{font-size:11px}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font:400 12px/1.45 var(--mono);padding:8px 10px;border-radius:3px;max-width:300px;z-index:1000;transform:translate(-50%,calc(-100% - 12px));display:none}
+.tip b{font-weight:600}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.ctl-l{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.btn{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:8px 10px;cursor:pointer;min-height:36px}
+.btn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--hot);outline-offset:2px}
+.seg{display:inline-flex;border:1px solid var(--border);border-radius:3px;overflow:hidden;max-width:100%;flex-wrap:wrap}
+.seg .btn{border:0;border-radius:0;border-right:1px solid var(--border)}
+.seg .btn:last-child{border-right:0}
+select{font:500 13px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:8px 6px;min-height:36px;max-width:100%}
+.sportchips{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
+.sportchips button{font:600 11.5px/1 var(--mono);border:2px solid var(--c);background:var(--card);color:var(--fg);padding:6px 8px;border-radius:14px;cursor:pointer}
+.sportchips button[aria-pressed="true"]{background:var(--c);color:#fff}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}
+@media (max-width:900px){.mapgrid{grid-template-columns:1fr}}
+.side{background:var(--card);border:1px solid var(--border);padding:12px 12px 10px;font:400 13px/1.45 var(--mono);min-width:0}
+.side h4{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 8px}
+.side h4:first-child{margin-top:2px}
+.lmap{height:620px;border:1px solid var(--border);background:var(--panel);border-radius:2px}
+@media (max-width:600px){.lmap{height:460px}}
+.leaflet-container{font:400 12px/1.4 var(--mono);background:var(--panel)}
+.lyrBtn{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;font:600 12px/1 var(--mono);padding:8px 10px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.lyrBtn[aria-expanded="true"]{background:var(--fg);color:var(--bg)}
+.lyrPanel{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:10px 12px 8px;margin-top:6px;width:244px;box-shadow:0 2px 10px rgba(0,0,0,.15);font:400 12px/1.3 var(--mono)}
+.lyrPanel[hidden]{display:none}
+.lyrPanel .row{margin:0 0 9px}
+.lyrPanel label{display:flex;gap:6px;align-items:center;cursor:pointer;font-weight:600}
+.lyrPanel input[type=range]{width:100%;accent-color:var(--fg)}
+.lyrPanel select{font:400 12px var(--mono);background:var(--bg);color:var(--fg);border:1px solid var(--border);border-radius:2px;padding:2px 4px;width:100%;min-height:0}
+.lyrPanel .sub{display:flex;gap:6px;align-items:center;color:var(--muted);font-size:11px;margin-top:3px}
+.lyrPanel .sub span{flex:0 0 58px}
+.lyrPanel .reset{font:400 11px var(--mono);color:var(--muted);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}
+.nm{font:600 11px/1 var(--mono);color:var(--fg);white-space:nowrap;text-shadow:0 0 3px var(--bg),0 0 3px var(--bg),0 0 2px var(--bg);pointer-events:none;transform:translate(-50%,-50%)}
+.nm.s{font-weight:500;font-size:10px;color:var(--muted)}
+.sg{pointer-events:none;transform:translate(-50%,-50%);text-align:center;white-space:nowrap}
+.sg b{display:inline-block;font:700 10.5px/1 var(--mono);color:#fff;background:var(--c);padding:3px 5px 3px;border-radius:2px;text-transform:uppercase;letter-spacing:.03em;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.sg i{display:block;font:500 9.5px/1.1 var(--mono);font-style:normal;color:var(--fg);text-shadow:0 0 3px var(--bg),0 0 3px var(--bg);margin-top:2px}
+.glow{pointer-events:none;transform:translate(-50%,-50%);white-space:nowrap}
+.glow b{display:inline-block;font:700 12px/1.15 var(--mono);color:#fff;background:var(--c);padding:5px 8px;border-radius:3px;box-shadow:0 0 0 2px #fff,0 0 14px 4px var(--c),0 0 30px 8px color-mix(in srgb,var(--c) 55%,transparent);animation:pulse 2.6s ease-in-out infinite}
+.glow b span{font-weight:500;opacity:.92}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 2px #fff,0 0 12px 3px var(--c),0 0 26px 6px color-mix(in srgb,var(--c) 45%,transparent)}50%{box-shadow:0 0 0 2px #fff,0 0 18px 6px var(--c),0 0 40px 12px color-mix(in srgb,var(--c) 60%,transparent)}}
+@media (prefers-reduced-motion:reduce){.glow b{animation:none}}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 6px 2px var(--c);border:1px solid #fff}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--card);color:var(--fg);border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.leaflet-bar a,.leaflet-bar a:hover{background:var(--card);color:var(--fg);border-bottom-color:var(--border)}
+.leaflet-control-attribution{background:color-mix(in srgb,var(--card) 85%,transparent)!important;color:var(--muted)}
+.leaflet-control-attribution a{color:var(--fg)}
+.legend .row{display:flex;align-items:center;gap:7px;margin:3px 0;cursor:pointer;font-size:12px}
+.legend .sw{width:14px;height:14px;border-radius:2px;flex:0 0 14px;border:1px solid rgba(0,0,0,.15)}
+.legend .row span.k{color:var(--muted);margin-left:auto}
+.ramp{display:flex;gap:2px;margin:4px 0 2px}
+.ramp div{flex:1;height:14px;border-radius:1px}
+.rampl{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted)}
+.card .big{font:800 26px/1.1 var(--display);margin:2px 0 4px}
+.card .sub{font-size:12px;color:var(--muted);margin:0 0 10px}
+.bars .r{display:grid;grid-template-columns:92px minmax(0,1fr) 46px;gap:6px;align-items:center;margin:3px 0;font-size:11.5px}
+.bars .r .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bars .r .b{height:12px;border-radius:1px}
+.bars .r .v{text-align:right}
+.lg{width:100%;border-collapse:collapse;font:400 12.5px/1.35 var(--mono)}
+.lg td,.lg th{padding:5px 4px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.lg th{font-weight:500;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.lg td.r{text-align:right;white-space:nowrap}
+.stories{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin:18px 0}
+.story{background:var(--card);border:1px solid var(--border);border-top:6px solid var(--c);padding:12px 14px;cursor:pointer}
+.story .x{font:900 34px/1 var(--display);color:var(--c)}
+.story h3{margin:6px 0 4px;font-size:18px}
+.story p{font-size:15px;line-height:1.45;margin:0}
+.story .m{font:400 11.5px/1.4 var(--mono);color:var(--muted);margin-top:8px}
+.note{background:var(--panel);border-left:4px solid var(--gold);padding:12px 14px;font-size:16px;margin:18px 0}
+details{border-top:1px solid var(--rule);padding:10px 0}
+summary{cursor:pointer;font:600 17px/1.3 var(--display)}
+footer{border-top:6px double var(--fg);margin-top:56px;padding-top:16px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+footer p{margin:0 0 10px}
+.theme{position:fixed;right:12px;bottom:12px;z-index:1002}
+.toggle{display:flex;gap:6px;align-items:center;font:500 12px/1.2 var(--mono)}
+.mapbox{position:relative}
+.loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:500 13px/1.4 var(--mono);color:var(--muted);background:color-mix(in srgb,var(--panel) 80%,transparent);z-index:900;pointer-events:none}
+@media print{.theme,.controls{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker"><b>Data study</b><span>Sport</span><span>World and UK</span><span>2026</span></div>
+<header class="hero">
+<h1>Signature <span class="a">sports</span></h1>
+<div class="chips" id="heroChips"></div>
+<p class="dek">Every country plays football. But which sport does each country play <i>unusually</i> much? I counted {{meta.clubs|int}} sports clubs in Wikidata and coloured each country by the sport it over-indexes on most, and by how strongly.</p>
+<p class="byline">Dr Tristan Hotham · Independent researcher · <a href="https://blog.tristanhotham.com/">blog</a> · <a href="https://doi.org/10.5281/zenodo.23748256">paper and data</a></p>
+</header>
+
+<div class="stats">
+<div><b>{{meta.clubs|int}}</b><span>clubs and club teams in Wikidata, in {{meta.countries_all|int}} countries</span></div>
+<div><b>{{signature.n_signature|int}}</b><span>countries with a clear signature sport (of {{signature.n_countries_mapped|int}} with 100+ clubs)</span></div>
+<div><b>{{signature.n_sports|int}}</b><span>different sports win somewhere</span></div>
+<div><b>{{uk.sites|int}}</b><span>UK places to play from OpenStreetMap, in {{uk.areas|int}} counties</span></div>
+</div>
+
+<p class="lede">Ask which sport a country loves and the answer is nearly always football. That is true and dull. Football is {{meta.football_share|pct}} of all the clubs in this data, so it tops the list almost everywhere. The better question is which sport a country has <b>more of than you would expect</b>: if a sport makes up 1% of the world's clubs but 10% of one country's, that country plays it ten times as much as the world average. Geographers call this a location quotient. Because it compares each country with itself, it cancels out the fact that some countries are far better recorded than others.</p>
+<p>The result is a map of national quirks. Finland's signature sport is pesäpallo, its own version of baseball. Switzerland's is tchoukball, a no-contact game devised there around 1970. Ireland's is hurling and Poland's is speedway. Sweden's comes out as minigolf and the United Kingdom's as target shooting, though those two owe a lot to how Wikidata was filled in: count only clubs with a Wikipedia article and the UK's signature becomes cricket. Every map here can be checked that way.</p>
+
+<h2><span class="n">01 · The map</span>Every country's signature sport</h2>
+<p>Each country is coloured by the sport it over-indexes on most. The deeper the colour, the stronger the lead: a pale wash means a sport played a little more than the world average, a rich fill means a true heartland. Grey means there were too few clubs to say, or no sport stood out. Click a country to see its whole profile.</p>
+<div class="bleed figure">
+<div class="controls">
+ <span class="ctl-l">Count</span>
+ <div class="seg" role="group" aria-label="Which clubs to count"><button class="btn" id="vAll" aria-pressed="true">All clubs in Wikidata</button><button class="btn" id="vWp" aria-pressed="false">Only clubs with a Wikipedia article</button></div>
+</div>
+<div class="mapgrid">
+ <div class="mapbox"><div id="map1" class="lmap" role="img" aria-label="World map of each country's signature sport"></div><div class="loading" id="load1">Loading map</div></div>
+ <div class="side">
+  <div id="card1" class="card"><h4>Click a country</h4><p style="margin:0;color:var(--muted)">Tap or click any country to see which sports it plays more, and less, than the world.</p></div>
+  <h4>Signature sports on the map</h4>
+  <div id="legend1" class="legend"></div>
+  <h4>Colour strength: times the world average</h4>
+  <div class="ramp" id="ramp1"></div><div class="rampl"><span>1.5x</span><span>2x</span><span>4x</span><span>8x</span><span>16x+</span></div>
+  <div style="display:flex;gap:10px;margin-top:8px;font-size:11px;color:var(--muted)"><span><i style="display:inline-block;width:12px;height:12px;background:var(--nodata);vertical-align:-2px"></i> no clear heartland</span><span><i style="display:inline-block;width:12px;height:12px;background:var(--few);border:1px dashed var(--border);vertical-align:-2px"></i> under 100 clubs</span></div>
+ </div>
+</div>
+<p class="src">Sports clubs and club teams in Wikidata (CC0), {{meta.retrieved|raw}}. National teams, Olympic delegations, team seasons, school and college teams are left out. A sport can only be a signature with at least {{thr.cell|int}} clubs in the country, and countries need {{thr.country|int}} clubs. Ranking uses the cautious ratio (see the method).</p>
+</div>
+
+<h3>Who leads by most</h3>
+<p>The biggest leads belong to sports that barely exist outside one country. Ranked by how many times the world average:</p>
+<div class="figure"><div class="chart" id="chLead"></div><p class="src">Countries with a signature sport, top 20 by location quotient. Bars are coloured by sport.</p></div>
+
+<h2><span class="n">02 · Pick a sport</span>Where is each sport a big deal?</h2>
+<p>Choose a sport to see where it is over-represented. The places that over-index most glow on the map, with how many times the world average they play it. Switch on regions to see inside countries, where clubs have coordinates in Wikidata ({{meta.located_share|pct}} of them do).</p>
+<div class="bleed figure">
+<div class="controls">
+ <span class="ctl-l">Sport</span><select id="sportSel" aria-label="Choose a sport"></select>
+ <span class="ctl-l" style="margin-left:8px">Show</span>
+ <div class="seg" role="group" aria-label="Countries or regions"><button class="btn" id="gC" aria-pressed="true">Countries</button><button class="btn" id="gR" aria-pressed="false">Regions</button></div>
+</div>
+<div class="sportchips" id="chips2"></div>
+<div class="mapgrid">
+ <div class="mapbox"><div id="map2" class="lmap" role="img" aria-label="Heat map of one sport by country or region"></div></div>
+ <div class="side"><div id="card2"></div></div>
+</div>
+<p class="src">Times the world average = the sport's share of a place's clubs divided by its share of all clubs worldwide. Regions are Natural Earth first-level divisions (states, provinces, counties); a region needs {{thr.region|int}} located clubs and {{thr.region_cell|int}} of the sport. Medal counts are all-time Olympic medal tables from English Wikipedia.</p>
+</div>
+
+<h2><span class="n">03 · Unexpected heartlands</span>The stories on the map</h2>
+<p>Some heartlands are famous (cricket in South Asia, hurling in Ireland, curling in Canada). Others were news to me. Click a card to see it on the map above.</p>
+<div class="stories" id="stories"></div>
+
+<h2><span class="n">04 · The UK, county by county</span>Shinty, Gaelic games and polo</h2>
+<p>Wikidata is too thin to go inside the UK for small sports, so here I switch to OpenStreetMap, where volunteers have mapped {{uk.features|int}} pitches, courts, greens, clubs and sports centres with a sport tag. I merged features of the same sport that sit within about 200 metres of each other into one place to play (four pitches on one field count once), which leaves {{uk.sites|int}} places. Each county is coloured by the sport it has most over-represented compared with the UK as a whole.</p>
+<div class="bleed figure">
+<div class="controls">
+ <span class="ctl-l">Show</span><select id="ukSel" aria-label="Choose a UK sport"></select>
+</div>
+<div class="sportchips" id="chips3"></div>
+<div class="mapgrid">
+ <div class="mapbox"><div id="map3" class="lmap" role="img" aria-label="Map of UK counties by over-represented sport"></div></div>
+ <div class="side"><div id="card3"></div></div>
+</div>
+<p class="src">OpenStreetMap features with a sport tag (© OpenStreetMap contributors, ODbL), retrieved through the Overpass API, {{uk.retrieved|raw}}. Counties: ceremonial counties of England, preserved counties of Wales, council areas of Scotland and districts of Northern Ireland, built from ONS boundaries (OGL v3). A county needs {{uk.thr_area|int}} places to play and a sport {{uk.thr_cell|int}} places before it can be a heartland.</p>
+</div>
+<div id="ukText"></div>
+
+<h2><span class="n">05 · Second opinions</span>Do medals and readers agree?</h2>
+<p>Clubs are only one way to measure a sport's grip. I checked them against two others. First, all-time Olympic medal tables for {{medals.articles|int}} sports from English Wikipedia ({{medals.medals_current|int}} medals won by countries that exist today). Where a country has at least five medals in a sport, its medal over-representation and its club over-representation agree only loosely (Spearman's rank correlation {{medals.spearman|f2}} across {{medals.pairs|int}} country and sport pairs): medals reward a few elite athletes, clubs measure everyday play. The pairs that are high on both are the real heartlands.</p>
+<div class="figure"><div class="chart" id="chMed"></div><p class="src">Each dot is a country and sport with at least five Olympic medals and at least {{thr.cell|int}} clubs. Both axes are times the world average, on a log scale.</p></div>
+<p id="pvText">Second, how much people read about each sport: Wikipedia page views in 2025 for {{pageviews.sports|int}} sports' main articles in {{pageviews.langs|int}} language editions. A language that reads about a sport far more than the average language is a rough signal of interest among its speakers (languages are not countries, so this is a loose guide).</p>
+<div class="figure"><div class="chart" id="chPv"></div><p class="src">Wikimedia pageviews API, user views, January to December 2025. Times the average = a sport's share of a language edition's views across these sports, divided by its average share across all {{pageviews.langs|int}} editions.</p></div>
+
+<h2><span class="n">06 · Method</span>How this works, and what it cannot tell you</h2>
+<details open><summary>The location quotient</summary>
+<p>For each sport and country I divide the sport's share of the country's clubs by the sport's share of all clubs in the world. A value of 1 is exactly average; 6 means the sport makes up six times as large a share of that country's clubs as of the world's. Because both shares come from the same country's records, a country that is thoroughly recorded and one that is barely recorded can be compared fairly, as long as their gaps are not specific to one sport.</p></details>
+<details open><summary>The minimum count, and the cautious ratio</summary>
+<p>Small counts make wild ratios: one croquet club in a small country can look like a 50 times heartland. Three rules stop that. A country needs at least {{thr.country|int}} clubs in total before it is mapped. A sport needs at least {{thr.cell|int}} clubs in a country before that country can be its heartland, and at least {{thr.sport|int}} clubs worldwide to be listed. And the signature sport is chosen by a cautious ratio: the location quotient recalculated with the club count replaced by the lower end of a 90% Poisson interval for it. With 10 clubs the cautious count is about {{thr.lo10|f1}}; with 100 it is about {{thr.lo100|f1}}. So a sport needs a big lead or plenty of clubs to win, and the page shows both the plain and the cautious figure.</p></details>
+<details><summary>What counts as a club</summary>
+<p>Items in Wikidata that are a sports club or sports team (or any subclass) and have both a sport and a country: {{meta.wikidata_items_all|int}} items. I removed {{meta.excluded_items|int}} that are national sides, Olympic and Paralympic delegations, "nation at" competition entries, cycling team seasons, youth and reserve sides, school, college and university teams, and commercial motor-racing and esports teams, leaving {{meta.clubs|int}} clubs in {{meta.countries_all|int}} present-day countries (clubs recorded only under former states such as the Soviet Union are left out). A club listed under several sports counts as a fraction for each, so every club counts once. Sport variants are merged (women's football into football, camogie into hurling, all ski disciplines into skiing, and so on); umbrella values such as "winter sport" and mind sports such as chess are left out.</p></details>
+<details><summary>Coverage and bias</summary>
+<p>Wikidata records what volunteers and bulk imports have put into it. Some countries have imported whole registries of clubs for one sport, which inflates that sport there: the {{caveat.uk_shooting|int}} UK shooting clubs, the {{caveat.nor_athletics|int}} Norwegian athletics clubs and the {{caveat.swe_minigolf|int}} Swedish minigolf clubs look like imports of this kind. The "only clubs with a Wikipedia article" switch is a check: it keeps the {{wp.clubs|int}} clubs that someone has written an encyclopedia article about. That removes most imports but brings in a different bias, towards clubs that editors find notable. {{wp.same_sig|int}} of the {{wp.both|int}} countries mapped both ways keep the same signature sport. Multi-sport clubs are often recorded under football alone, which hides sports such as fencing that are usually sections of larger clubs. None of this measures how many people play: it measures organised clubs as recorded.</p></details>
+<details><summary>The UK map</summary>
+<p>OpenStreetMap is mapped by volunteers, and some places are mapped in more detail than others; again, comparing each county with itself removes the overall difference but not a local enthusiasm for tagging, say, bowling greens. The {{uk.features|int}} features were merged into {{uk.sites|int}} places to play (one per sport per grid square of about 220 by 200 metres). Sport England's Active Lives survey reports activity by local authority, but not for small sports at county level, so it is not used here.</p></details>
+
+<h2><span class="n">07 · Sources</span>Data and licences</h2>
+<ul style="font-size:16px">
+<li>Wikidata, sports clubs and teams (P31 subclasses of sports club Q847017 and sports team Q12973014; sport P641, country P17, coordinates P625 or headquarters P159), via the QLever endpoint of the University of Freiburg, {{meta.retrieved|raw}}. CC0.</li>
+<li>English Wikipedia, articles "<i>Sport</i> at the Summer Olympics" and "at the Winter Olympics", all-time medal tables. CC BY-SA 4.0.</li>
+<li>Wikimedia pageviews API (user views, 2025). CC0.</li>
+<li>OpenStreetMap contributors, features tagged sport=*, via the Overpass API. ODbL 1.0. Derived counts on this page are shared under the ODbL.</li>
+<li>Boundaries: Natural Earth 1:50m countries and 1:10m first-level divisions (public domain); UK counties from Office for National Statistics boundaries via onsvisual/uk-topojson (Open Government Licence v3, contains OS data © Crown copyright and database right).</li>
+<li>Base map tiles © Esri.</li>
+</ul>
+
+<footer>
+  <p>Dr Tristan Hotham, Independent researcher. ORCID 0000-0003-4931-9349. Cite as: Hotham, T. (2026) Signature sports: where the world's niche games are unusually popular. https://doi.org/10.5281/zenodo.23748256</p>
+  <p>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</p>
+  <p>Text and figures: CC BY 4.0. Code: MIT. Derived data: CC BY 4.0, except data derived from OpenStreetMap (ODbL 1.0) and from Wikipedia (CC BY-SA 4.0). Data and code: <a href="https://github.com/Tristan-Hotham/niche-sports">github.com/Tristan-Hotham/niche-sports</a>. Other studies: <a href="https://maps.tristanhotham.com/sun-and-rain/">Sun and rain</a>, <a href="https://maps.tristanhotham.com/games-on-the-map/">Games on the map</a>, <a href="https://blog.tristanhotham.com/">all posts</a>.</p>
+</footer>
+</div>
+<div class="tip" id="tip"></div>
+<button class="btn theme" id="theme" aria-label="Toggle dark mode">◐</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const R = /*RESULTS*/;
+const PD = /*PD*/;
+const fmt = n => n == null ? "n/a" : Math.round(n).toLocaleString("en-GB");
+const xf = v => v >= 10 ? Math.round(v) + "x" : (Math.round(v * 10) / 10).toFixed(1).replace(/\.0$/, "") + "x";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const tip = document.getElementById("tip");
+function showTip(h, x, y) { tip.innerHTML = h; tip.style.display = "block"; const w = tip.offsetWidth; x = Math.max(w / 2 + 8, Math.min(innerWidth - w / 2 - 8, x)); tip.style.left = x + scrollX + "px"; tip.style.top = y + scrollY + "px"; }
+function hideTip() { tip.style.display = "none"; }
+const isDark = () => { const r = document.documentElement; return r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; };
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const SC = s => PD.colours[s] || PD.neutral;
+const SHORT = { "hurling and camogie": "hurling", "Australian rules football": "Aussie rules" };
+const sh = s => SHORT[s] || s;
+const redraws = [];
+function resp(box, render) { let last = 0; const go = force => { const w = Math.max(280, Math.round(box.clientWidth)); if (!force && Math.abs(w - last) < 4) return; last = w; box.innerHTML = ""; render(w, w < 560); }; new ResizeObserver(() => go()).observe(box); go(); redraws.push(() => go(true)); }
+const NS = "http://www.w3.org/2000/svg";
+const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const lbl = (svg, x, y, s, cls = "lab", anchor = "start") => { const t = el("text", { x, y, class: cls, "text-anchor": anchor }, svg); t.textContent = s; return t; };
+/* strength classes: times the world average */
+const BR = [1.5, 2, 4, 8, 16];
+const ALPHA = [.16, .34, .52, .7, .86, .97];
+const cls = v => { let k = 0; while (k < BR.length && v >= BR[k]) k++; return k; };   // 0: below 1.5
+document.getElementById("heroChips").innerHTML = PD.heroChips.map(([c, s]) => `<span class="chip" style="background:${SC(s)}">${esc(c)}: ${esc(s)}</span>`).join("");
+
+/* ===== shared map scaffolding: base map, hills, labels and borders, names, colour strength ===== */
+const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/";
+function makeMap(id, view, opts) {
+  const map = L.map(id, Object.assign({ minZoom: 1, maxZoom: 10, zoomSnap: .5, worldCopyJump: false, maxBounds: [[-75, -200], [86, 220]] }, opts || {})).setView(view[0], view[1]);
+  map.createPane("hills"); map.getPane("hills").style.zIndex = 360; map.getPane("hills").style.pointerEvents = "none";
+  map.createPane("fills"); map.getPane("fills").style.zIndex = 400;
+  map.createPane("labels"); map.getPane("labels").style.zIndex = 450; map.getPane("labels").style.pointerEvents = "none";
+  map.createPane("names"); map.getPane("names").style.zIndex = 620; map.getPane("names").style.pointerEvents = "none";
+  const key = "ns_layers_" + id;
+  const LY = { base: "plain", hills: true, hillK: 45, labels: true, labelK: 70, names: true, nameLvl: 1, colour: 100, extra: true };
+  const DEF = { ...LY };
+  try { Object.assign(LY, JSON.parse(localStorage.getItem(key) || "{}")); } catch (e) {}
+  const save = () => { try { localStorage.setItem(key, JSON.stringify(LY)); } catch (e) {} };
+  const M = { map, LY, onApply: [], onNames: [] };
+  let base, hills, labels;
+  M.setTiles = () => {
+    [base, hills, labels].forEach(l => { if (l) map.removeLayer(l); });
+    const t = isDark() ? "Dark" : "Light";
+    const url = LY.base === "relief" ? ESRI + "World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}" : LY.base === "satellite" ? ESRI + "World_Imagery/MapServer/tile/{z}/{y}/{x}" : `${ESRI}Canvas/World_${t}_Gray_Base/MapServer/tile/{z}/{y}/{x}`;
+    base = L.tileLayer(url, { maxZoom: 16, maxNativeZoom: LY.base === "relief" ? 13 : 16, attribution: "Tiles &copy; Esri" }).addTo(map);
+    hills = L.tileLayer(ESRI + "Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16, maxNativeZoom: 16, pane: "hills" });
+    labels = L.tileLayer(`${ESRI}Canvas/World_${t}_Gray_Reference/MapServer/tile/{z}/{y}/{x}`, { maxZoom: 16, pane: "labels" });
+    M.apply();
+  };
+  M.apply = () => {
+    if (!base) return;
+    if (LY.hills) { hills.addTo(map); hills.setOpacity(Math.min(1, .1 + LY.hillK / 100)); } else map.removeLayer(hills);
+    if (LY.labels) { labels.addTo(map); labels.setOpacity(LY.labelK / 100); } else map.removeLayer(labels);
+    M.onApply.forEach(f => f());
+  };
+  const Ctl = L.Control.extend({ options: { position: "topright" }, onAdd() {
+    const d = L.DomUtil.create("div"); L.DomEvent.disableClickPropagation(d); L.DomEvent.disableScrollPropagation(d);
+    d.innerHTML = `<button class="lyrBtn" aria-expanded="false">Map layers</button>
+<div class="lyrPanel" hidden>
+ <div class="row"><label style="font-weight:600">Base map</label><div class="sub"><select data-k="base" aria-label="Base map"><option value="plain">Plain grey</option><option value="relief">Shaded relief</option><option value="satellite">Satellite</option></select></div></div>
+ <div class="row"><label><input type="checkbox" data-k="hills"> Hills and mountains</label><div class="sub"><span>strength</span><input type="range" data-k="hillK" min="10" max="100" step="5" aria-label="Hill shading strength"></div></div>
+ <div class="row"><label><input type="checkbox" data-k="labels"> Map labels and borders</label><div class="sub"><span>strength</span><input type="range" data-k="labelK" min="20" max="100" step="5" aria-label="Map label strength"></div></div>
+ <div class="row"><label><input type="checkbox" data-k="names"> ${opts && opts.namesLabel || "Bold names"}</label><div class="sub"><span>how many</span><select data-k="nameLvl" aria-label="How many names"><option value="0">Fewest</option><option value="1">Some</option><option value="2">Lots</option></select></div></div>
+ ${opts && opts.extraLabel ? `<div class="row"><label><input type="checkbox" data-k="extra"> ${opts.extraLabel}</label></div>` : ""}
+ <div class="row"><label style="font-weight:600">Colour</label><div class="sub"><span>strength</span><input type="range" data-k="colour" min="20" max="100" step="5" aria-label="Colour strength"></div></div>
+ <button class="reset">Reset layers</button>
+</div>`;
+    return d; } });
+  const ctl = new Ctl(); map.addControl(ctl);
+  const c = ctl.getContainer(), btn = c.querySelector(".lyrBtn"), pan = c.querySelector(".lyrPanel");
+  btn.onclick = () => { const o = pan.hidden; pan.hidden = !o; btn.setAttribute("aria-expanded", o); };
+  const inputs = [...c.querySelectorAll("[data-k]")];
+  const sync = () => inputs.forEach(i => { const k = i.dataset.k; if (i.type === "checkbox") i.checked = !!LY[k]; else i.value = LY[k]; });
+  inputs.forEach(i => i.addEventListener(i.type === "range" ? "input" : "change", () => {
+    const k = i.dataset.k; LY[k] = i.type === "checkbox" ? i.checked : (k === "base" ? i.value : +i.value);
+    if (k === "hillK") LY.hills = true; if (k === "labelK") LY.labels = true; if (k === "nameLvl") LY.names = true;
+    sync(); save(); k === "base" ? M.setTiles() : M.apply();
+  }));
+  c.querySelector(".reset").onclick = () => { Object.assign(LY, DEF); save(); sync(); M.setTiles(); };
+  sync();
+  map.on("zoomend moveend", () => M.onNames.forEach(f => f()));
+  return M;
+}
+/* names with collision boxes (drawn on top so you can see where you are) */
+function placeNames(M, layer, items, minBy) {
+  layer.clearLayers(); if (!M.LY.names) return;
+  const map = M.map, z = map.getZoom(), bb = map.getBounds().pad(.05), boxes = [];
+  const lim = minBy(z, M.LY.nameLvl);
+  const vis = items.filter(o => o.w >= lim && bb.contains(o.ll)).sort((a, b) => b.w - a.w);
+  let n = 0;
+  for (const o of vis) {
+    const p = map.latLngToContainerPoint(o.ll), w = o.t.length * (o.big ? 7 : 6.2) + 8;
+    const bx = [p.x - w / 2, p.y - 8, p.x + w / 2, p.y + 8];
+    if (M.blocked && M.blocked.some(q => bx[0] < q[2] && bx[2] > q[0] && bx[1] < q[3] && bx[3] > q[1])) continue;
+    if (boxes.some(q => bx[0] < q[2] && bx[2] > q[0] && bx[1] < q[3] && bx[3] > q[1])) continue;
+    boxes.push(bx);
+    L.marker(o.ll, { pane: "names", interactive: false, keyboard: false, icon: L.divIcon({ className: "", html: `<div class="nm${o.big ? "" : " s"}">${esc(o.t)}</div>`, iconSize: null }) }).addTo(layer);
+    if (++n > 160) break;
+  }
+}
+const GEO = {};
+const getJSON = u => fetch(u).then(r => r.json());
+
+/* ===== Map 1: signature sport ===== */
+let VAR = "all";
+const M1 = makeMap("map1", [[30, 12], 2], { namesLabel: "Country names" });
+const sigL = L.layerGroup().addTo(M1.map), nameL1 = L.layerGroup().addTo(M1.map);
+let geo1 = null, sel1 = null;
+const sigOf = c => { const C = PD.C[c]; if (!C) return null; return VAR === "wp" ? C.gw : C.g; };
+function style1(f) {
+  const c = f.properties.iso3, C = PD.C[c], s = sigOf(c), k = M1.LY.colour / 100;
+  const line = { color: isDark() ? "#16151A" : "#fff", weight: .7, opacity: .9, pane: "fills" };
+  if (!C || !s || s[0] === "few") return { ...line, fillColor: css("--few"), fillOpacity: .9, dashArray: null };
+  if (s[0] === "none") return { ...line, fillColor: css("--nodata"), fillOpacity: .95 };
+  return { ...line, fillColor: SC(s[0]), fillOpacity: ALPHA[cls(s[2])] * k + (1 - k) * .05 };
+}
+function drawSig() {
+  if (!geo1) return;
+  sigL.clearLayers();
+  L.geoJSON(geo1, { style: style1, onEachFeature: (f, l) => {
+    l.on("click", e => { sel1 = f.properties.iso3; card1(sel1); L.DomEvent.stopPropagation(e); });
+    l.on("mouseover", e => { const c = f.properties.iso3, C = PD.C[c], s = sigOf(c); showTip(`<b>${esc(C ? C.nm : f.properties.name)}</b><br>` + (s && s[0] !== "few" && s[0] !== "none" ? `${esc(s[0])}: ${xf(s[2])} the world average` : (s && s[0] === "none" ? "no sport stands out" : "too few clubs to say")), e.originalEvent.pageX - scrollX, e.originalEvent.pageY - scrollY - 6); });
+    l.on("mouseout", hideTip);
+  } }).addTo(sigL);
+  sigNames();
+}
+function sigNames() {
+  nameL1.clearLayers(); if (!geo1) return;
+  const map = M1.map, z = map.getZoom(), bb = map.getBounds().pad(.05), boxes = [];
+  const items = [];
+  for (const f of geo1.features) {
+    const c = f.properties.iso3, s = sigOf(c), C = PD.C[c];
+    if (!C || !s || s[0] === "few" || s[0] === "none") continue;
+    items.push({ c, s, ll: L.latLng(f.properties.lp[0], f.properties.lp[1]), w: Math.log(C.N) * (1 + Math.log(s[2])), nm: C.nm });
+  }
+  const lvl = M1.LY.nameLvl, lim = [[2, 9], [3, 6], [4, 3.5], [99, 0]].find(([zz]) => z < zz + (lvl === 2 ? 1.5 : lvl === 0 ? -1 : 0))[1];
+  items.sort((a, b) => b.w - a.w); M1.blocked = [];
+  if (!M1.LY.names) return;
+  for (const o of items) {
+    if (o.w < lim || !bb.contains(o.ll)) continue;
+    const p = map.latLngToContainerPoint(o.ll), w = Math.max(sh(o.s[0]).length * 7.2 + 12, o.nm.length * 6 + 30);
+    const bx = [p.x - w / 2, p.y - 12, p.x + w / 2, p.y + 14];
+    if (boxes.some(q => bx[0] < q[2] && bx[2] > q[0] && bx[1] < q[3] && bx[3] > q[1])) continue;
+    boxes.push(bx);
+    L.marker(o.ll, { pane: "names", interactive: false, keyboard: false, icon: L.divIcon({ className: "", iconSize: null, html: `<div class="sg" style="--c:${SC(o.s[0])}"><b>${esc(sh(o.s[0]))}</b><i>${esc(o.nm)} ${xf(o.s[2])}</i></div>` }) }).addTo(nameL1);
+  }
+}
+M1.onApply.push(() => { if (geo1) sigL.eachLayer(g => g.setStyle && g.setStyle(style1)); sigNames(); });
+M1.onNames.push(sigNames);
+function legend1() {
+  const cnt = {};
+  for (const c in PD.C) { const s = sigOf(c); if (s && s[0] !== "few" && s[0] !== "none") cnt[s[0]] = (cnt[s[0]] || 0) + 1; }
+  const L1 = Object.entries(cnt).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  document.getElementById("legend1").innerHTML = L1.map(([s, n]) => `<div class="row" data-s="${esc(s)}"><i class="sw" style="background:${SC(s)}"></i>${esc(cap(s))}<span class="k">${n}</span></div>`).join("");
+  document.querySelectorAll("#legend1 .row").forEach(r => r.onclick = () => { setSport(r.dataset.s); document.getElementById("map2").scrollIntoView({ behavior: "smooth", block: "center" }); });
+  document.getElementById("ramp1").innerHTML = ALPHA.slice(1).map(a => `<div style="background:${css("--fg")};opacity:${a}"></div>`).join("");
+}
+function bars(rows, max) {
+  return `<div class="bars">` + rows.map(r => `<div class="r"><span class="t" title="${esc(r[0])}">${esc(r[0])}</span><div style="background:var(--panel)"><div class="b" style="width:${Math.max(2, Math.min(100, Math.log(Math.max(r[1], 1)) / Math.log(max) * 100))}%;background:${SC(r[0])}"></div></div><span class="v">${xf(r[1])}</span></div>`).join("") + `</div>`;
+}
+function card1(c) {
+  const C = PD.C[c], box = document.getElementById("card1");
+  if (!C) { box.innerHTML = `<h4>No clubs recorded</h4>`; return; }
+  const s = sigOf(c), x = (VAR === "wp" ? C.xw : C.x) || [];
+  const ok = x.filter(r => r[4]).sort((a, b) => b[3] - a[3]);
+  const N = VAR === "wp" ? C.Nw : C.N;
+  let h = `<h4>${VAR === "wp" ? "Clubs with a Wikipedia article" : "All clubs in Wikidata"}</h4><div class="big">${esc(C.nm)}</div><p class="sub">${fmt(N)} clubs. `;
+  if (s && s[0] !== "few" && s[0] !== "none") h += `Signature sport: <b style="color:${SC(s[0])}">${esc(s[0])}</b>, ${fmt(s[1])} clubs, ${xf(s[2])} the world average (cautious ${xf(s[3])}).`;
+  else if (s && s[0] === "none") h += `No sport has a clear lead.`; else h += `Too few clubs to call.`;
+  h += `</p>`;
+  if (ok.length) { h += `<h4>Over-represented (at least ${PD.thr.cell} clubs)</h4>` + bars(ok.slice(0, 7).map(r => [r[0], r[2]]), 64); }
+  const big = x.slice().sort((a, b) => b[1] - a[1]).slice(0, 3);
+  h += `<h4>Most clubs</h4><p style="margin:0;font-size:12px">` + big.map(r => `${esc(r[0])} ${fmt(r[1])} (${xf(r[2])})`).join(" · ") + `</p>`;
+  const med = (PD.med[c] || []).slice(0, 3);
+  if (med.length) h += `<h4>Olympic medals, over-represented</h4><p style="margin:0;font-size:12px">` + med.map(m => `${esc(m[0])}: ${m[1]} medals, ${xf(m[2])}`).join(" · ") + `</p>`;
+  box.innerHTML = h;
+}
+function setVar(v) { VAR = v; document.getElementById("vAll").setAttribute("aria-pressed", v === "all"); document.getElementById("vWp").setAttribute("aria-pressed", v === "wp"); drawSig(); legend1(); if (sel1) card1(sel1); }
+document.getElementById("vAll").onclick = () => setVar("all"); document.getElementById("vWp").onclick = () => setVar("wp");
+M1.map.on("click", () => {});
+
+/* ===== Map 2: pick a sport ===== */
+const M2 = makeMap("map2", [[30, 12], 2], { namesLabel: "Country names" });
+const fillL2 = L.layerGroup().addTo(M2.map), glowL2 = L.layerGroup().addTo(M2.map), nameL2 = L.layerGroup().addTo(M2.map);
+let SPORT = PD.defaultSport, GR = "C", geoR = null;
+const sel = document.getElementById("sportSel");
+sel.innerHTML = PD.sportList.map(s => `<option value="${esc(s)}">${esc(cap(s))} (${fmt(PD.sports[s].n)} clubs)</option>`).join("");
+document.getElementById("chips2").innerHTML = PD.quick.map(s => `<button style="--c:${SC(s)}" data-s="${esc(s)}" aria-pressed="false">${esc(s)}</button>`).join("");
+document.querySelectorAll("#chips2 button").forEach(b => b.onclick = () => setSport(b.dataset.s));
+sel.onchange = () => setSport(sel.value);
+function cellC(c) { const C = PD.C[c]; if (!C) return null; const r = (C.x || []).find(r => r[0] === SPORT); return r ? { n: r[1], lq: r[2], lo: r[3], ok: r[4], N: C.N, nm: C.nm } : { n: 0, lq: 0, lo: 0, ok: 0, N: C.N, nm: C.nm }; }
+function cellR(code) { const G = PD.R[code]; if (!G) return null; const r = G.x.find(r => r[0] === SPORT); return r ? { n: r[1], lq: r[2], lo: r[3], ok: 1, N: G.N, nm: G.nm, ct: G.ct } : { n: 0, lq: 0, lo: 0, ok: 0, N: G.N, nm: G.nm, ct: G.ct }; }
+function style2(v) {
+  const k = M2.LY.colour / 100, line = { color: isDark() ? "#16151A" : "#fff", weight: GR === "R" ? .4 : .7, opacity: .9, pane: "fills" };
+  if (!v || v.N < (GR === "R" ? PD.thr.region : PD.thr.country)) return { ...line, fillColor: css("--few"), fillOpacity: .8 };
+  if (!v.ok) return { ...line, fillColor: css("--nodata"), fillOpacity: v.n > 0 ? .9 : .7 };
+  if (v.lq < 1) return { ...line, fillColor: SC(SPORT), fillOpacity: .08 * k + .02 };
+  return { ...line, fillColor: SC(SPORT), fillOpacity: ALPHA[cls(v.lq)] * k + (1 - k) * .05 };
+}
+function drawSport() {
+  fillL2.clearLayers();
+  const g = GR === "R" ? geoR : GEO.countries; if (!g) return;
+  const val = f => GR === "R" ? cellR(f.properties.code) : cellC(f.properties.iso3);
+  L.geoJSON(g, { style: f => style2(val(f)), onEachFeature: (f, l) => {
+    l.on("mouseover", e => { const v = val(f), nm = GR === "R" ? `${f.properties.name}, ${f.properties.country}` : (v ? v.nm : f.properties.name);
+      showTip(`<b>${esc(nm)}</b><br>` + (v && v.ok ? `${esc(SPORT)}: ${fmt(v.n)} of ${fmt(v.N)} clubs<br>${xf(v.lq)} the world average (cautious ${xf(v.lo)})` : v && v.n > 0 ? `${fmt(v.n)} ${esc(SPORT)} clubs: too few to call` : `no ${esc(SPORT)} clubs recorded`), e.originalEvent.pageX - scrollX, e.originalEvent.pageY - scrollY - 6); });
+    l.on("mouseout", hideTip);
+  } }).addTo(fillL2);
+  glow2();
+}
+function topList() {
+  if (GR === "R") return (PD.rtop[SPORT] || []).map(r => ({ t: r[1], sub: r[2], ll: PD.R[r[0]] ? PD.R[r[0]].lp : null, lq: r[4], lo: r[5], n: r[3] }));
+  return (PD.top[SPORT] || []).map(r => ({ t: PD.C[r[0]].nm, ll: PD.C[r[0]].lp, lq: r[2], lo: r[3], n: r[1] }));
+}
+function glow2() {
+  glowL2.clearLayers(); M2.blocked = [];
+  const map = M2.map, T = topList().filter(o => o.ll).slice(0, 5), boxes = [];
+  const dotIc = L.divIcon({ className: "", iconSize: [12, 12], iconAnchor: [6, 6], html: `<div class="dot" style="--c:${SC(SPORT)};width:12px;height:12px"></div>` });
+  T.forEach((o, i) => {
+    const p = map.latLngToContainerPoint(o.ll), txt = `${o.t}: ${xf(o.lq)} world average`, w = txt.length * 7.3 + 20, h = 28;
+    let best = null;
+    search: for (const dy of [0, -36, 36, -72, 72, -108, 108, -144, 144]) for (const dx of [0, 90, -90]) {
+      const q = [p.x + dx - w / 2, p.y + dy - h / 2, p.x + dx + w / 2, p.y + dy + h / 2];
+      if (!boxes.some(b => q[0] < b[2] && q[2] > b[0] && q[1] < b[3] && q[3] > b[1])) { best = [dx, dy, q]; break search; }
+    }
+    if (!best) return;
+    boxes.push(best[2]); M2.blocked.push(best[2]);
+    const at = map.containerPointToLatLng([p.x + best[0], p.y + best[1]]);
+    L.marker(o.ll, { icon: dotIc, pane: "names", interactive: false, keyboard: false }).addTo(glowL2);
+    if (best[0] || best[1]) L.polyline([o.ll, at], { pane: "names", color: SC(SPORT), weight: 1.5, opacity: .9, interactive: false }).addTo(glowL2);
+    L.marker(at, { pane: "names", interactive: false, keyboard: false, zIndexOffset: 1000 - i, icon: L.divIcon({ className: "", iconSize: null, html: `<div class="glow" style="--c:${SC(SPORT)}"><b>${esc(o.t)}: ${xf(o.lq)} <span>world average</span></b></div>` }) }).addTo(glowL2);
+  });
+  names2();
+}
+function names2() {
+  const items = [];
+  if (GR === "C" && GEO.countries) for (const f of GEO.countries.features) { const C = PD.C[f.properties.iso3]; items.push({ t: C ? C.nm : f.properties.name, ll: L.latLng(f.properties.lp[0], f.properties.lp[1]), w: C ? C.N : 1, big: C && C.N > 1500 }); }
+  if (GR === "R" && geoR) for (const f of geoR.features) { const G = PD.R[f.properties.code]; if (G) items.push({ t: G.nm, ll: L.latLng(f.properties.lp[0], f.properties.lp[1]), w: G.N, big: G.N > 400 }); }
+  placeNames(M2, nameL2, items, (z, lvl) => (GR === "R" ? [[3, 800], [4, 300], [5, 120], [6, 50], [99, 0]] : [[2, 3000], [3, 900], [4, 250], [5, 60], [99, 0]]).find(([zz]) => z < zz + (lvl === 2 ? 1.5 : lvl === 0 ? -1 : 0))[1] * (lvl === 0 ? 2 : 1));
+}
+M2.onApply.push(() => { drawSport(); }); M2.onNames.push(() => glow2());
+function card2() {
+  const T = topList(), S = PD.sports[SPORT], box = document.getElementById("card2");
+  let h = `<h4>${GR === "R" ? "Top regions" : "Top countries"}</h4><div class="big" style="color:${SC(SPORT)}">${esc(cap(SPORT))}</div><p class="sub">${fmt(S.n)} clubs in ${fmt(S.k)} countries, ${(S.sh * 100).toFixed(S.sh < .01 ? 2 : 1)}% of all clubs.</p>`;
+  if (!T.length) h += `<p style="font-size:12px">No ${GR === "R" ? "region" : "country"} has enough ${esc(SPORT)} clubs to pass the minimum count.</p>`;
+  else h += `<table class="lg"><tr><th>${GR === "R" ? "Region" : "Country"}</th><th class="r">Clubs</th><th class="r">x avg</th></tr>` + T.slice(0, 10).map(o => `<tr><td>${esc(o.t)}${o.sub ? `<br><span style="color:var(--muted);font-size:11px">${esc(o.sub)}</span>` : ""}</td><td class="r">${fmt(o.n)}</td><td class="r"><b>${xf(o.lq)}</b></td></tr>`).join("") + `</table>`;
+  const pv = PD.pv[SPORT];
+  if (pv && pv.length) h += `<h4>Read about most (Wikipedia, 2025)</h4><p style="margin:0;font-size:12px">` + pv.slice(0, 4).map(r => `${esc(r[0])} ${xf(r[1])}`).join(" · ") + `</p>`;
+  const md = PD.medTop[SPORT];
+  if (md && md.length) h += `<h4>Olympic medals, over-represented</h4><p style="margin:0;font-size:12px">` + md.slice(0, 4).map(r => `${esc(PD.C[r[0]] ? PD.C[r[0]].nm : r[0])} ${r[1]} medals, ${xf(r[2])}`).join(" · ") + `</p>`;
+  box.innerHTML = h;
+}
+function setSport(s) {
+  if (!PD.sports[s]) return; SPORT = s; sel.value = s;
+  document.querySelectorAll("#chips2 button").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === s));
+  drawSport(); card2(); fit2();
+}
+function fit2() {
+  const T = topList().filter(o => o.ll).slice(0, 5);
+  if (!T.length) return;
+  const b = L.latLngBounds(T.map(o => o.ll));
+  M2.map.fitBounds(b.pad(.6), { maxZoom: GR === "R" ? 6 : 4, animate: false });
+  if (M2.map.getZoom() < 2) M2.map.setZoom(2, { animate: false });
+}
+function setGR(g) {
+  GR = g; document.getElementById("gC").setAttribute("aria-pressed", g === "C"); document.getElementById("gR").setAttribute("aria-pressed", g === "R");
+  if (g === "R" && !geoR) { getJSON("data/geo_regions.json").then(j => { geoR = j; drawSport(); card2(); fit2(); }); } else { drawSport(); card2(); fit2(); }
+}
+document.getElementById("gC").onclick = () => setGR("C"); document.getElementById("gR").onclick = () => setGR("R");
+
+/* ===== stories ===== */
+document.getElementById("stories").innerHTML = PD.stories.map((s, i) => `<div class="story" style="--c:${SC(s.sport)}" data-i="${i}" tabindex="0" role="button"><div class="x">${xf(s.lq)}</div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p><div class="m">${esc(s.meta)}</div></div>`).join("");
+document.querySelectorAll(".story").forEach(d => { const go = () => { const s = PD.stories[+d.dataset.i]; setGR(s.region ? "R" : "C"); setSport(s.sport); document.getElementById("map2").scrollIntoView({ behavior: "smooth", block: "center" }); if (s.ll) setTimeout(() => M2.map.setView(s.ll, s.z || 4), 400); }; d.onclick = go; d.onkeydown = e => { if (e.key === "Enter") go(); }; });
+
+/* ===== Map 3: UK counties ===== */
+const M3 = makeMap("map3", [[55.2, -3.4], 5.5], { minZoom: 4, maxBounds: [[47, -16], [63, 8]], namesLabel: "County names", extraLabel: "Places to play (dots)" });
+const fillL3 = L.layerGroup().addTo(M3.map), dotL3 = L.layerGroup().addTo(M3.map), nameL3 = L.layerGroup().addTo(M3.map);
+let UKS = "signature", geoUK = null, UKP = null;
+const ukSel = document.getElementById("ukSel");
+ukSel.innerHTML = `<option value="signature">Each county's signature sport</option>` + PD.uk.list.map(s => `<option value="${esc(s)}">${esc(cap(s))} (${fmt(PD.uk.n[s])} places)</option>`).join("");
+document.getElementById("chips3").innerHTML = PD.uk.quick.map(s => `<button style="--c:${SC(s)}" data-s="${esc(s)}" aria-pressed="false">${esc(s)}</button>`).join("");
+document.querySelectorAll("#chips3 button").forEach(b => b.onclick = () => setUK(b.dataset.s));
+ukSel.onchange = () => setUK(ukSel.value);
+function ukCell(a) { const A = PD.uk.A[a]; if (!A) return null; if (UKS === "signature") return A.g ? { s: A.g[0], n: A.g[1], lq: A.g[2], lo: A.g[3], ok: 1, N: A.N } : { ok: 0, N: A.N, n: 0 }; const r = A.x.find(r => r[0] === UKS); return r ? { s: UKS, n: r[1], lq: r[2], lo: r[3], ok: r[4], N: A.N } : { s: UKS, n: 0, lq: 0, ok: 0, N: A.N }; }
+function style3(a) {
+  const v = ukCell(a), k = M3.LY.colour / 100, line = { color: isDark() ? "#16151A" : "#fff", weight: .8, opacity: .95, pane: "fills" };
+  if (!v || !v.ok) return { ...line, fillColor: css("--nodata"), fillOpacity: v && v.n > 0 ? .85 : .6 };
+  if (v.lq < 1) return { ...line, fillColor: SC(v.s), fillOpacity: .1 * k };
+  return { ...line, fillColor: SC(v.s), fillOpacity: ALPHA[cls(v.lq)] * k + (1 - k) * .05 };
+}
+function drawUK() {
+  fillL3.clearLayers(); dotL3.clearLayers(); if (!geoUK) return;
+  L.geoJSON(geoUK, { style: f => style3(f.properties.area), onEachFeature: (f, l) => {
+    l.on("mouseover", e => { const a = f.properties.area, v = ukCell(a); showTip(`<b>${esc(a)}</b><br>` + (v && v.ok ? `${esc(v.s)}: ${fmt(v.n)} of ${fmt(v.N)} places<br>${xf(v.lq)} the UK average (cautious ${xf(v.lo)})` : v && v.n > 0 ? `${fmt(v.n)} places: too few to call` : UKS === "signature" ? "no sport stands out" : `none mapped`), e.originalEvent.pageX - scrollX, e.originalEvent.pageY - scrollY - 6); });
+    l.on("mouseout", hideTip);
+  } }).addTo(fillL3);
+  if (UKS !== "signature" && M3.LY.extra && PD.uk.pts.includes(UKS)) {
+    if (!UKP) { getJSON("data/uk_points.json").then(j => { UKP = j; drawUK(); }); }
+    else {
+      const ic = L.divIcon({ className: "", iconSize: [9, 9], iconAnchor: [4.5, 4.5], html: `<div class="dot" style="--c:${SC(UKS)}"></div>` });
+      (UKP[UKS] || []).forEach(p => L.marker(p, { icon: ic, interactive: false, keyboard: false, pane: "names" }).addTo(dotL3));
+    }
+  }
+  names3();
+}
+function names3() {
+  if (!geoUK) return;
+  const items = geoUK.features.map(f => { const A = PD.uk.A[f.properties.area]; return { t: f.properties.area, ll: L.latLng(f.properties.lp[0], f.properties.lp[1]), w: A ? A.N : 1, big: A && A.N > 3000 }; });
+  placeNames(M3, nameL3, items, (z, lvl) => [[6, 3000], [7, 800], [99, 0]].find(([zz]) => z < zz + (lvl === 2 ? 1.5 : lvl === 0 ? -1 : 0))[1] * (lvl === 0 ? 2 : 1));
+}
+M3.onApply.push(drawUK); M3.onNames.push(names3);
+function card3() {
+  const box = document.getElementById("card3");
+  if (UKS === "signature") {
+    const cnt = {}; for (const a in PD.uk.A) { const g = PD.uk.A[a].g; if (g) cnt[g[0]] = (cnt[g[0]] || 0) + 1; }
+    box.innerHTML = `<h4>Signature sports by county</h4>` + `<div class="legend">` + Object.entries(cnt).sort((a, b) => b[1] - a[1]).map(([s, n]) => `<div class="row" data-s="${esc(s)}"><i class="sw" style="background:${SC(s)}"></i>${esc(cap(s))}<span class="k">${n}</span></div>`).join("") + `</div><h4>Biggest leads</h4><table class="lg">` + PD.uk.sigTop.slice(0, 8).map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td class="r"><b>${xf(r[2])}</b></td></tr>`).join("") + `</table>`;
+    box.querySelectorAll(".row").forEach(r => r.onclick = () => setUK(r.dataset.s));
+    return;
+  }
+  const T = PD.uk.top[UKS] || [];
+  box.innerHTML = `<h4>Top counties</h4><div class="big" style="color:${SC(UKS)}">${esc(cap(UKS))}</div><p class="sub">${fmt(PD.uk.n[UKS])} places to play across the UK.</p>` + (T.length ? `<table class="lg"><tr><th>County</th><th class="r">Places</th><th class="r">x UK</th></tr>` + T.map(r => `<tr><td>${esc(r[0])}</td><td class="r">${fmt(r[1])}</td><td class="r"><b>${xf(r[2])}</b></td></tr>`).join("") + `</table>` : `<p style="font-size:12px">No county has enough places to pass the minimum count.</p>`);
+}
+function setUK(s) { UKS = s; ukSel.value = s; document.querySelectorAll("#chips3 button").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === s)); drawUK(); card3(); }
+document.getElementById("ukText").innerHTML = PD.uk.text;
+
+/* ===== charts ===== */
+resp(document.getElementById("chLead"), (W, sm) => {
+  const rows = PD.lead.slice(0, 20), rh = 24, lw = sm ? 120 : 170, H = rows.length * rh + 26;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}` }, document.getElementById("chLead"));
+  const mx = Math.log(Math.max(...rows.map(r => r[2]))), x = v => lw + (W - lw - (sm ? 130 : 200)) * Math.log(Math.max(v, 1)) / mx;
+  [2, 5, 10, 20, 50, 100].filter(v => Math.log(v) <= mx).forEach(v => { el("line", { x1: x(v), x2: x(v), y1: 0, y2: H - 20, stroke: css("--rule") }, svg); lbl(svg, x(v), H - 6, v + "x", "lab s m", "middle"); });
+  rows.forEach((r, i) => { const y = i * rh;
+    lbl(svg, lw - 8, y + 16, r[0], "lab", "end");
+    el("rect", { x: lw, y: y + 4, width: Math.max(2, x(r[2]) - lw), height: rh - 8, fill: SC(r[1]), rx: 1 }, svg);
+    lbl(svg, x(r[2]) + 6, y + 16, `${sh(r[1])} ${xf(r[2])}`, "lab s b"); });
+});
+resp(document.getElementById("chMed"), (W, sm) => {
+  const P = PD.medPairs, H = sm ? 360 : 440, m = { l: 46, r: 16, t: 10, b: 40 };
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}` }, document.getElementById("chMed"));
+  const lx = v => Math.log10(v), X0 = -1.1, X1 = 2.1, Y0 = -1.6, Y1 = 2.0;
+  const x = v => m.l + (W - m.l - m.r) * (lx(v) - X0) / (X1 - X0), y = v => H - m.b - (H - m.t - m.b) * (lx(v) - Y0) / (Y1 - Y0);
+  [.1, 1, 10, 100].forEach(v => { el("line", { x1: x(v), x2: x(v), y1: m.t, y2: H - m.b, stroke: css("--rule") }, svg); lbl(svg, x(v), H - m.b + 16, v + "x", "lab s m", "middle"); });
+  [.1, 1, 10, 100].forEach(v => { if (lx(v) < Y0 || lx(v) > Y1) return; el("line", { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: css("--rule") }, svg); lbl(svg, m.l - 6, y(v) + 4, v + "x", "lab s m", "end"); });
+  el("line", { x1: x(1), x2: x(1), y1: m.t, y2: H - m.b, stroke: css("--muted"), "stroke-dasharray": "3 3" }, svg);
+  el("line", { x1: m.l, x2: W - m.r, y1: y(1), y2: y(1), stroke: css("--muted"), "stroke-dasharray": "3 3" }, svg);
+  lbl(svg, (m.l + W - m.r) / 2, H - 6, "Clubs: times the world average", "lab s m", "middle");
+  const yl = lbl(svg, 12, (m.t + H - m.b) / 2, "Olympic medals: times the world average", "lab s m", "middle"); yl.setAttribute("transform", `rotate(-90 12 ${(m.t + H - m.b) / 2})`);
+  const lb = [];
+  P.forEach(p => { const c = el("circle", { cx: x(Math.max(p[3], .09)), cy: y(Math.max(p[2], .03)), r: 4.5, fill: SC(p[1]), "fill-opacity": .85, stroke: "#fff", "stroke-width": .8 }, svg);
+    c.addEventListener("mousemove", e => showTip(`<b>${esc(p[0])}, ${esc(p[1])}</b><br>clubs ${xf(p[3])}, medals ${xf(p[2])} (${p[4]} medals)`, e.pageX - scrollX, e.pageY - scrollY - 6)); c.addEventListener("mouseleave", hideTip);
+    if (p[5]) { const tx = x(Math.max(p[3], .09)) + 6, ty = y(Math.max(p[2], .03)) + 4, t = `${p[0]} ${p[1]}`, bx = [tx, ty - 11, tx + t.length * 6.6, ty + 3];
+      if (!lb.some(q => bx[0] < q[2] && bx[2] > q[0] && bx[1] < q[3] && bx[3] > q[1]) && bx[2] < W) { lb.push(bx); lbl(svg, tx, ty, t, "lab s"); } } });
+});
+resp(document.getElementById("chPv"), (W, sm) => {
+  const rows = PD.pvTable, rh = 26, lw = sm ? 110 : 150, H = rows.length * rh + 6;
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}` }, document.getElementById("chPv"));
+  rows.forEach((r, i) => { const y = i * rh; lbl(svg, lw - 8, y + 17, r[0], "lab b", "end");
+    el("rect", { x: lw, y: y + 5, width: 6, height: rh - 10, fill: SC(r[0]) }, svg);
+    lbl(svg, lw + 14, y + 17, r[1].map(q => `${q[0]} ${xf(q[1])}`).join("   "), sm ? "lab s" : "lab"); });
+});
+
+/* ===== load ===== */
+Promise.all([getJSON("data/geo_countries.json"), getJSON("data/geo_uk.json")]).then(([gc, gu]) => {
+  GEO.countries = gc; geo1 = gc; geoUK = gu;
+  document.getElementById("load1").remove();
+  M1.setTiles(); M2.setTiles(); M3.setTiles();
+  drawSig(); legend1(); setSport(SPORT); setUK("signature");
+});
+document.getElementById("theme").onclick = () => { const r = document.documentElement; r.dataset.theme = isDark() ? "light" : "dark"; [M1, M2, M3].forEach(M => M.setTiles()); legend1(); redraws.forEach(f => f()); };
+</script>
+</body>
+</html>
