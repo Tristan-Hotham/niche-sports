@@ -1,0 +1,1279 @@
+iso3,sport,medals,lq,name
+ITA,fencing,135.0000,4.9426,Italy
+FRA,fencing,130.0000,4.1983,France
+HUN,fencing,93.0000,5.1520,Hungary
+SUN,fencing,49.0000,1.2160,SUN
+RUS,fencing,26.0000,1.4323,Russia
+KOR,fencing,19.0000,1.3742,South Korea
+USA,fencing,37.0000,0.3587,United States
+DEU,fencing,21.0000,0.6458,Germany
+CHN,fencing,15.0000,0.5478,China
+POL,fencing,23.0000,2.0618,Poland
+ROU,fencing,17.0000,1.9644,Romania
+CUB,fencing,10.0000,1.2174,Cuba
+BEL,fencing,10.0000,1.7714,Belgium
+UKR,fencing,9.0000,1.7177,Ukraine
+JPN,fencing,8.0000,0.3774,Japan
+HKG,fencing,3.0000,7.3956,Hong Kong
+SWE,fencing,7.0000,0.3095,Sweden
+GRC,fencing,5.0000,1.2326,Greece
+GBR,fencing,9.0000,0.2872,United Kingdom
+CHE,fencing,8.0000,0.5961,Switzerland
+DNK,fencing,6.0000,0.9646,Denmark
+AUT,fencing,7.0000,0.5800,Austria
+EST,fencing,2.0000,1.3759,Estonia
+VEN,fencing,1.0000,1.5570,Venezuela
+EGY,fencing,2.0000,1.4430,Egypt
+TUN,fencing,2.0000,3.4803,Tunisia
+NOR,fencing,1.0000,0.0510,Norway
+DDR,fencing,1.0000,0.0577,DDR
+MEX,fencing,1.0000,0.3892,Mexico
+CZE,fencing,2.0000,0.5379,Czechia
+ARG,fencing,1.0000,0.4415,Argentina
+PRT,fencing,1.0000,1.0565,Portugal
+ESP,fencing,1.0000,0.1771,Spain
+CAN,fencing,1.0000,0.0507,Canada
+DNK,handball,7.0000,9.9486,Denmark
+FRA,handball,8.0000,2.2839,France
+SUN,handball,6.0000,1.3163,SUN
+NOR,handball,8.0000,3.6070,Norway
+KOR,handball,7.0000,4.4757,South Korea
+RUS,handball,4.0000,1.9479,Russia
+HRV,handball,3.0000,13.7635,Croatia
+DEU,handball,4.0000,1.0873,Germany
+DDR,handball,3.0000,1.5293,DDR
+SWE,handball,4.0000,1.5636,Sweden
+ROU,handball,4.0000,4.0860,Romania
+HUN,handball,3.0000,1.4691,Hungary
+AUT,handball,1.0000,0.7325,Austria
+CSK,handball,1.0000,1.5566,CSK
+ISL,handball,1.0000,65.3767,Iceland
+MNE,handball,1.0000,261.5067,Montenegro
+ESP,handball,6.0000,9.3954,Spain
+CHN,handball,1.0000,0.3228,China
+POL,handball,1.0000,0.7924,Poland
+CHE,handball,1.0000,0.6587,Switzerland
+UKR,handball,1.0000,1.6871,Ukraine
+IND,field hockey,13.0000,71.4800,India
+AUS,field hockey,13.0000,5.0529,Australia
+GBR,field hockey,13.0000,3.1615,United Kingdom
+DEU,field hockey,11.0000,2.5778,Germany
+PAK,field hockey,8.0000,163.9540,Pakistan
+ARG,field hockey,7.0000,23.5531,Argentina
+ESP,field hockey,5.0000,6.7496,Spain
+NZL,field hockey,1.0000,1.5988,New Zealand
+ZWE,field hockey,1.0000,28.1796,Zimbabwe
+KOR,field hockey,3.0000,1.6536,South Korea
+BEL,field hockey,3.0000,4.0498,Belgium
+CHN,field hockey,2.0000,0.5566,China
+DNK,field hockey,1.0000,1.2252,Denmark
+JPN,field hockey,1.0000,0.3595,Japan
+CSK,field hockey,1.0000,1.3419,CSK
+SUN,field hockey,2.0000,0.3782,SUN
+USA,field hockey,2.0000,0.1478,United States
+HUN,water polo,17.0000,6.6424,Hungary
+USA,water polo,15.0000,1.0258,United States
+ITA,water polo,10.0000,2.5823,Italy
+GBR,water polo,4.0000,0.9003,United Kingdom
+SUN,water polo,7.0000,1.2253,SUN
+SRB,water polo,5.0000,38.6387,Serbia
+ESP,water polo,5.0000,6.2470,Spain
+DEU,water polo,3.0000,0.6507,Germany
+HRV,water polo,4.0000,14.6420,Croatia
+FRA,water polo,4.0000,0.9111,France
+AUS,water polo,3.0000,1.0792,Australia
+BEL,water polo,6.0000,7.4964,Belgium
+GRC,water polo,2.0000,3.4775,Greece
+RUS,water polo,4.0000,1.5542,Russia
+SWE,water polo,3.0000,0.9356,Sweden
+SCG,water polo,2.0000,46.3664,SCG
+JPN,judo,104.0000,5.2135,Japan
+FRA,judo,67.0000,2.2990,France
+KOR,judo,51.0000,3.9193,South Korea
+CHN,judo,23.0000,0.8925,China
+CUB,judo,37.0000,4.7858,Cuba
+GEO,judo,15.0000,9.8222,Georgia
+SUN,judo,23.0000,0.6065,SUN
+RUS,judo,16.0000,0.9365,Russia
+ITA,judo,18.0000,0.7002,Italy
+BRA,judo,28.0000,6.1977,Brazil
+POL,judo,8.0000,0.7620,Poland
+DEU,judo,22.0000,0.7188,Germany
+AZE,judo,7.0000,3.9289,Azerbaijan
+SVN,judo,7.0000,4.0003,Slovenia
+ESP,judo,7.0000,1.3175,Spain
+XKS,judo,5.0000,31.4311,XKS
+USA,judo,14.0000,0.1442,United States
+PRK,judo,8.0000,3.9912,North Korea
+AUT,judo,8.0000,0.7043,Austria
+BEL,judo,14.0000,2.6349,Belgium
+CZE,judo,2.0000,0.5715,Czechia
+HUN,judo,10.0000,0.5886,Hungary
+MNG,judo,12.0000,12.1669,Mongolia
+UZB,judo,10.0000,6.2862,Uzbekistan
+DDR,judo,9.0000,0.5514,DDR
+CAN,judo,8.0000,0.4306,Canada
+ROU,judo,6.0000,0.7367,Romania
+KAZ,judo,6.0000,2.1677,Kazakhstan
+CHE,judo,4.0000,0.3167,Switzerland
+GRC,judo,3.0000,0.7858,Greece
+ARG,judo,2.0000,0.9382,Argentina
+BLR,judo,2.0000,0.5987,Belarus
+TUR,judo,2.0000,0.5663,Turkey
+HRV,judo,1.0000,0.5514,Croatia
+GBR,judo,20.0000,0.6781,United Kingdom
+ISR,judo,9.0000,18.8587,Israel
+BGR,judo,3.0000,0.3945,Bulgaria
+UKR,judo,4.0000,0.8111,Ukraine
+DZA,judo,2.0000,3.1431,Algeria
+COL,judo,2.0000,1.6543,Colombia
+EGY,judo,2.0000,1.5332,Egypt
+MEX,judo,1.0000,0.4136,Mexico
+SVK,judo,1.0000,0.7310,Slovakia
+TWN,judo,1.0000,0.7310,Taiwan
+PRT,judo,4.0000,4.4902,Portugal
+EST,judo,3.0000,2.1929,Estonia
+TJK,judo,3.0000,13.4705,Tajikistan
+AUS,judo,2.0000,0.1084,Australia
+MDA,judo,2.0000,6.2862,Moldova
+CSK,judo,1.0000,0.1871,CSK
+ISL,judo,1.0000,7.8578,Iceland
+KGZ,judo,1.0000,2.4178,Kyrgyzstan
+LVA,judo,1.0000,0.9822,Latvia
+SWE,judo,1.0000,0.0470,Sweden
+ARE,judo,1.0000,15.7155,United Arab Emirates
+SUN,wrestling,116.0000,1.3993,SUN
+USA,wrestling,149.0000,0.7022,United States
+JPN,wrestling,87.0000,1.9952,Japan
+RUS,wrestling,56.0000,1.4995,Russia
+TUR,wrestling,68.0000,8.8088,Turkey
+SWE,wrestling,86.0000,1.8484,Sweden
+FIN,wrestling,83.0000,2.5178,Finland
+HUN,wrestling,56.0000,1.5079,Hungary
+BGR,wrestling,73.0000,4.3919,Bulgaria
+IRN,wrestling,55.0000,8.9869,Iran
+CUB,wrestling,32.0000,1.8935,Cuba
+KOR,wrestling,36.0000,1.2656,South Korea
+ROU,wrestling,34.0000,1.9097,Romania
+ITA,wrestling,22.0000,0.3915,Italy
+DEU,wrestling,28.0000,0.4185,Germany
+POL,wrestling,27.0000,1.1765,Poland
+EST,wrestling,11.0000,3.6784,Estonia
+AZE,wrestling,28.0000,7.1895,Azerbaijan
+UKR,wrestling,21.0000,1.9481,Ukraine
+GEO,wrestling,21.0000,6.2908,Georgia
+FRA,wrestling,18.0000,0.2826,France
+CHE,wrestling,14.0000,0.5071,Switzerland
+CAN,wrestling,17.0000,0.4186,Canada
+GBR,wrestling,17.0000,0.2637,United Kingdom
+PRK,wrestling,12.0000,2.7389,North Korea
+UZB,wrestling,10.0000,2.8758,Uzbekistan
+CHN,wrestling,20.0000,0.3550,China
+ARM,wrestling,11.0000,7.1895,Armenia
+EGY,wrestling,8.0000,2.8057,Egypt
+DDR,wrestling,7.0000,0.1962,DDR
+NOR,wrestling,7.0000,0.1735,Norway
+CSK,wrestling,15.0000,1.2838,CSK
+KAZ,wrestling,18.0000,2.9750,Kazakhstan
+GRC,wrestling,12.0000,1.4379,Greece
+SRB,wrestling,1.0000,0.5326,Serbia
+BHR,wrestling,1.0000,1.7974,Bahrain
+BLR,wrestling,14.0000,1.9172,Belarus
+KGZ,wrestling,11.0000,12.1669,Kyrgyzstan
+MNG,wrestling,10.0000,4.6384,Mongolia
+DNK,wrestling,10.0000,0.7815,Denmark
+BEL,wrestling,3.0000,0.2583,Belgium
+IND,wrestling,8.0000,2.8057,India
+AUS,wrestling,3.0000,0.0744,Australia
+LTU,wrestling,2.0000,1.0651,Lithuania
+MDA,wrestling,2.0000,2.8758,Moldova
+PRI,wrestling,2.0000,2.3965,Puerto Rico
+CHL,wrestling,1.0000,0.9586,Chile
+ECU,wrestling,1.0000,1.4379,Ecuador
+LVA,wrestling,1.0000,0.4493,Latvia
+MEX,wrestling,1.0000,0.1892,Mexico
+NGA,wrestling,1.0000,0.5326,Nigeria
+SVK,wrestling,1.0000,0.3344,Slovakia
+SYR,wrestling,1.0000,3.5948,Syria
+TJK,wrestling,1.0000,2.0541,Tajikistan
+ALB,wrestling,2.0000,14.3790,Albania
+AUT,wrestling,2.0000,0.0806,Austria
+COL,wrestling,3.0000,1.1352,Colombia
+CZE,wrestling,1.0000,0.1307,Czechia
+MKD,wrestling,1.0000,7.1895,North Macedonia
+PAK,wrestling,1.0000,1.3072,Pakistan
+SMR,wrestling,1.0000,4.7930,San Marino
+ESP,wrestling,1.0000,0.0861,Spain
+TUN,wrestling,1.0000,0.8458,Tunisia
+HRV,wrestling,1.0000,0.2523,Croatia
+CHN,weightlifting,67.0000,2.3478,China
+SUN,weightlifting,62.0000,1.4763,SUN
+USA,weightlifting,48.0000,0.4465,United States
+BGR,weightlifting,39.0000,4.6316,Bulgaria
+IRN,weightlifting,20.0000,6.4508,Iran
+FRA,weightlifting,22.0000,0.6817,France
+TUR,weightlifting,11.0000,2.8128,Turkey
+DEU,weightlifting,20.0000,0.5901,Germany
+POL,weightlifting,34.0000,2.9244,Poland
+GRC,weightlifting,15.0000,3.5479,Greece
+PRK,weightlifting,18.0000,8.1096,North Korea
+ITA,weightlifting,18.0000,0.6323,Italy
+THA,weightlifting,17.0000,11.7688,Thailand
+EGY,weightlifting,15.0000,10.3842,Egypt
+RUS,weightlifting,17.0000,0.8985,Russia
+TWN,weightlifting,11.0000,7.2609,Taiwan
+GEO,weightlifting,8.0000,4.7306,Georgia
+KOR,weightlifting,17.0000,1.1798,South Korea
+AUT,weightlifting,9.0000,0.7156,Austria
+CSK,weightlifting,8.0000,1.3516,CSK
+HUN,weightlifting,20.0000,1.0631,Hungary
+ROU,weightlifting,12.0000,1.3305,Romania
+COL,weightlifting,11.0000,8.2163,Colombia
+JPN,weightlifting,15.0000,0.6790,Japan
+CAN,weightlifting,6.0000,0.2916,Canada
+CUB,weightlifting,8.0000,0.9344,Cuba
+UKR,weightlifting,5.0000,0.9156,Ukraine
+UZB,weightlifting,4.0000,2.2707,Uzbekistan
+NOR,weightlifting,2.0000,0.0979,Norway
+IDN,weightlifting,16.0000,11.3534,Indonesia
+DDR,weightlifting,11.0000,0.6086,DDR
+KAZ,weightlifting,11.0000,3.5887,Kazakhstan
+GBR,weightlifting,9.0000,0.2756,United Kingdom
+BLR,weightlifting,8.0000,2.1626,Belarus
+EST,weightlifting,7.0000,4.6206,Estonia
+BEL,weightlifting,4.0000,0.6798,Belgium
+DNK,weightlifting,3.0000,0.4628,Denmark
+ECU,weightlifting,4.0000,11.3534,Ecuador
+AUS,weightlifting,4.0000,0.1957,Australia
+ESP,weightlifting,3.0000,0.5099,Spain
+PHL,weightlifting,2.0000,3.1537,Philippines
+MEX,weightlifting,4.0000,1.4939,Mexico
+FIN,weightlifting,3.0000,0.1796,Finland
+HRV,weightlifting,2.0000,0.9959,Croatia
+QAT,weightlifting,2.0000,6.3074,Qatar
+ARM,weightlifting,7.0000,9.0311,Armenia
+CHE,weightlifting,4.0000,0.2860,Switzerland
+VEN,weightlifting,3.0000,4.4816,Venezuela
+LVA,weightlifting,3.0000,2.6610,Latvia
+ARG,weightlifting,2.0000,0.8473,Argentina
+DOM,weightlifting,2.0000,3.7845,Dominican Republic
+IND,weightlifting,2.0000,1.3846,India
+NGA,weightlifting,2.0000,2.1025,Nigeria
+VNM,weightlifting,2.0000,11.3534,Vietnam
+LUX,weightlifting,1.0000,7.0959,Luxembourg
+WSM,weightlifting,1.0000,28.3835,Samoa
+TKM,weightlifting,1.0000,28.3835,Turkmenistan
+SWE,weightlifting,4.0000,0.1697,Sweden
+BHR,weightlifting,1.0000,3.5479,Bahrain
+CMR,weightlifting,1.0000,4.7306,Cameroon
+IRQ,weightlifting,1.0000,28.3835,Iraq
+LTU,weightlifting,1.0000,1.0512,Lithuania
+SYR,weightlifting,1.0000,7.0959,Syria
+USA,boxing,118.0000,0.7533,United States
+CUB,boxing,80.0000,6.4121,Cuba
+GBR,boxing,63.0000,1.3237,United Kingdom
+ITA,boxing,48.0000,1.1570,Italy
+SUN,boxing,51.0000,0.8333,SUN
+RUS,boxing,30.0000,1.0881,Russia
+HUN,boxing,20.0000,0.7295,Hungary
+UZB,boxing,20.0000,7.7907,Uzbekistan
+POL,boxing,44.0000,2.5969,Poland
+ARG,boxing,24.0000,6.9767,Argentina
+KAZ,boxing,26.0000,5.8206,Kazakhstan
+FRA,boxing,28.0000,0.5954,France
+CHN,boxing,19.0000,0.4569,China
+ZAF,boxing,19.0000,3.9368,South Africa
+BGR,boxing,20.0000,1.6298,Bulgaria
+UKR,boxing,16.0000,2.0105,Ukraine
+DDR,boxing,13.0000,0.4936,DDR
+DEU,boxing,24.0000,0.4859,Germany
+IRL,boxing,19.0000,9.2514,Ireland
+THA,boxing,16.0000,7.6006,Thailand
+KOR,boxing,21.0000,1.0000,South Korea
+CAN,boxing,18.0000,0.6003,Canada
+CSK,boxing,6.0000,0.6956,CSK
+JPN,boxing,8.0000,0.2485,Japan
+MEX,boxing,14.0000,3.5878,Mexico
+PRK,boxing,9.0000,2.7824,North Korea
+BRA,boxing,9.0000,1.2344,Brazil
+FIN,boxing,16.0000,0.6574,Finland
+DZA,boxing,7.0000,6.8168,Algeria
+ROU,boxing,25.0000,1.9020,Romania
+DNK,boxing,12.0000,1.2702,Denmark
+TUR,boxing,10.0000,1.7547,Turkey
+VEN,boxing,6.0000,6.1505,Venezuela
+MNG,boxing,7.0000,4.3980,Mongolia
+NOR,boxing,5.0000,0.1679,Norway
+KEN,boxing,7.0000,1.0995,Kenya
+BEL,boxing,4.0000,0.4665,Belgium
+NZL,boxing,4.0000,0.5525,New Zealand
+DOM,boxing,4.0000,5.1938,Dominican Republic
+TWN,boxing,4.0000,1.8118,Taiwan
+SWE,boxing,11.0000,0.3202,Sweden
+PHL,boxing,10.0000,10.8204,Philippines
+ESP,boxing,6.0000,0.6998,Spain
+NGA,boxing,6.0000,4.3281,Nigeria
+UGA,boxing,4.0000,5.9928,Uganda
+AZE,boxing,10.0000,3.4780,Azerbaijan
+BLR,boxing,2.0000,0.3710,Belarus
+AUS,boxing,7.0000,0.2351,Australia
+PRI,boxing,6.0000,9.7383,Puerto Rico
+COL,boxing,5.0000,2.5627,Colombia
+EGY,boxing,4.0000,1.9002,Egypt
+GHA,boxing,4.0000,15.5813,Ghana
+CHL,boxing,3.0000,3.8953,Chile
+CMR,boxing,2.0000,6.4922,Cameroon
+CZE,boxing,1.0000,0.1771,Czechia
+EST,boxing,1.0000,0.4529,Estonia
+KGZ,boxing,1.0000,1.4982,Kyrgyzstan
+PAN,boxing,1.0000,4.8692,Panama
+TON,boxing,1.0000,19.4767,Tonga
+MAR,boxing,4.0000,2.9964,Morocco
+IND,boxing,3.0000,1.4251,India
+GEO,boxing,2.0000,0.8115,Georgia
+MDA,boxing,2.0000,3.8953,Moldova
+TJK,boxing,2.0000,5.5648,Tajikistan
+TUN,boxing,2.0000,2.2914,Tunisia
+ARM,boxing,2.0000,1.7706,Armenia
+BMU,boxing,1.0000,9.7383,Bermuda
+CPV,boxing,1.0000,19.4767,Cabo Verde
+HRV,boxing,1.0000,0.3417,Croatia
+GUY,boxing,1.0000,19.4767,Guyana
+LTU,boxing,1.0000,0.7214,Lithuania
+MUS,boxing,1.0000,19.4767,Mauritius
+NER,boxing,1.0000,9.7383,Niger
+PAK,boxing,1.0000,1.7706,Pakistan
+SYR,boxing,1.0000,4.8692,Syria
+URY,boxing,1.0000,1.9477,Uruguay
+ZMB,boxing,1.0000,6.4922,Zambia
+DEU,canoeing,83.0000,2.2898,Germany
+SUN,canoeing,51.0000,1.1355,SUN
+HUN,canoeing,93.0000,4.6221,Hungary
+SWE,canoeing,30.0000,1.1901,Sweden
+DDR,canoeing,30.0000,1.5520,DDR
+NZL,canoeing,19.0000,3.5763,New Zealand
+ROU,canoeing,34.0000,3.5248,Romania
+FRA,canoeing,39.0000,1.1300,France
+AUS,canoeing,32.0000,1.4643,Australia
+SVK,canoeing,21.0000,12.9614,Slovakia
+ITA,canoeing,19.0000,0.6241,Italy
+CZE,canoeing,19.0000,4.5842,Czechia
+CSK,canoeing,12.0000,1.8957,CSK
+USA,canoeing,19.0000,0.1653,United States
+NOR,canoeing,14.0000,0.6406,Norway
+CAN,canoeing,28.0000,1.2725,Canada
+ESP,canoeing,23.0000,3.6552,Spain
+GBR,canoeing,23.0000,0.6585,United Kingdom
+FIN,canoeing,10.0000,0.5599,Finland
+CHN,canoeing,7.0000,0.2294,China
+BGR,canoeing,17.0000,1.8878,Bulgaria
+DNK,canoeing,17.0000,2.4521,Denmark
+AUT,canoeing,14.0000,1.0408,Austria
+UKR,canoeing,11.0000,1.8835,Ukraine
+RUS,canoeing,13.0000,0.6425,Russia
+BLR,canoeing,9.0000,2.2749,Belarus
+CUB,canoeing,5.0000,0.5461,Cuba
+BRA,canoeing,5.0000,0.9345,Brazil
+SVN,canoeing,3.0000,1.4476,Slovenia
+POL,canoeing,23.0000,1.8498,Poland
+LVA,canoeing,2.0000,1.6587,Latvia
+MDA,canoeing,3.0000,7.9620,Moldova
+AZE,canoeing,2.0000,0.9479,Azerbaijan
+PRT,canoeing,2.0000,1.8957,Portugal
+SRB,canoeing,1.0000,0.9830,Serbia
+CHE,canoeing,1.0000,0.0669,Switzerland
+ISR,canoeing,1.0000,1.7693,Israel
+JPN,canoeing,1.0000,0.0423,Japan
+LTU,canoeing,1.0000,0.9830,Lithuania
+ZAF,canoeing,1.0000,0.2823,South Africa
+TGO,canoeing,1.0000,26.5399,Togo
+USA,rowing,91.0000,0.8047,United States
+GBR,rowing,78.0000,2.2700,United Kingdom
+DDR,rowing,48.0000,2.5243,DDR
+DEU,rowing,55.0000,1.5424,Germany
+NZL,rowing,33.0000,6.3140,New Zealand
+AUS,rowing,45.0000,2.0931,Australia
+SUN,rowing,42.0000,0.9506,SUN
+ITA,rowing,43.0000,1.4357,Italy
+CAN,rowing,44.0000,2.0326,Canada
+FRA,rowing,36.0000,1.0603,France
+CHE,rowing,25.0000,1.6989,Switzerland
+DNK,rowing,25.0000,3.6655,Denmark
+POL,rowing,20.0000,1.6350,Poland
+NOR,rowing,18.0000,0.8372,Norway
+BGR,rowing,14.0000,1.5803,Bulgaria
+HRV,rowing,8.0000,3.7864,Croatia
+FIN,rowing,7.0000,0.3984,Finland
+CHN,rowing,12.0000,0.3997,China
+CSK,rowing,11.0000,1.7664,CSK
+BLR,rowing,7.0000,1.7985,Belarus
+CZE,rowing,5.0000,1.2263,Czechia
+GRC,rowing,6.0000,1.3489,Greece
+SVN,rowing,5.0000,2.4525,Slovenia
+ARG,rowing,4.0000,1.6106,Argentina
+IRL,rowing,5.0000,3.3722,Ireland
+ZAF,rowing,3.0000,0.8610,South Africa
+UKR,rowing,3.0000,0.5222,Ukraine
+RUS,rowing,3.0000,0.1507,Russia
+BEL,rowing,8.0000,1.2924,Belgium
+AUT,rowing,6.0000,0.4534,Austria
+EST,rowing,3.0000,1.8822,Estonia
+SWE,rowing,2.0000,0.0807,Sweden
+URY,rowing,4.0000,10.7912,Uruguay
+LTU,rowing,4.0000,3.9967,Lithuania
+HUN,rowing,3.0000,0.1516,Hungary
+ESP,rowing,1.0000,0.1615,Spain
+DEU,equestrian sport,61.0000,3.0632,Germany
+SWE,equestrian sport,45.0000,3.2494,Sweden
+FRA,equestrian sport,45.0000,2.3732,France
+GBR,equestrian sport,45.0000,2.3450,United Kingdom
+USA,equestrian sport,55.0000,0.8708,United States
+ITA,equestrian sport,23.0000,1.3751,Italy
+SUN,equestrian sport,15.0000,0.6079,SUN
+AUS,equestrian sport,15.0000,1.2493,Australia
+CHE,equestrian sport,24.0000,2.9204,Switzerland
+BEL,equestrian sport,14.0000,4.0498,Belgium
+NZL,equestrian sport,10.0000,3.4261,New Zealand
+CAN,equestrian sport,7.0000,0.5790,Canada
+MEX,equestrian sport,7.0000,4.4494,Mexico
+POL,equestrian sport,6.0000,0.8783,Poland
+ESP,equestrian sport,4.0000,1.1571,Spain
+AUT,equestrian sport,3.0000,0.4059,Austria
+BRA,equestrian sport,3.0000,1.0206,Brazil
+JPN,equestrian sport,2.0000,0.1541,Japan
+CSK,equestrian sport,1.0000,0.2875,CSK
+DNK,equestrian sport,7.0000,1.8378,Denmark
+CHL,equestrian sport,2.0000,6.4411,Chile
+ROU,equestrian sport,2.0000,0.3774,Romania
+ARG,equestrian sport,1.0000,0.7210,Argentina
+BGR,equestrian sport,1.0000,0.2021,Bulgaria
+NOR,equestrian sport,1.0000,0.0833,Norway
+PRT,equestrian sport,3.0000,5.1758,Portugal
+SAU,equestrian sport,2.0000,24.1539,Saudi Arabia
+HUN,equestrian sport,1.0000,0.0905,Hungary
+IRL,equestrian sport,1.0000,1.2077,Ireland
+KOR,archery,50.0000,11.4721,South Korea
+USA,archery,35.0000,1.0765,United States
+BEL,archery,21.0000,11.8005,Belgium
+FRA,archery,27.0000,2.7661,France
+ITA,archery,9.0000,1.0453,Italy
+GBR,archery,9.0000,0.9111,United Kingdom
+CHN,archery,10.0000,1.1585,China
+SUN,archery,7.0000,0.5511,SUN
+FIN,archery,4.0000,0.7919,Finland
+UKR,archery,4.0000,2.4217,Ukraine
+AUS,archery,3.0000,0.4854,Australia
+ESP,archery,1.0000,0.5619,Spain
+TUR,archery,2.0000,1.6908,Turkey
+JPN,archery,7.0000,1.0477,Japan
+DEU,archery,5.0000,0.4877,Germany
+TWN,archery,4.0000,8.7295,Taiwan
+SWE,archery,2.0000,0.2805,Sweden
+MEX,archery,4.0000,4.9391,Mexico
+POL,archery,2.0000,0.5687,Poland
+RUS,archery,2.0000,0.3495,Russia
+IDN,archery,1.0000,2.3461,Indonesia
+CHN,table tennis,66.0000,12.7848,China
+KOR,table tennis,20.0000,7.6726,South Korea
+JPN,table tennis,10.0000,2.5025,Japan
+SWE,table tennis,5.0000,1.1727,Sweden
+DEU,table tennis,9.0000,1.4679,Germany
+PRK,table tennis,5.0000,12.4527,North Korea
+FRA,table tennis,4.0000,0.6852,France
+TWN,table tennis,3.0000,10.9468,Taiwan
+HKG,table tennis,2.0000,26.1507,Hong Kong
+DNK,table tennis,1.0000,0.8527,Denmark
+CHN,badminton,52.0000,9.3267,China
+IDN,badminton,22.0000,79.9048,Indonesia
+KOR,badminton,22.0000,7.8147,South Korea
+DNK,badminton,10.0000,7.8957,Denmark
+TWN,badminton,3.0000,10.1359,Taiwan
+JPN,badminton,6.0000,1.3903,Japan
+ESP,badminton,1.0000,0.8699,Spain
+MYS,badminton,11.0000,106.5398,Malaysia
+GBR,badminton,3.0000,0.4702,United Kingdom
+IND,badminton,3.0000,10.6304,India
+THA,badminton,1.0000,3.5435,Thailand
+RUS,badminton,1.0000,0.2705,Russia
+HUN,modern pentathlon,24.0000,6.7806,Hungary
+SWE,modern pentathlon,21.0000,4.7358,Sweden
+SUN,modern pentathlon,15.0000,1.8985,SUN
+RUS,modern pentathlon,5.0000,1.4047,Russia
+POL,modern pentathlon,4.0000,1.8287,Poland
+ITA,modern pentathlon,8.0000,1.4938,Italy
+GBR,modern pentathlon,9.0000,1.4647,United Kingdom
+DEU,modern pentathlon,3.0000,0.4705,Germany
+LTU,modern pentathlon,5.0000,27.9387,Lithuania
+EGY,modern pentathlon,2.0000,7.3595,Egypt
+CZE,modern pentathlon,2.0000,2.7431,Czechia
+AUS,modern pentathlon,1.0000,0.2601,Australia
+KAZ,modern pentathlon,1.0000,1.7341,Kazakhstan
+USA,modern pentathlon,9.0000,0.4450,United States
+FIN,modern pentathlon,5.0000,1.5914,Finland
+FRA,modern pentathlon,4.0000,0.6588,France
+CSK,modern pentathlon,2.0000,1.7961,CSK
+LVA,modern pentathlon,1.0000,4.7147,Latvia
+CHN,modern pentathlon,1.0000,0.1863,China
+JPN,modern pentathlon,1.0000,0.2406,Japan
+UKR,modern pentathlon,1.0000,0.9733,Ukraine
+BLR,modern pentathlon,2.0000,2.8737,Belarus
+BRA,modern pentathlon,1.0000,1.0625,Brazil
+MEX,modern pentathlon,1.0000,1.9851,Mexico
+KOR,modern pentathlon,2.0000,0.7377,South Korea
+USA,shooting,121.0000,0.9140,United States
+CHN,shooting,77.0000,2.1909,China
+ITA,shooting,47.0000,1.3406,Italy
+SUN,shooting,49.0000,0.9474,SUN
+SWE,shooting,58.0000,1.9981,Sweden
+GBR,shooting,49.0000,1.2182,United Kingdom
+NOR,shooting,32.0000,1.2716,Norway
+KOR,shooting,23.0000,1.2960,South Korea
+DEU,shooting,24.0000,0.5750,Germany
+FRA,shooting,31.0000,0.7800,France
+RUS,shooting,31.0000,1.3305,Russia
+CHE,shooting,25.0000,1.4513,Switzerland
+HUN,shooting,18.0000,0.7769,Hungary
+AUS,shooting,12.0000,0.4768,Australia
+FIN,shooting,21.0000,1.0211,Finland
+BGR,shooting,17.0000,1.6393,Bulgaria
+GRC,shooting,13.0000,2.4968,Greece
+POL,shooting,12.0000,0.8381,Poland
+CAN,shooting,9.0000,0.3552,Canada
+CSK,shooting,9.0000,1.2347,CSK
+UKR,shooting,10.0000,1.4869,Ukraine
+DNK,shooting,19.0000,2.3799,Denmark
+DDR,shooting,16.0000,0.7188,DDR
+CZE,shooting,11.0000,2.3047,Czechia
+HRV,shooting,4.0000,1.6173,Croatia
+BEL,shooting,9.0000,1.2421,Belgium
+AUT,shooting,8.0000,0.5165,Austria
+BLR,shooting,7.0000,1.5365,Belarus
+JPN,shooting,6.0000,0.2205,Japan
+SVK,shooting,6.0000,3.2159,Slovakia
+SRB,shooting,5.0000,4.2680,Serbia
+BRA,shooting,4.0000,0.6492,Brazil
+IND,shooting,7.0000,3.9349,India
+ESP,shooting,4.0000,0.5520,Spain
+PER,shooting,3.0000,17.2853,Peru
+CUB,shooting,5.0000,0.4742,Cuba
+VNM,shooting,2.0000,9.2188,Vietnam
+AZE,shooting,3.0000,1.2347,Azerbaijan
+PRK,shooting,3.0000,1.0975,North Korea
+SVN,shooting,3.0000,1.2571,Slovenia
+CHL,shooting,2.0000,3.0729,Chile
+GTM,shooting,2.0000,15.3647,Guatemala
+LTU,shooting,1.0000,0.8536,Lithuania
+ARE,shooting,1.0000,11.5235,United Arab Emirates
+IRN,shooting,1.0000,0.2619,Iran
+KAZ,shooting,4.0000,1.0596,Kazakhstan
+COL,shooting,2.0000,1.2130,Colombia
+MNG,shooting,2.0000,1.4869,Mongolia
+NZL,shooting,2.0000,0.3269,New Zealand
+SMR,shooting,2.0000,15.3647,San Marino
+ARG,shooting,1.0000,0.3440,Argentina
+LVA,shooting,1.0000,0.7202,Latvia
+MDA,shooting,1.0000,2.3047,Moldova
+MEX,shooting,1.0000,0.3033,Mexico
+PRT,shooting,1.0000,0.8231,Portugal
+ZAF,shooting,1.0000,0.2452,South Africa
+TUR,shooting,1.0000,0.2076,Turkey
+KWT,shooting,3.0000,23.0470,Kuwait
+GEO,shooting,1.0000,0.4801,Georgia
+HTI,shooting,1.0000,11.5235,Haiti
+QAT,shooting,1.0000,2.5608,Qatar
+TWN,shooting,1.0000,0.5360,Taiwan
+VEN,shooting,1.0000,1.2130,Venezuela
+SCG,shooting,4.0000,10.2431,SCG
+FRA,cycling,103.0000,2.8904,France
+GBR,cycling,110.0000,3.0502,United Kingdom
+ITA,cycling,67.0000,2.1315,Italy
+USA,cycling,66.0000,0.5561,United States
+AUS,cycling,62.0000,2.7478,Australia
+DEU,cycling,49.0000,1.3093,Germany
+SUN,cycling,24.0000,0.5176,SUN
+DNK,cycling,30.0000,4.1911,Denmark
+BEL,cycling,32.0000,4.9255,Belgium
+CHE,cycling,26.0000,1.6835,Switzerland
+DDR,cycling,16.0000,0.8017,DDR
+RUS,cycling,19.0000,0.9095,Russia
+ESP,cycling,16.0000,2.4628,Spain
+SWE,cycling,18.0000,0.6916,Sweden
+CSK,cycling,6.0000,0.9180,CSK
+CAN,cycling,16.0000,0.7042,Canada
+CHN,cycling,9.0000,0.2856,China
+COL,cycling,8.0000,5.4116,Colombia
+AUT,cycling,4.0000,0.2880,Austria
+NOR,cycling,4.0000,0.1773,Norway
+LVA,cycling,3.0000,2.4099,Latvia
+NZL,cycling,15.0000,2.7346,New Zealand
+ZAF,cycling,9.0000,2.4611,South Africa
+GRC,cycling,4.0000,0.8568,Greece
+KAZ,cycling,2.0000,0.5909,Kazakhstan
+CZE,cycling,2.0000,0.4674,Czechia
+SVN,cycling,2.0000,0.9347,Slovenia
+ARG,cycling,2.0000,0.7673,Argentina
+EST,cycling,1.0000,0.5978,Estonia
+ECU,cycling,1.0000,2.5705,Ecuador
+POL,cycling,12.0000,0.9347,Poland
+JPN,cycling,5.0000,0.2050,Japan
+UKR,cycling,4.0000,0.6634,Ukraine
+MYS,cycling,2.0000,3.4273,Malaysia
+MEX,cycling,2.0000,0.6765,Mexico
+VEN,cycling,2.0000,2.7058,Venezuela
+CUB,cycling,1.0000,0.1058,Cuba
+PRT,cycling,3.0000,2.7541,Portugal
+URY,cycling,1.0000,2.5705,Uruguay
+HKG,cycling,2.0000,4.2842,Hong Kong
+BLR,cycling,1.0000,0.2448,Belarus
+JAM,cycling,1.0000,0.2735,Jamaica
+LTU,cycling,1.0000,0.9520,Lithuania
+SUN,gymnastics,184.0000,2.7299,SUN
+USA,gymnastics,129.0000,0.7478,United States
+JPN,gymnastics,107.0000,3.0181,Japan
+CHN,gymnastics,96.0000,2.0960,China
+ROU,gymnastics,73.0000,5.0431,Romania
+RUS,gymnastics,64.0000,2.1077,Russia
+DEU,gymnastics,43.0000,0.7905,Germany
+CHE,gymnastics,47.0000,2.0937,Switzerland
+HUN,gymnastics,40.0000,1.3247,Hungary
+ITA,gymnastics,37.0000,0.8098,Italy
+CSK,gymnastics,35.0000,3.6844,CSK
+FIN,gymnastics,25.0000,0.9328,Finland
+UKR,gymnastics,20.0000,2.2820,Ukraine
+DDR,gymnastics,36.0000,1.2411,DDR
+GRC,gymnastics,13.0000,1.9159,Greece
+SWE,gymnastics,8.0000,0.2115,Sweden
+GBR,gymnastics,21.0000,0.4006,United Kingdom
+CAN,gymnastics,10.0000,0.3028,Canada
+FRA,gymnastics,22.0000,0.4248,France
+BGR,gymnastics,16.0000,1.1840,Bulgaria
+BRA,gymnastics,10.0000,1.2454,Brazil
+ESP,gymnastics,8.0000,0.8472,Spain
+PRK,gymnastics,3.0000,0.8422,North Korea
+BLR,gymnastics,13.0000,2.1896,Belarus
+KOR,gymnastics,11.0000,0.4756,South Korea
+ISR,gymnastics,4.0000,4.7161,Israel
+PHL,gymnastics,2.0000,1.9650,Philippines
+DNK,gymnastics,4.0000,0.3845,Denmark
+NOR,gymnastics,4.0000,0.1220,Norway
+POL,gymnastics,4.0000,0.2144,Poland
+BEL,gymnastics,3.0000,0.3177,Belgium
+LVA,gymnastics,2.0000,1.1053,Latvia
+DZA,gymnastics,1.0000,0.8843,Algeria
+IRL,gymnastics,1.0000,0.4421,Ireland
+HRV,gymnastics,2.0000,0.6205,Croatia
+ARM,gymnastics,2.0000,1.6078,Armenia
+TWN,gymnastics,2.0000,0.8226,Taiwan
+AUS,gymnastics,1.0000,0.0305,Australia
+COL,gymnastics,1.0000,0.4654,Colombia
+KAZ,gymnastics,1.0000,0.2033,Kazakhstan
+UZB,gymnastics,2.0000,0.7074,Uzbekistan
+NZL,gymnastics,1.0000,0.1254,New Zealand
+TUR,gymnastics,1.0000,0.1593,Turkey
+SUN,volleyball,12.0000,2.1462,SUN
+BRA,volleyball,12.0000,18.0156,Brazil
+USA,volleyball,13.0000,0.9084,United States
+JPN,volleyball,9.0000,3.0601,Japan
+CHN,volleyball,6.0000,1.5791,China
+CUB,volleyball,5.0000,4.3865,Cuba
+FRA,volleyball,2.0000,0.4655,France
+ITA,volleyball,7.0000,1.8469,Italy
+RUS,volleyball,6.0000,2.3820,Russia
+POL,volleyball,4.0000,2.5841,Poland
+SCG,volleyball,2.0000,47.3744,SCG
+DDR,volleyball,2.0000,0.8311,DDR
+BGR,volleyball,2.0000,1.7840,Bulgaria
+CSK,volleyball,2.0000,2.5379,CSK
+SRB,volleyball,2.0000,15.7915,Serbia
+PER,volleyball,1.0000,53.2962,Peru
+ARG,volleyball,2.0000,6.3637,Argentina
+PRK,volleyball,1.0000,3.3839,North Korea
+ROU,volleyball,1.0000,0.8328,Romania
+KOR,volleyball,1.0000,0.5212,South Korea
+USA,basketball,32.0000,2.1884,United States
+SUN,basketball,12.0000,2.1005,SUN
+ARG,basketball,2.0000,6.2283,Argentina
+FRA,basketball,7.0000,1.5945,France
+ESP,basketball,5.0000,6.2470,Spain
+AUS,basketball,7.0000,2.5182,Australia
+SRB,basketball,3.0000,23.1832,Serbia
+SCG,basketball,1.0000,23.1832,SCG
+ITA,basketball,2.0000,0.5165,Italy
+BRA,basketball,5.0000,7.3468,Brazil
+BGR,basketball,2.0000,1.7460,Bulgaria
+CHN,basketball,2.0000,0.5152,China
+CAN,basketball,1.0000,0.3573,Canada
+HRV,basketball,1.0000,3.6605,Croatia
+JPN,basketball,1.0000,0.3328,Japan
+KOR,basketball,1.0000,0.5101,South Korea
+LTU,basketball,3.0000,23.1832,Lithuania
+RUS,basketball,3.0000,1.1656,Russia
+URY,basketball,2.0000,41.7298,Uruguay
+CUB,basketball,1.0000,0.8586,Cuba
+MEX,basketball,1.0000,2.7454,Mexico
+USA,football,9.0000,0.5844,United States
+HUN,football,5.0000,1.8550,Hungary
+GBR,football,3.0000,0.6411,United Kingdom
+BRA,football,10.0000,13.9515,Brazil
+ESP,football,5.0000,5.9315,Spain
+ARG,football,4.0000,11.8275,Argentina
+SUN,football,5.0000,0.8310,SUN
+CAN,football,4.0000,1.3569,Canada
+URY,football,2.0000,39.6222,Uruguay
+SWE,football,5.0000,1.4807,Sweden
+FRA,football,3.0000,0.6488,France
+POL,football,3.0000,1.8010,Poland
+DEU,football,6.0000,1.2356,Germany
+DDR,football,3.0000,1.1585,DDR
+NGA,football,3.0000,22.0123,Nigeria
+CSK,football,2.0000,2.3585,CSK
+ITA,football,3.0000,0.7356,Italy
+NOR,football,3.0000,1.0247,Norway
+MEX,football,2.0000,5.2135,Mexico
+BEL,football,2.0000,2.3726,Belgium
+CMR,football,1.0000,33.0185,Cameroon
+DNK,football,4.0000,4.3068,Denmark
+BGR,football,2.0000,1.6578,Bulgaria
+JPN,football,2.0000,0.6319,Japan
+AUT,football,1.0000,0.5549,Austria
+CHN,football,1.0000,0.2446,China
+PRY,football,1.0000,198.1111,Paraguay
+CHE,football,1.0000,0.4990,Switzerland
+CHL,football,1.0000,13.2074,Chile
+GHA,football,1.0000,39.6222,Ghana
+KOR,football,1.0000,0.4844,South Korea
+MAR,football,1.0000,7.6197,Morocco
+USA,athletics,867.0000,1.7979,United States
+SUN,athletics,193.0000,1.0244,SUN
+GBR,athletics,221.0000,1.5083,United Kingdom
+FIN,athletics,114.0000,1.5216,Finland
+KEN,athletics,117.0000,5.9696,Kenya
+DDR,athletics,109.0000,1.3443,DDR
+POL,athletics,67.0000,1.2845,Poland
+JAM,athletics,93.0000,6.2595,Jamaica
+ITA,athletics,68.0000,0.5325,Italy
+ETH,athletics,62.0000,6.3268,Ethiopia
+AUS,athletics,83.0000,0.9054,Australia
+SWE,athletics,85.0000,0.8039,Sweden
+DEU,athletics,87.0000,0.5722,Germany
+CAN,athletics,69.0000,0.7475,Canada
+RUS,athletics,56.0000,0.6598,Russia
+FRA,athletics,71.0000,0.4904,France
+CHN,athletics,43.0000,0.3359,China
+CUB,athletics,45.0000,1.1716,Cuba
+ROU,athletics,35.0000,0.8650,Romania
+CSK,athletics,24.0000,0.9038,CSK
+NZL,athletics,28.0000,1.2564,New Zealand
+HUN,athletics,41.0000,0.4858,Hungary
+NOR,athletics,26.0000,0.2836,Norway
+ZAF,athletics,30.0000,2.0192,South Africa
+GRC,athletics,32.0000,1.6871,Greece
+JPN,athletics,28.0000,0.2825,Japan
+MAR,athletics,21.0000,5.1101,Morocco
+BEL,athletics,17.0000,0.6440,Belgium
+BHS,athletics,14.0000,6.3268,Bahamas
+BGR,athletics,19.0000,0.5030,Bulgaria
+ESP,athletics,20.0000,0.7577,Spain
+BRA,athletics,21.0000,0.9356,Brazil
+PRT,athletics,13.0000,2.9374,Portugal
+CZE,athletics,16.0000,0.9203,Czechia
+UGA,athletics,9.0000,4.3801,Uganda
+DZA,athletics,10.0000,3.1634,Algeria
+IRL,athletics,7.0000,1.1072,Ireland
+MEX,athletics,11.0000,0.9157,Mexico
+BLR,athletics,15.0000,0.9038,Belarus
+TTO,athletics,15.0000,6.3268,Trinidad and Tobago
+UKR,athletics,21.0000,0.8572,Ukraine
+BHR,athletics,6.0000,4.7451,Bahrain
+DOM,athletics,6.0000,2.5307,Dominican Republic
+LTU,athletics,7.0000,1.6403,Lithuania
+HRV,athletics,6.0000,0.6660,Croatia
+NGA,athletics,14.0000,3.2805,Nigeria
+ARG,athletics,5.0000,0.4721,Argentina
+TUN,athletics,5.0000,1.8608,Tunisia
+ECU,athletics,4.0000,2.5307,Ecuador
+EST,athletics,6.0000,0.8828,Estonia
+KAZ,athletics,5.0000,0.3636,Kazakhstan
+CMR,athletics,2.0000,2.1089,Cameroon
+COL,athletics,5.0000,0.8325,Colombia
+IND,athletics,4.0000,0.6172,India
+AUT,athletics,8.0000,0.1418,Austria
+QAT,athletics,5.0000,3.5149,Qatar
+BWA,athletics,4.0000,6.3268,Botswana
+SVN,athletics,4.0000,0.4601,Slovenia
+GRD,athletics,5.0000,6.3268,Grenada
+VEN,athletics,3.0000,0.9990,Venezuela
+BDI,athletics,2.0000,6.3268,Burundi
+LCA,athletics,2.0000,6.3268,Saint Lucia
+KOR,athletics,2.0000,0.0309,South Korea
+PAN,athletics,3.0000,4.7451,Panama
+PRI,athletics,3.0000,1.5817,Puerto Rico
+MOZ,athletics,2.0000,6.3268,Mozambique
+DMA,athletics,1.0000,6.3268,Dominica
+LUX,athletics,1.0000,1.5817,Luxembourg
+PAK,athletics,1.0000,0.5752,Pakistan
+SVK,athletics,1.0000,0.1471,Slovakia
+SYR,athletics,1.0000,1.5817,Syria
+TJK,athletics,1.0000,0.9038,Tajikistan
+CHE,athletics,8.0000,0.1275,Switzerland
+NAM,athletics,5.0000,6.3268,Namibia
+DNK,athletics,7.0000,0.2407,Denmark
+LVA,athletics,5.0000,0.9886,Latvia
+CHL,athletics,2.0000,0.8436,Chile
+LKA,athletics,2.0000,6.3268,Sri Lanka
+TZA,athletics,2.0000,6.3268,Tanzania
+TWN,athletics,2.0000,0.2943,Taiwan
+ISL,athletics,2.0000,3.1634,Iceland
+ZMB,athletics,2.0000,4.2178,Zambia
+GTM,athletics,1.0000,2.1089,Guatemala
+HTI,athletics,1.0000,3.1634,Haiti
+IRN,athletics,1.0000,0.0719,Iran
+CIV,athletics,1.0000,1.2654,Côte d'Ivoire
+SAU,athletics,1.0000,1.5817,Saudi Arabia
+SEN,athletics,1.0000,6.3268,Senegal
+SDN,athletics,1.0000,6.3268,Sudan
+PHL,athletics,2.0000,0.7030,Philippines
+TUR,athletics,2.0000,0.1140,Turkey
+BRB,athletics,1.0000,6.3268,Barbados
+BFA,athletics,1.0000,6.3268,Burkina Faso
+DJI,athletics,1.0000,6.3268,Djibouti
+ERI,athletics,1.0000,6.3268,Eritrea
+SRB,athletics,1.0000,0.2343,Serbia
+USA,swimming,611.0000,2.2521,United States
+AUS,swimming,224.0000,4.3433,Australia
+DDR,swimming,92.0000,2.0168,DDR
+HUN,swimming,77.0000,1.6216,Hungary
+JPN,swimming,84.0000,1.5066,Japan
+GBR,swimming,86.0000,1.0433,United Kingdom
+CHN,swimming,61.0000,0.8469,China
+DEU,swimming,63.0000,0.7365,Germany
+SUN,swimming,59.0000,0.5566,SUN
+CAN,swimming,62.0000,1.1939,Canada
+FRA,swimming,50.0000,0.6139,France
+SWE,swimming,41.0000,0.6892,Sweden
+ZAF,swimming,22.0000,2.6320,South Africa
+ITA,swimming,31.0000,0.4315,Italy
+RUS,swimming,22.0000,0.4607,Russia
+UKR,swimming,9.0000,0.6530,Ukraine
+ROU,swimming,11.0000,0.4832,Romania
+IRL,swimming,7.0000,1.9680,Ireland
+DNK,swimming,15.0000,0.9168,Denmark
+ZWE,swimming,7.0000,9.8402,Zimbabwe
+ESP,swimming,8.0000,0.5387,Spain
+NZL,swimming,6.0000,0.4786,New Zealand
+TUN,swimming,3.0000,1.9846,Tunisia
+AUT,swimming,11.0000,0.3465,Austria
+BRA,swimming,15.0000,1.1880,Brazil
+GRC,swimming,7.0000,0.6560,Greece
+POL,swimming,6.0000,0.2045,Poland
+KOR,swimming,5.0000,0.1375,South Korea
+BEL,swimming,5.0000,0.3367,Belgium
+CRI,swimming,4.0000,11.2460,Costa Rica
+ARG,swimming,3.0000,0.5036,Argentina
+BGR,swimming,3.0000,0.1412,Bulgaria
+MEX,swimming,2.0000,0.2959,Mexico
+SUR,swimming,2.0000,11.2460,Suriname
+KAZ,swimming,1.0000,0.1293,Kazakhstan
+LTU,swimming,1.0000,0.4165,Lithuania
+BLR,swimming,3.0000,0.3213,Belarus
+HKG,swimming,4.0000,3.7487,Hong Kong
+SVK,swimming,2.0000,0.5231,Slovakia
+FIN,swimming,5.0000,0.1186,Finland
+CUB,swimming,2.0000,0.0926,Cuba
+NOR,swimming,2.0000,0.0388,Norway
+HRV,swimming,1.0000,0.1973,Croatia
+SRB,swimming,1.0000,0.4165,Serbia
+SVN,swimming,1.0000,0.2045,Slovenia
+CHE,swimming,4.0000,0.1133,Switzerland
+PHL,swimming,2.0000,1.2496,Philippines
+VEN,swimming,1.0000,0.5919,Venezuela
+CHN,diving,92.0000,5.4733,China
+USA,diving,142.0000,2.2428,United States
+SWE,diving,21.0000,1.5127,Sweden
+RUS,diving,18.0000,1.6153,Russia
+SUN,diving,14.0000,0.5660,SUN
+ITA,diving,11.0000,0.6560,Italy
+AUS,diving,15.0000,1.2463,Australia
+DEU,diving,22.0000,1.1020,Germany
+GBR,diving,18.0000,0.9357,United Kingdom
+DDR,diving,7.0000,0.6576,DDR
+MEX,diving,17.0000,10.7792,Mexico
+CAN,diving,15.0000,1.2377,Canada
+CSK,diving,2.0000,0.5737,CSK
+DNK,diving,2.0000,0.5238,Denmark
+GRC,diving,1.0000,0.4016,Greece
+EGY,diving,2.0000,2.3507,Egypt
+MYS,diving,2.0000,6.4252,Malaysia
+FRA,diving,1.0000,0.0526,France
+UKR,diving,2.0000,0.6218,Ukraine
+JPN,diving,1.0000,0.0769,Japan
+PRK,diving,2.0000,1.5298,North Korea
+KOR,taekwondo,25.0000,5.8767,South Korea
+CHN,taekwondo,13.0000,1.5430,China
+USA,taekwondo,11.0000,0.3466,United States
+GBR,taekwondo,10.0000,1.0371,United Kingdom
+MEX,taekwondo,7.0000,8.8552,Mexico
+TWN,taekwondo,9.0000,20.1228,Taiwan
+IRN,taekwondo,10.0000,10.9252,Iran
+ITA,taekwondo,5.0000,0.5949,Italy
+SRB,taekwondo,5.0000,17.8041,Serbia
+ESP,taekwondo,7.0000,4.0299,Spain
+FRA,taekwondo,10.0000,1.0496,France
+TUR,taekwondo,10.0000,8.6615,Turkey
+GRC,taekwondo,4.0000,3.2047,Greece
+CUB,taekwondo,7.0000,2.7695,Cuba
+THA,taekwondo,7.0000,16.4145,Thailand
+AUS,taekwondo,2.0000,0.3315,Australia
+JOR,taekwondo,3.0000,72.1066,Jordan
+HRV,taekwondo,6.0000,10.1202,Croatia
+AZE,taekwondo,4.0000,6.8673,Azerbaijan
+CIV,taekwondo,4.0000,76.9137,Côte d'Ivoire
+ARG,taekwondo,1.0000,1.4350,Argentina
+HUN,taekwondo,1.0000,0.1800,Hungary
+UZB,taekwondo,3.0000,5.7685,Uzbekistan
+RUS,taekwondo,4.0000,0.7161,Russia
+NOR,taekwondo,2.0000,0.3315,Norway
+CAN,taekwondo,3.0000,0.4939,Canada
+DOM,taekwondo,2.0000,12.8190,Dominican Republic
+DEU,taekwondo,2.0000,0.1999,Germany
+TUN,taekwondo,4.0000,22.6217,Tunisia
+GAB,taekwondo,1.0000,96.1422,Gabon
+MKD,taekwondo,1.0000,48.0711,North Macedonia
+NER,taekwondo,1.0000,48.0711,Niger
+VNM,taekwondo,1.0000,19.2284,Vietnam
+EGY,taekwondo,4.0000,9.3797,Egypt
+AFG,taekwondo,2.0000,96.1422,Afghanistan
+BRA,taekwondo,3.0000,2.0312,Brazil
+VEN,taekwondo,2.0000,10.1202,Venezuela
+COL,taekwondo,1.0000,2.5301,Colombia
+JPN,taekwondo,1.0000,0.1533,Japan
+KAZ,taekwondo,1.0000,1.1051,Kazakhstan
+NGA,taekwondo,1.0000,3.5608,Nigeria
+ISR,taekwondo,1.0000,6.4095,Israel
+BGR,taekwondo,1.0000,0.4023,Bulgaria
+BEL,taekwondo,1.0000,0.5757,Belgium
+DNK,taekwondo,1.0000,0.5225,Denmark
+USA,tennis,41.0000,1.1714,United States
+GBR,tennis,43.0000,4.0434,United Kingdom
+FRA,tennis,19.0000,1.8081,France
+DEU,tennis,11.0000,0.9967,Germany
+RUS,tennis,8.0000,1.2986,Russia
+CHE,tennis,6.0000,1.3174,Switzerland
+ZAF,tennis,6.0000,5.5640,South Africa
+ESP,tennis,15.0000,7.8295,Spain
+CZE,tennis,9.0000,7.1320,Czechia
+AUS,tennis,7.0000,1.0520,Australia
+CHL,tennis,4.0000,23.2450,Chile
+CHN,tennis,4.0000,0.4305,China
+HRV,tennis,6.0000,9.1757,Croatia
+CSK,tennis,4.0000,2.0754,CSK
+ITA,tennis,3.0000,0.3236,Italy
+BLR,tennis,2.0000,1.6604,Belarus
+BEL,tennis,2.0000,1.0439,Belgium
+CAN,tennis,2.0000,0.2985,Canada
+SRB,tennis,2.0000,6.4570,Serbia
+PRI,tennis,1.0000,7.2641,Puerto Rico
+SWE,tennis,8.0000,1.0424,Sweden
+ARG,tennis,5.0000,6.5051,Argentina
+GRC,tennis,3.0000,2.1792,Greece
+JPN,tennis,3.0000,0.4171,Japan
+AUT,tennis,1.0000,0.2442,Austria
+DNK,tennis,1.0000,0.4737,Denmark
+ROU,tennis,1.0000,0.3405,Romania
+BRA,tennis,1.0000,0.6139,Brazil
+BGR,tennis,1.0000,0.3647,Bulgaria
+HUN,tennis,1.0000,0.1632,Hungary
+IND,tennis,1.0000,2.1261,India
+NZL,tennis,1.0000,0.6182,New Zealand
+NOR,tennis,1.0000,0.1503,Norway
+POL,tennis,1.0000,0.2641,Poland
+UKR,tennis,1.0000,0.5624,Ukraine
+GBR,triathlon,11.0000,4.8486,United Kingdom
+CHE,triathlon,6.0000,6.1754,Switzerland
+AUS,triathlon,5.0000,3.5224,Australia
+NZL,triathlon,5.0000,14.4895,New Zealand
+USA,triathlon,5.0000,0.6696,United States
+CAN,triathlon,2.0000,1.3993,Canada
+DEU,triathlon,3.0000,1.2742,Germany
+FRA,triathlon,3.0000,1.3382,France
+AUT,triathlon,1.0000,1.1445,Austria
+BMU,triathlon,1.0000,204.3021,Bermuda
+NOR,triathlon,1.0000,0.7045,Norway
+PRT,triathlon,1.0000,14.5930,Portugal
+ESP,triathlon,1.0000,2.4467,Spain
+SWE,triathlon,1.0000,0.6108,Sweden
+CZE,triathlon,1.0000,3.7146,Czechia
+ZAF,triathlon,1.0000,4.3469,South Africa
+FJI,rugby union,4.0000,1089.6111,Fiji
+AUS,rugby union,1.0000,1.8786,Australia
+NZL,rugby union,4.0000,30.9110,New Zealand
+GBR,rugby union,1.0000,1.1754,United Kingdom
+FRA,rugby union,2.0000,2.3791,France
+CAN,rugby union,2.0000,3.7315,Canada
+ZAF,rugby union,2.0000,23.1832,South Africa
+ARG,rugby union,1.0000,16.2629,Argentina
+USA,rugby union,1.0000,0.3571,United States
+USA,golf,12.0000,2.4884,United States
+GBR,golf,4.0000,2.7300,United Kingdom
+NZL,golf,3.0000,13.4612,New Zealand
+CAN,golf,1.0000,1.0834,Canada
+KOR,golf,1.0000,1.5469,South Korea
+JPN,golf,2.0000,2.0181,Japan
+DEU,golf,1.0000,0.6577,Germany
+SVK,golf,1.0000,14.7134,Slovakia
+SWE,golf,1.0000,0.9457,Sweden
+CHE,golf,1.0000,1.5936,Switzerland
+CHN,golf,2.0000,1.5622,China
+TWN,golf,1.0000,14.7134,Taiwan
+FRA,golf,1.0000,0.6907,France
+CUB,baseball,5.0000,22.4200,Cuba
+JPN,baseball,4.0000,6.9513,Japan
+USA,baseball,4.0000,1.4285,United States
+KOR,baseball,2.0000,5.3282,South Korea
+AUS,baseball,1.0000,1.8786,Australia
+TWN,baseball,1.0000,25.3398,Taiwan
+DOM,baseball,1.0000,72.6407,Dominican Republic
+USA,softball,5.0000,2.1428,United States
+JPN,softball,4.0000,8.3415,Japan
+AUS,softball,4.0000,9.0175,Australia
+CHN,softball,1.0000,1.6142,China
+CAN,softball,1.0000,2.2389,Canada
+RUS,artistic swimming,10.0000,6.0872,Russia
+USA,artistic swimming,10.0000,1.0714,United States
+CAN,artistic swimming,8.0000,4.4779,Canada
+JPN,artistic swimming,14.0000,7.2988,Japan
+CHN,artistic swimming,9.0000,3.6320,China
+ESP,artistic swimming,5.0000,9.7869,Spain
+UKR,artistic swimming,2.0000,4.2178,Ukraine
+FRA,artistic swimming,1.0000,0.3569,France
+GBR,artistic swimming,1.0000,0.3526,United Kingdom
+USA,beach volleyball,11.0000,1.5372,United States
+BRA,beach volleyball,14.0000,42.0364,Brazil
+DEU,beach volleyball,4.0000,1.7728,Germany
+AUS,beach volleyball,3.0000,2.2054,Australia
+NOR,beach volleyball,2.0000,1.4702,Norway
+CHN,beach volleyball,2.0000,1.0528,China
+ITA,beach volleyball,1.0000,0.5277,Italy
+ESP,beach volleyball,1.0000,2.5531,Spain
+CHE,beach volleyball,3.0000,3.2219,Switzerland
+SWE,beach volleyball,1.0000,0.6373,Sweden
+CAN,beach volleyball,2.0000,1.4602,Canada
+LVA,beach volleyball,1.0000,13.3240,Latvia
+QAT,beach volleyball,1.0000,47.3744,Qatar
+BGR,karate,1.0000,2.5645,Bulgaria
+ESP,karate,2.0000,7.3402,Spain
+SRB,karate,1.0000,22.7002,Serbia
+FRA,karate,1.0000,0.6691,France
+IRN,karate,1.0000,6.9648,Iran
+JPN,karate,3.0000,2.9326,Japan
+TUR,karate,4.0000,22.0867,Turkey
+CHN,karate,2.0000,1.5133,China
+SAU,karate,1.0000,153.2266,Saudi Arabia
+UKR,karate,2.0000,7.9085,Ukraine
+AZE,karate,2.0000,21.8895,Azerbaijan
+AUT,karate,1.0000,1.7168,Austria
+EGY,karate,2.0000,29.8979,Egypt
+HKG,karate,1.0000,51.0755,Hong Kong
+HUN,karate,1.0000,1.1478,Hungary
+ITA,karate,2.0000,1.5171,Italy
+JOR,karate,1.0000,153.2266,Jordan
+KAZ,karate,2.0000,14.0898,Kazakhstan
+TWN,karate,1.0000,14.2536,Taiwan
+USA,karate,1.0000,0.2009,United States
+POL,climbing,2.0000,6.6037,Poland
+IDN,climbing,1.0000,27.2403,Indonesia
+SVN,climbing,2.0000,39.6222,Slovenia
+ESP,climbing,1.0000,6.5246,Spain
+GBR,climbing,1.0000,1.1754,United Kingdom
+CHN,climbing,2.0000,2.6904,China
+JPN,climbing,3.0000,5.2135,Japan
+USA,climbing,3.0000,1.0714,United States
+AUT,climbing,3.0000,9.1564,Austria
+CAN,curling,14.0000,7.8362,Canada
+SWE,curling,13.0000,6.3520,Sweden
+GBR,curling,7.0000,2.4684,United Kingdom
+CHE,curling,9.0000,7.4105,Switzerland
+NOR,curling,5.0000,2.8180,Norway
+USA,curling,3.0000,0.3214,United States
+ITA,curling,2.0000,0.8091,Italy
+JPN,curling,2.0000,1.0427,Japan
+DNK,curling,1.0000,1.7765,Denmark
+FIN,curling,1.0000,0.6896,Finland
+KOR,curling,1.0000,0.7992,South Korea
+CHN,curling,1.0000,0.4036,China
+FRA,curling,1.0000,0.3569,France
+NOR,biathlon,67.0000,7.4041,Norway
+DEU,biathlon,55.0000,3.6645,Germany
+FRA,biathlon,45.0000,3.1488,France
+RUS,biathlon,20.0000,2.3871,Russia
+SUN,biathlon,19.0000,1.0216,SUN
+SWE,biathlon,22.0000,2.1078,Sweden
+BLR,biathlon,11.0000,6.7147,Belarus
+DDR,biathlon,11.0000,1.3744,DDR
+SVK,biathlon,7.0000,10.4340,Slovakia
+CAN,biathlon,3.0000,0.3293,Canada
+ITA,biathlon,9.0000,0.7139,Italy
+UKR,biathlon,5.0000,2.0676,Ukraine
+BGR,biathlon,3.0000,0.8045,Bulgaria
+CZE,biathlon,9.0000,5.2441,Czechia
+AUT,biathlon,7.0000,1.2568,Austria
+FIN,biathlon,7.0000,0.9465,Finland
+SVN,biathlon,2.0000,2.3307,Slovenia
+KAZ,biathlon,1.0000,0.7367,Kazakhstan
+POL,biathlon,1.0000,0.1942,Poland
+CHE,biathlon,1.0000,0.1614,Switzerland
+HRV,biathlon,1.0000,1.1245,Croatia
+DEU,bobsleigh,40.0000,5.0969,Germany
+CHE,bobsleigh,32.0000,9.8806,Switzerland
+USA,bobsleigh,31.0000,1.2455,United States
+DDR,bobsleigh,13.0000,3.1063,DDR
+CAN,bobsleigh,11.0000,2.3089,Canada
+ITA,bobsleigh,12.0000,1.8205,Italy
+AUT,bobsleigh,3.0000,1.0301,Austria
+GBR,bobsleigh,5.0000,0.6612,United Kingdom
+LVA,bobsleigh,3.0000,11.4920,Latvia
+SUN,bobsleigh,3.0000,0.3085,SUN
+BEL,bobsleigh,2.0000,1.4680,Belgium
+RUS,bobsleigh,2.0000,0.4565,Russia
+KOR,bobsleigh,1.0000,0.2997,South Korea
+FRA,bobsleigh,1.0000,0.1338,France
+ROU,bobsleigh,1.0000,0.4788,Romania
+DEU,luge,48.0000,6.4382,Germany
+DDR,luge,29.0000,7.2943,DDR
+ITA,luge,22.0000,3.5133,Italy
+AUT,luge,29.0000,10.4817,Austria
+SUN,luge,6.0000,0.6495,SUN
+USA,luge,7.0000,0.2960,United States
+RUS,luge,3.0000,0.7209,Russia
+LVA,luge,6.0000,24.1937,Latvia
+CAN,luge,2.0000,0.4419,Canada
+GBR,skeleton,11.0000,4.7496,United Kingdom
+USA,skeleton,8.0000,1.0495,United States
+DEU,skeleton,12.0000,4.9929,Germany
+CAN,skeleton,4.0000,2.7415,Canada
+AUT,skeleton,2.0000,2.2424,Austria
+RUS,skeleton,3.0000,2.2361,Russia
+CHE,skeleton,3.0000,3.0247,Switzerland
+KOR,skeleton,1.0000,0.9786,South Korea
+ITA,skeleton,1.0000,0.4954,Italy
+LVA,skeleton,2.0000,25.0166,Latvia
+AUS,skeleton,1.0000,0.6901,Australia
+CHN,skeleton,1.0000,0.4942,China
+NOR,skiing,273.0000,5.8763,Norway
+FIN,skiing,131.0000,3.4503,Finland
+AUT,skiing,187.0000,6.5395,Austria
+DEU,skiing,83.0000,1.0771,Germany
+JPN,skiing,33.0000,0.6571,Japan
+POL,skiing,19.0000,0.7188,Poland
+CHE,skiing,123.0000,3.8680,Switzerland
+DDR,skiing,18.0000,0.4380,DDR
+SVN,skiing,21.0000,4.7668,Slovenia
+CSK,skiing,13.0000,0.9661,CSK
+SUN,skiing,73.0000,0.7646,SUN
+SWE,skiing,126.0000,2.3513,Sweden
+CAN,skiing,52.0000,1.1116,Canada
+FRA,skiing,81.0000,1.1040,France
+USA,skiing,105.0000,0.4297,United States
+RUS,skiing,39.0000,0.9067,Russia
+ITA,skiing,83.0000,1.2824,Italy
+EST,skiing,9.0000,2.6130,Estonia
+CZE,skiing,12.0000,1.3619,Czechia
+KAZ,skiing,5.0000,0.7175,Kazakhstan
+BGR,skiing,1.0000,0.0522,Bulgaria
+HRV,skiing,10.0000,2.1902,Croatia
+LIE,skiing,10.0000,12.4844,Liechtenstein
+ESP,skiing,2.0000,0.1495,Spain
+BRA,skiing,1.0000,0.0879,Brazil
+SVK,skiing,1.0000,0.2903,Slovakia
+LUX,skiing,2.0000,6.2422,Luxembourg
+NZL,skiing,4.0000,0.3542,New Zealand
+AUS,skiing,14.0000,0.3013,Australia
+USA,speed skating,97.0000,0.8895,United States
+NOR,speed skating,91.0000,4.3897,Norway
+SUN,speed skating,60.0000,1.4083,SUN
+DEU,speed skating,38.0000,1.1052,Germany
+CAN,speed skating,89.0000,4.2639,Canada
+SWE,speed skating,18.0000,0.7528,Sweden
+DDR,speed skating,29.0000,1.5816,DDR
+FIN,speed skating,24.0000,1.4166,Finland
+JPN,speed skating,32.0000,1.4279,Japan
+KOR,speed skating,80.0000,5.4726,South Korea
+RUS,speed skating,18.0000,0.9378,Russia
+CZE,speed skating,10.0000,2.5435,Czechia
+CHN,speed skating,50.0000,1.7271,China
+ITA,speed skating,31.0000,1.0734,Italy
+AUT,speed skating,6.0000,0.4702,Austria
+POL,speed skating,7.0000,0.5935,Poland
+BEL,speed skating,5.0000,0.8377,Belgium
+BLR,speed skating,1.0000,0.2665,Belarus
+PRK,speed skating,2.0000,0.8882,North Korea
+DNK,speed skating,1.0000,0.1521,Denmark
+KAZ,speed skating,1.0000,0.3216,Kazakhstan
+HUN,speed skating,4.0000,0.2096,Hungary
+AUS,speed skating,2.0000,0.0965,Australia
+BGR,speed skating,3.0000,0.3512,Bulgaria
+GBR,speed skating,1.0000,0.0302,United Kingdom
+LVA,speed skating,1.0000,0.8743,Latvia
+USA,figure skating,57.0000,1.2994,United States
+RUS,figure skating,27.0000,3.4969,Russia
+SUN,figure skating,24.0000,1.4003,SUN
+AUT,figure skating,20.0000,3.8963,Austria
+CAN,figure skating,30.0000,3.5728,Canada
+DEU,figure skating,13.0000,0.9399,Germany
+FRA,figure skating,15.0000,1.1389,France
+GBR,figure skating,15.0000,1.1254,United Kingdom
+SWE,figure skating,10.0000,1.0396,Sweden
+JPN,figure skating,17.0000,1.8857,Japan
+DDR,figure skating,10.0000,1.3557,DDR
+NOR,figure skating,6.0000,0.7195,Norway
+CHN,figure skating,9.0000,0.7728,China
+CSK,figure skating,5.0000,2.0699,CSK
+FIN,figure skating,2.0000,0.2935,Finland
+KOR,figure skating,2.0000,0.3401,South Korea
+BEL,figure skating,2.0000,0.8329,Belgium
+KAZ,figure skating,2.0000,1.5988,Kazakhstan
+UKR,figure skating,2.0000,0.8974,Ukraine
+HUN,figure skating,6.0000,0.7815,Hungary
+CHE,figure skating,3.0000,0.5256,Switzerland
+GEO,figure skating,1.0000,1.4490,Georgia
+ITA,figure skating,3.0000,0.2582,Italy
+ESP,figure skating,1.0000,0.4165,Spain
+CAN,ice hockey,25.0000,8.5673,Canada
+SUN,ice hockey,9.0000,1.5111,SUN
+USA,ice hockey,20.0000,1.3119,United States
+SWE,ice hockey,11.0000,3.2907,Sweden
+FIN,ice hockey,12.0000,5.0666,Finland
+CZE,ice hockey,2.0000,3.6388,Czechia
+GBR,ice hockey,2.0000,0.4318,United Kingdom
+CSK,ice hockey,8.0000,9.5301,CSK
+DEU,ice hockey,2.0000,0.4161,Germany
+RUS,ice hockey,2.0000,0.7454,Russia
+CHE,ice hockey,4.0000,2.0164,Switzerland
+SVK,ice hockey,1.0000,4.6542,Slovakia
+CHN,skiing,27.0000,0.4161,China
+BLR,skiing,8.0000,0.9512,Belarus
+UKR,skiing,2.0000,0.1611,Ukraine
+UZB,skiing,1.0000,0.2497,Uzbekistan
+GBR,skiing,2.0000,0.0269,United Kingdom
+USA,snowboarding,37.0000,1.2927,United States
+CHE,snowboarding,14.0000,3.7589,Switzerland
+AUT,snowboarding,15.0000,4.4787,Austria
+CAN,snowboarding,18.0000,3.2854,Canada
+JPN,snowboarding,16.0000,2.7201,Japan
+FRA,snowboarding,14.0000,1.6291,France
+CZE,snowboarding,6.0000,5.8141,Czechia
+AUS,snowboarding,8.0000,1.4702,Australia
+RUS,snowboarding,5.0000,0.9925,Russia
+CHN,snowboarding,5.0000,0.6580,China
+DEU,snowboarding,7.0000,0.7756,Germany
+ITA,snowboarding,8.0000,1.0554,Italy
+NZL,snowboarding,5.0000,3.7799,New Zealand
+KOR,snowboarding,4.0000,1.0425,South Korea
+GBR,snowboarding,3.0000,0.3450,United Kingdom
+NOR,snowboarding,5.0000,0.9189,Norway
+SVN,snowboarding,5.0000,9.6902,Slovenia
+FIN,snowboarding,4.0000,0.8995,Finland
+ESP,snowboarding,2.0000,1.2766,Spain
+SVK,snowboarding,1.0000,2.4789,Slovakia
+SWE,snowboarding,1.0000,0.1593,Sweden
+BGR,snowboarding,1.0000,0.4460,Bulgaria

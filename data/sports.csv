@@ -1,0 +1,481 @@
+sport,clubs,countries,world_share,listed,top_place,top_lq,colour
+football,51010.36474,214,0.51398,True,Iraq,1.89000,#7A8C5A
+basketball,6087.42664,138,0.06134,True,Philippines,8.42000,#F26B1D
+ice hockey,4454.67502,49,0.04489,True,Canada,12.95000,#3C8FD9
+baseball,3959.28339,48,0.03989,True,United States,8.07000,#C4223B
+volleyball,3463.92561,124,0.03490,True,Philippines,6.26000,#F2B705
+cycling,3447.40238,105,0.03474,True,Colombia,14.12000,#FFB000
+handball,2595.92387,77,0.02616,True,Tunisia,6.62000,#E0362C
+rugby union,2395.43948,76,0.02414,True,New Zealand,7.90000,#2E7D32
+American football,2198.06618,52,0.02215,True,United States,5.18000,#7B3F1D
+Australian rules football,2117.16667,11,0.02133,True,Australia,23.21000,#D9481C
+athletics,1869.68121,47,0.01884,True,Norway,21.67000,#E35D22
+rugby league,1215.52381,16,0.01225,True,Australia,17.73000,#8F1D5E
+cricket,1167.35919,56,0.01176,True,Sri Lanka,59.76000,#5DA639
+futsal,1082.75757,81,0.01091,True,South Korea,12.03000,#A2C523
+badminton,1029.31106,72,0.01037,True,Malta,10.79000,#B5338A
+shooting,888.29798,28,0.00895,True,United Kingdom,13.33000,#6D6E2E
+Gaelic football,817.79167,9,0.00824,True,Ireland,50.34000,#0F7A47
+field hockey,751.47631,46,0.00757,True,Netherlands,9.73000,#008C8C
+golf,736.59103,53,0.00742,True,Sweden,3.81000,#3F8F3F
+floorball,607.16817,25,0.00612,True,Finland,12.47000,#6C3FC9
+tennis,548.23827,54,0.00552,True,Germany,3.48000,#9BBF2A
+hurling and camogie,497.91667,4,0.00502,True,Ireland,60.86000,#1C9E5B
+table tennis,379.58931,41,0.00382,True,Germany,4.75000,#D7263D
+water polo,355.81612,40,0.00359,True,Malta,21.46000,#1A9FC4
+gymnastics,355.43965,32,0.00358,True,Switzerland,8.74000,#C2459E
+bandy,322.20394,13,0.00325,True,Sweden,16.71000,#1F6FD6
+swimming,320.90157,42,0.00323,True,Vietnam,46.46000,#2196C8
+rowing,312.19202,31,0.00315,True,Spain,13.21000,#225F9C
+roller hockey,262.76102,18,0.00265,True,Portugal,11.67000,#8E44AD
+skiing,217.37908,27,0.00219,True,Norway,10.90000,#4FA3E0
+korfball,210.69643,10,0.00212,True,Netherlands,16.03000,#F08A00
+pesäpallo,193.06952,1,0.00195,True,Finland,70.00000,#2A4BA8
+curling,185.44702,49,0.00187,True,Canada,12.92000,#5A6BD8
+cue sports,167.20826,11,0.00168,True,Germany,5.19000,#2C7A3F
+boxing,153.48774,31,0.00155,True,Uganda,106.14000,#A61E22
+sailing,152.15280,32,0.00153,True,Italy,2.76000,#1F78B4
+orienteering,150.34120,11,0.00151,True,Sweden,20.83000,#E2632A
+minigolf,144.89527,4,0.00146,True,Sweden,29.86000,#7DB33A
+speedway,141.50000,13,0.00143,True,Poland,25.60000,#B03A2E
+lacrosse,128.49812,16,0.00129,True,United States,8.00000,#7E57C2
+softball,106.15695,23,0.00107,True,United States,3.68000,#E5533C
+netball,89.07619,9,0.00090,True,New Zealand,26.41000,#E5559B
+figure skating,85.10992,26,0.00086,True,Finland,13.15000,#7FA8D9
+fencing,73.76248,29,0.00074,True,Germany,2.22000,#C2185B
+speed skating,71.45770,18,0.00072,True,Norway,7.13000,#3A7DC9
+canoeing,71.33378,21,0.00072,True,France,6.67000,#2F8F83
+Canadian football,70.00000,2,0.00071,True,Canada,46.57000,#A0522D
+judo,67.77571,36,0.00068,True,Germany,2.12000,#4B4B9E
+diving,66.55031,25,0.00067,True,,,#039BE5
+beach soccer,61.46292,19,0.00062,True,,,#E4A11B
+wrestling,57.87459,22,0.00058,True,Finland,16.79000,#8C4A2F
+inline hockey,54.16937,15,0.00055,True,Italy,11.37000,#5C6BC0
+tchoukball,41.04545,2,0.00041,True,Switzerland,94.75000,#16A085
+ten-pin bowling,38.74860,10,0.00039,True,Croatia,18.79000,#8A8F98
+karate,37.15189,23,0.00037,True,Norway,11.75000,#9A3B3B
+triathlon,36.89463,19,0.00037,True,,,#2BA59A
+squash,32.16346,18,0.00032,True,Germany,3.41000,#00838F
+archery,30.62980,20,0.00031,True,,,#AD1457
+motor racing,30.06250,18,0.00030,True,,,#8A8F98
+kabaddi,29.33333,8,0.00030,False,,,#E67E22
+shinty,28.00000,1,0.00028,False,,,#3E7C3A
+equestrian sport,27.65266,17,0.00028,False,,,#7D5A3A
+dancesport,22.59815,7,0.00023,False,,,#D6336C
+weightlifting,22.06341,19,0.00022,False,,,#6D4C41
+biathlon,21.41432,11,0.00022,False,,,#3E6FB0
+ultimate,21.27055,7,0.00021,False,,,#26A69A
+pétanque,21.01833,11,0.00021,False,,,#A1887F
+polo,20.59444,13,0.00021,False,,,#9C6B30
+taekwondo,20.29492,20,0.00020,False,,,#3949AB
+fistball,19.94165,4,0.00020,False,,,#D35400
+roller derby,19.05489,8,0.00019,False,,,#AB47BC
+bolo palma,19.00000,1,0.00019,False,,,#8A8F98
+motorsport,18.16667,11,0.00018,False,,,#5F5F5F
+beach volleyball,17.14477,14,0.00017,False,,,#8A8F98
+ringette,16.99444,3,0.00017,False,,,#8A8F98
+cheerleading,16.94155,7,0.00017,False,,,#EC407A
+bobsleigh,16.81313,9,0.00017,False,,,#455A64
+ice stock sport,14.62647,3,0.00015,False,,,#5D8AA8
+synchronised skating,14.33333,7,0.00014,False,,,#8A8F98
+bocce,13.71368,4,0.00014,False,,,#8D6E63
+nine-pin bowling,13.70204,4,0.00014,False,,,#B8860B
+mixed martial arts,13.70000,7,0.00014,False,,,#8A8F98
+motoball,13.50000,3,0.00014,False,,,#8A8F98
+Basque pelota,13.44484,3,0.00014,False,,,#C0392B
+darts,12.44803,6,0.00013,False,,,#B23A48
+BMX,12.40000,6,0.00012,False,,,#8A8F98
+padel,12.30043,9,0.00012,False,,,#00897B
+luge,10.66555,8,0.00011,False,,,#546E7A
+gliding,10.50000,3,0.00011,False,,,#8A8F98
+bowls,10.25833,8,0.00010,False,,,#6B8E23
+climbing,9.57279,11,0.00010,False,,,#8D6E63
+wheelchair basketball,9.01396,7,0.00009,False,,,#8A8F98
+horse racing,8.62424,8,0.00009,False,,,#8A8F98
+artistic swimming,8.35825,11,0.00008,False,,,#4DD0E1
+krachtbal,8.00000,1,0.00008,False,,,#8A8F98
+aerobatics,8.00000,6,0.00008,False,,,#8A8F98
+aikido,7.91532,10,0.00008,False,,,#8A8F98
+kickboxing,7.43595,10,0.00007,False,,,#8A8F98
+artistic roller skating,7.42112,5,0.00007,False,,,#8A8F98
+motocross,7.09091,7,0.00007,False,,,#8A8F98
+skeleton,7.09091,5,0.00007,False,,,#8A8F98
+canoe polo,7.02522,6,0.00007,False,,,#8A8F98
+wushu,7.00000,1,0.00007,False,,,#8A8F98
+skater hockey,6.00000,2,0.00006,False,,,#8A8F98
+Gaelic handball,5.41667,2,0.00005,False,,,#8A8F98
+caving,5.00000,4,0.00005,False,,,#8A8F98
+powerboating,4.95833,6,0.00005,False,,,#8A8F98
+rinkball,4.40952,1,0.00004,False,,,#8A8F98
+disc golf,4.40459,5,0.00004,False,,,#8A8F98
+cycle ball,4.38645,3,0.00004,False,,,#8A8F98
+jujutsu,4.30543,8,0.00004,False,,,#8A8F98
+snowboarding,4.29167,7,0.00004,False,,,#8A8F98
+professional wrestling,4.11026,3,0.00004,False,,,#8A8F98
+aerobics,4.07247,3,0.00004,False,,,#8A8F98
+Para ice hockey,4.00000,2,0.00004,False,,,#8A8F98
+wheelchair rugby league,4.00000,3,0.00004,False,,,#8A8F98
+competitive fencing,3.70000,1,0.00004,False,,,#8A8F98
+indoor hockey,3.58333,5,0.00004,False,,,#8A8F98
+roller skating,3.51313,7,0.00004,False,,,#8A8F98
+youth association football,3.50000,1,0.00004,False,,,#8A8F98
+skydiving,3.50000,4,0.00004,False,,,#8A8F98
+water skiing,3.47619,5,0.00004,False,,,#8A8F98
+croquet,3.46359,7,0.00003,False,,,#558B2F
+arm wrestling,3.34402,4,0.00003,False,,,#8A8F98
+inline speed skating,3.25000,4,0.00003,False,,,#8A8F98
+kendo,3.24872,5,0.00003,False,,,#8A8F98
+tug of war,3.14286,3,0.00003,False,,,#8A8F98
+powerlifting,3.14055,4,0.00003,False,,,#8A8F98
+quadball,3.03846,4,0.00003,False,,,#8A8F98
+Frisian handball,3.00000,1,0.00003,False,,,#8A8F98
+sport crossbow shooting,3.00000,2,0.00003,False,,,#8A8F98
+ball hockey,3.00000,1,0.00003,False,,,#8A8F98
+airsoft,3.00000,2,0.00003,False,,,#8A8F98
+underwater rugby,3.00000,3,0.00003,False,,,#8A8F98
+Q31836660,3.00000,1,0.00003,False,,,#8A8F98
+rallying,3.00000,3,0.00003,False,,,#8A8F98
+épée fencing,3.00000,3,0.00003,False,,,#8A8F98
+real tennis,3.00000,2,0.00003,False,,,#8A8F98
+football tennis,2.52976,3,0.00003,False,,,#8A8F98
+hang gliding,2.50000,2,0.00003,False,,,#8A8F98
+pool,2.50000,1,0.00003,False,,,#8A8F98
+sled dog racing,2.50000,2,0.00003,False,,,#8A8F98
+team sport,2.50000,2,0.00003,False,,,#8A8F98
+women's ice hockey,2.50000,2,0.00003,False,,,#8A8F98
+German ju-jutsu,2.48197,1,0.00003,False,,,#8A8F98
+Czech handball,2.40476,1,0.00002,False,,,#8A8F98
+kayaking,2.38333,5,0.00002,False,,,#8A8F98
+snooker,2.25882,4,0.00002,False,,,#8A8F98
+aesthetic group gymnastics,2.25000,2,0.00002,False,,,#8A8F98
+modern pentathlon,2.17881,6,0.00002,False,,,#8A8F98
+racing,2.12500,3,0.00002,False,,,#8A8F98
+boule lyonnaise,2.12500,1,0.00002,False,,,#8A8F98
+whitewater kayaking,2.00000,2,0.00002,False,,,#8A8F98
+correspondence chess,2.00000,2,0.00002,False,,,#8A8F98
+volleyball player,2.00000,2,0.00002,False,,,#8A8F98
+women's futsal,2.00000,1,0.00002,False,,,#8A8F98
+long-distance running,2.00000,1,0.00002,False,,,#8A8F98
+marathon speed skating,2.00000,1,0.00002,False,,,#8A8F98
+dog sport,2.00000,1,0.00002,False,,,#8A8F98
+freediving,2.00000,1,0.00002,False,,,#8A8F98
+trainera competition,2.00000,1,0.00002,False,,,#8A8F98
+Grand Prix motor racing,2.00000,2,0.00002,False,,,#8A8F98
+sumo,2.00000,1,0.00002,False,,,#8A8F98
+futins,2.00000,2,0.00002,False,,,#8A8F98
+power hockey,2.00000,2,0.00002,False,,,#8A8F98
+salmon fishing,2.00000,1,0.00002,False,,,#8A8F98
+flying disc,2.00000,2,0.00002,False,,,#8A8F98
+beach handball,2.00000,2,0.00002,False,,,#8A8F98
+mountain bike trials,2.00000,2,0.00002,False,,,#8A8F98
+artistic cycling,1.84216,2,0.00002,False,,,#8A8F98
+Muay Thai,1.76970,5,0.00002,False,,,#8A8F98
+rink bandy,1.75000,2,0.00002,False,,,#8A8F98
+wheel gymnastics,1.73719,2,0.00002,False,,,#8A8F98
+seven-a-side football,1.72500,2,0.00002,False,,,#8A8F98
+boccia,1.68125,4,0.00002,False,,,#8A8F98
+parkour,1.62499,2,0.00002,False,,,#8A8F98
+inline skating,1.61808,2,0.00002,False,,,#8A8F98
+ski mountaineering,1.53333,2,0.00002,False,,,#8A8F98
+multidisciplinarity,1.50000,2,0.00002,False,,,#8A8F98
+paragliding sport,1.50000,1,0.00002,False,,,#8A8F98
+media football,1.50000,2,0.00002,False,,,#8A8F98
+model aircraft sports,1.50000,2,0.00002,False,,,#8A8F98
+surface water rescue,1.50000,1,0.00002,False,,,#8A8F98
+dragon boat sport,1.44714,3,0.00001,False,,,#8A8F98
+acrobatics,1.44562,2,0.00001,False,,,#8A8F98
+Brazilian jiu-jitsu,1.34444,3,0.00001,False,,,#8A8F98
+pickleball,1.33634,2,0.00001,False,,,#8A8F98
+winter swimming,1.33333,2,0.00001,False,,,#8A8F98
+ultramarathon,1.33333,2,0.00001,False,,,#8A8F98
+goalball,1.33333,2,0.00001,False,,,#8A8F98
+standup paddleboarding,1.31501,2,0.00001,False,,,#8A8F98
+table football,1.27038,2,0.00001,False,,,#8A8F98
+floor hockey,1.25000,2,0.00001,False,,,#8A8F98
+small-bore shooting,1.25000,1,0.00001,False,,,#8A8F98
+Q2138860,1.25000,1,0.00001,False,,,#8A8F98
+underwater sport,1.23704,3,0.00001,False,,,#8A8F98
+aerobic gymnastics,1.20000,2,0.00001,False,,,#8A8F98
+street hockey,1.20000,2,0.00001,False,,,#8A8F98
+prellball,1.19253,1,0.00001,False,,,#8A8F98
+Tai chi chuan,1.17708,2,0.00001,False,,,#8A8F98
+bicycle touring,1.16667,1,0.00001,False,,,#8A8F98
+hockey,1.16667,2,0.00001,False,,,#8A8F98
+para badminton,1.15758,3,0.00001,False,,,#8A8F98
+water gymnastics,1.11905,3,0.00001,False,,,#8A8F98
+savate,1.11111,2,0.00001,False,,,#8A8F98
+exercise gymnastics,1.11111,1,0.00001,False,,,#8A8F98
+acrobatic rock'n'roll,1.09091,2,0.00001,False,,,#8A8F98
+equitation,1.09091,2,0.00001,False,,,#8A8F98
+go,1.08608,2,0.00001,False,,,#8A8F98
+unicycle hockey,1.07143,3,0.00001,False,,,#8A8F98
+amputee football,1.06667,2,0.00001,False,,,#8A8F98
+breakdance,1.06458,2,0.00001,False,,,#8A8F98
+swordsmanship,1.05000,2,0.00001,False,,,#8A8F98
+flying disc sports,1.05000,2,0.00001,False,,,#8A8F98
+Greco-Roman wrestling,1.04762,2,0.00001,False,,,#8A8F98
+Major League Soccer,1.00000,1,0.00001,False,,,#8A8F98
+LNFS,1.00000,1,0.00001,False,,,#8A8F98
+Kyokushin kaikan,1.00000,1,0.00001,False,,,#8A8F98
+Korfbal,1.00000,1,0.00001,False,,,#8A8F98
+Kobudō,1.00000,1,0.00001,False,,,#8A8F98
+truck racing,1.00000,3,0.00001,False,,,#8A8F98
+target archery,1.00000,1,0.00001,False,,,#8A8F98
+rally raid,1.00000,3,0.00001,False,,,#8A8F98
+racquetball,1.00000,1,0.00001,False,,,#8A8F98
+rodeo,1.00000,1,0.00001,False,,,#8A8F98
+road cycling,1.00000,1,0.00001,False,,,#8A8F98
+women's boxing,1.00000,1,0.00001,False,,,#8A8F98
+whist,1.00000,1,0.00001,False,,,#8A8F98
+K-1,1.00000,2,0.00001,False,,,#8A8F98
+Motorcycle stunt riding,1.00000,1,0.00001,False,,,#8A8F98
+team penning,1.00000,1,0.00001,False,,,#8A8F98
+touch,1.00000,1,0.00001,False,,,#8A8F98
+Schwingen,1.00000,1,0.00001,False,,,#8A8F98
+What? Where? When?,1.00000,1,0.00001,False,,,#8A8F98
+marathon,1.00000,1,0.00001,False,,,#8A8F98
+mahjong,1.00000,1,0.00001,False,,,#8A8F98
+locksport,1.00000,1,0.00001,False,,,#8A8F98
+kayak,1.00000,1,0.00001,False,,,#8A8F98
+Twenty20 cricket,1.00000,1,0.00001,False,,,#8A8F98
+combined driving,1.00000,1,0.00001,False,,,#8A8F98
+professional basketball,1.00000,1,0.00001,False,,,#8A8F98
+mountain bike racing,1.00000,1,0.00001,False,,,#8A8F98
+physical culture,1.00000,1,0.00001,False,,,#8A8F98
+fly fishing,1.00000,1,0.00001,False,,,#8A8F98
+footvolley,1.00000,1,0.00001,False,,,#8A8F98
+formula racing,1.00000,1,0.00001,False,,,#8A8F98
+shot put,1.00000,1,0.00001,False,,,#8A8F98
+amateur boxing,1.00000,1,0.00001,False,,,#8A8F98
+airshow,1.00000,1,0.00001,False,,,#8A8F98
+pigeon-shooting,1.00000,1,0.00001,False,,,#8A8F98
+barefoot skiing,1.00000,1,0.00001,False,,,#8A8F98
+aviation,1.00000,1,0.00001,False,,,#8A8F98
+cross-country sprint,1.00000,1,0.00001,False,,,#8A8F98
+association football club,1.00000,1,0.00001,False,,,#8A8F98
+multisport sport,1.00000,1,0.00001,False,,,#8A8F98
+multi-sports club,1.00000,1,0.00001,False,,,#8A8F98
+ocean rowing,1.00000,1,0.00001,False,,,#8A8F98
+motorcycle racing,1.00000,1,0.00001,False,,,#8A8F98
+snowmobile,1.00000,1,0.00001,False,,,#8A8F98
+special hockey,1.00000,1,0.00001,False,,,#8A8F98
+baton twirling,1.00000,1,0.00001,False,,,#8A8F98
+beach korfball,1.00000,1,0.00001,False,,,#8A8F98
+street workout,1.00000,1,0.00001,False,,,#8A8F98
+Q5731606,1.00000,1,0.00001,False,,,#8A8F98
+Q4438165,1.00000,1,0.00001,False,,,#8A8F98
+Slamball,1.00000,1,0.00001,False,,,#8A8F98
+mushing,1.00000,1,0.00001,False,,,#8A8F98
+Shōtōkan-ryū,1.00000,1,0.00001,False,,,#8A8F98
+streetball,1.00000,1,0.00001,False,,,#8A8F98
+stilt walking,1.00000,1,0.00001,False,,,#8A8F98
+junior ice hockey,1.00000,1,0.00001,False,,,#8A8F98
+kart racing,1.00000,1,0.00001,False,,,#8A8F98
+ITHF table hockey,1.00000,1,0.00001,False,,,#8A8F98
+ice speedway,1.00000,1,0.00001,False,,,#8A8F98
+gouren,1.00000,1,0.00001,False,,,#8A8F98
+harness racing,1.00000,1,0.00001,False,,,#8A8F98
+minifootball,1.00000,1,0.00001,False,,,#8A8F98
+model aircraft building,1.00000,1,0.00001,False,,,#8A8F98
+trainera rowing,1.00000,1,0.00001,False,,,#8A8F98
+Japanese martial arts,1.00000,1,0.00001,False,,,#8A8F98
+Gaelic games,1.00000,1,0.00001,False,,,#8A8F98
+Boston game,1.00000,1,0.00001,False,,,#8A8F98
+Club de Fútbol Monterrey,1.00000,1,0.00001,False,,,#8A8F98
+400 metres,1.00000,1,0.00001,False,,,#8A8F98
+English boxing,1.00000,1,0.00001,False,,,#8A8F98
+Fierljeppen,1.00000,1,0.00001,False,,,#8A8F98
+kung fu,0.91667,2,0.00001,False,,,#8A8F98
+mountain bike orienteering,0.89216,3,0.00001,False,,,#8A8F98
+bodybuilding,0.87132,4,0.00001,False,,,#8A8F98
+ski orienteering,0.84286,2,0.00001,False,,,#8A8F98
+women's rugby union,0.83333,2,0.00001,False,,,#8A8F98
+racewalking,0.82900,2,0.00001,False,,,#8A8F98
+Telemark skiing,0.75000,2,0.00001,False,,,#8A8F98
+physical exercise,0.71786,2,0.00001,False,,,#8A8F98
+pelota paleta,0.70000,1,0.00001,False,,,#8A8F98
+natural track luge,0.70000,2,0.00001,False,,,#8A8F98
+iaido,0.69362,2,0.00001,False,,,#8A8F98
+indoor cycling,0.69167,3,0.00001,False,,,#8A8F98
+capoeira,0.67629,3,0.00001,False,,,#8A8F98
+American handball,0.66667,1,0.00001,False,,,#8A8F98
+yoga,0.64924,3,0.00001,False,,,#8A8F98
+women's sports,0.62500,2,0.00001,False,,,#8A8F98
+cross-training,0.60000,2,0.00001,False,,,#8A8F98
+pilates,0.58333,2,0.00001,False,,,#8A8F98
+skateboarding,0.57692,2,0.00001,False,,,#8A8F98
+bouldering,0.54167,1,0.00001,False,,,#8A8F98
+dance,0.51786,1,0.00001,False,,,#8A8F98
+fullbore target rifle,0.50000,1,0.00001,False,,,#8A8F98
+pigeon keeping,0.50000,1,0.00001,False,,,#8A8F98
+pigeon sport,0.50000,1,0.00001,False,,,#8A8F98
+road running,0.50000,1,0.00001,False,,,#8A8F98
+camping,0.50000,1,0.00001,False,,,#8A8F98
+professional ice hockey,0.50000,1,0.00001,False,,,#8A8F98
+football in Mexico,0.50000,1,0.00001,False,,,#8A8F98
+motorized air sports,0.50000,1,0.00001,False,,,#8A8F98
+five-a-side football,0.50000,1,0.00001,False,,,#8A8F98
+Cycling esports,0.50000,1,0.00001,False,,,#8A8F98
+men's futsal,0.50000,1,0.00001,False,,,#8A8F98
+women's rugby league,0.50000,1,0.00001,False,,,#8A8F98
+footgolf,0.50000,1,0.00001,False,,,#8A8F98
+Q1474640,0.50000,1,0.00001,False,,,#8A8F98
+unicycling,0.50000,1,0.00001,False,,,#8A8F98
+Q33527004,0.50000,1,0.00001,False,,,#8A8F98
+spearfishing,0.50000,1,0.00001,False,,,#8A8F98
+TeamGym,0.50000,1,0.00001,False,,,#8A8F98
+swimmer,0.50000,1,0.00001,False,,,#8A8F98
+tumbling,0.50000,1,0.00001,False,,,#8A8F98
+Nordic shooting with cross-country running,0.50000,1,0.00001,False,,,#8A8F98
+wheelchair fencing,0.49091,3,0.00000,False,,,#8A8F98
+Paralympic sport,0.48571,1,0.00000,False,,,#8A8F98
+wheelchair rugby,0.47944,4,0.00000,False,,,#8A8F98
+korbball,0.45238,1,0.00000,False,,,#8A8F98
+Jōdō,0.44444,1,0.00000,False,,,#8A8F98
+finswimming,0.41667,2,0.00000,False,,,#8A8F98
+surfing,0.40513,1,0.00000,False,,,#8A8F98
+Para athletics,0.37348,3,0.00000,False,,,#8A8F98
+life saving as a sport,0.35000,1,0.00000,False,,,#8A8F98
+duplicate bridge,0.34286,1,0.00000,False,,,#8A8F98
+cestoball,0.34286,1,0.00000,False,,,#8A8F98
+canoe camping,0.33333,1,0.00000,False,,,#8A8F98
+clay pigeon shooting,0.33333,1,0.00000,False,,,#8A8F98
+canoe marathon,0.33333,1,0.00000,False,,,#8A8F98
+Historical European martial arts,0.33333,1,0.00000,False,,,#8A8F98
+four-cross,0.33333,1,0.00000,False,,,#8A8F98
+kho kho,0.33333,1,0.00000,False,,,#8A8F98
+Five-pin billiards,0.33333,1,0.00000,False,,,#8A8F98
+mogul skiing,0.33333,1,0.00000,False,,,#8A8F98
+motorcycle trials,0.33333,1,0.00000,False,,,#8A8F98
+pitch and putt,0.33333,1,0.00000,False,,,#8A8F98
+summer biathlon,0.33333,1,0.00000,False,,,#8A8F98
+strength athletics,0.33333,1,0.00000,False,,,#8A8F98
+sporting clays,0.33333,1,0.00000,False,,,#8A8F98
+foxhunting,0.33333,1,0.00000,False,,,#8A8F98
+roller skiing,0.33333,2,0.00000,False,,,#8A8F98
+Vovinam,0.33333,1,0.00000,False,,,#8A8F98
+Q2984585,0.33333,1,0.00000,False,,,#8A8F98
+ice dance,0.32692,1,0.00000,False,,,#8A8F98
+yachting,0.32500,2,0.00000,False,,,#8A8F98
+sport climbing,0.32361,1,0.00000,False,,,#8A8F98
+rock climbing,0.32143,2,0.00000,False,,,#8A8F98
+senior sport,0.31134,1,0.00000,False,,,#8A8F98
+long-distance swimming,0.31069,1,0.00000,False,,,#8A8F98
+marathon swimming,0.31069,1,0.00000,False,,,#8A8F98
+poker,0.29167,1,0.00000,False,,,#8A8F98
+ice sport,0.27941,1,0.00000,False,,,#8A8F98
+Skat,0.27692,1,0.00000,False,,,#8A8F98
+line dance,0.26250,1,0.00000,False,,,#8A8F98
+trail running,0.25000,1,0.00000,False,,,#8A8F98
+Optimist,0.25000,1,0.00000,False,,,#8A8F98
+racket sport,0.25000,1,0.00000,False,,,#8A8F98
+cliff jumping,0.25000,1,0.00000,False,,,#8A8F98
+self-defense,0.25000,1,0.00000,False,,,#8A8F98
+catamaran,0.25000,1,0.00000,False,,,#8A8F98
+rounders,0.25000,1,0.00000,False,,,#8A8F98
+freeriding,0.25000,1,0.00000,False,,,#8A8F98
+Sailing skate,0.25000,1,0.00000,False,,,#8A8F98
+døds diving,0.25000,1,0.00000,False,,,#8A8F98
+fishing,0.25000,1,0.00000,False,,,#8A8F98
+tamburello,0.25000,1,0.00000,False,,,#8A8F98
+Para alpine skiing,0.25000,1,0.00000,False,,,#8A8F98
+beach tennis,0.24348,2,0.00000,False,,,#8A8F98
+competitive dance,0.22917,2,0.00000,False,,,#8A8F98
+handball sports,0.20833,1,0.00000,False,,,#8A8F98
+grass skiing,0.20000,1,0.00000,False,,,#8A8F98
+Q1308520,0.20000,1,0.00000,False,,,#8A8F98
+volksmarching,0.20000,1,0.00000,False,,,#8A8F98
+speleology,0.20000,1,0.00000,False,,,#8A8F98
+Schlitte,0.20000,1,0.00000,False,,,#8A8F98
+Skate sailing,0.20000,1,0.00000,False,,,#8A8F98
+Submission wrestling,0.20000,1,0.00000,False,,,#8A8F98
+Q56296701,0.20000,1,0.00000,False,,,#8A8F98
+speed skiing,0.20000,1,0.00000,False,,,#8A8F98
+extreme sport,0.20000,1,0.00000,False,,,#8A8F98
+Shootfighting,0.20000,1,0.00000,False,,,#8A8F98
+wildwater canoeing,0.20000,1,0.00000,False,,,#8A8F98
+endurance sport,0.20000,1,0.00000,False,,,#8A8F98
+ball game,0.20000,1,0.00000,False,,,#8A8F98
+carve turn,0.20000,1,0.00000,False,,,#8A8F98
+fitness boxing,0.19444,1,0.00000,False,,,#8A8F98
+children's soccer,0.16667,1,0.00000,False,,,#8A8F98
+Aquatics,0.16667,1,0.00000,False,,,#8A8F98
+inline alpine skating,0.16667,1,0.00000,False,,,#8A8F98
+ice sledge racing,0.16667,1,0.00000,False,,,#8A8F98
+para table tennis,0.15758,2,0.00000,False,,,#8A8F98
+qigong,0.15459,1,0.00000,False,,,#8A8F98
+minkey,0.14286,1,0.00000,False,,,#8A8F98
+artistic skating,0.14286,1,0.00000,False,,,#8A8F98
+foil fencing,0.14286,1,0.00000,False,,,#8A8F98
+Q1124184,0.14286,1,0.00000,False,,,#8A8F98
+slalom skiing,0.14286,1,0.00000,False,,,#8A8F98
+Quidditch,0.13125,2,0.00000,False,,,#8A8F98
+kyūdō,0.12692,1,0.00000,False,,,#8A8F98
+IFO,0.12500,1,0.00000,False,,,#8A8F98
+walking football,0.12500,1,0.00000,False,,,#8A8F98
+jazz dance,0.12500,1,0.00000,False,,,#8A8F98
+weight throw triathlon,0.12500,1,0.00000,False,,,#8A8F98
+rock'n'roll dance,0.12500,1,0.00000,False,,,#8A8F98
+cinematography,0.12500,1,0.00000,False,,,#8A8F98
+sambo,0.12500,1,0.00000,False,,,#8A8F98
+backgammon,0.12500,1,0.00000,False,,,#8A8F98
+Q10511221,0.12500,1,0.00000,False,,,#8A8F98
+Okinawan kobudō,0.11250,1,0.00000,False,,,#8A8F98
+skipping rope,0.11111,1,0.00000,False,,,#8A8F98
+Tangsudo,0.11111,1,0.00000,False,,,#8A8F98
+mountain hiking,0.11111,1,0.00000,False,,,#8A8F98
+mountain running,0.11111,1,0.00000,False,,,#8A8F98
+angling,0.11111,1,0.00000,False,,,#8A8F98
+crossminton,0.11014,1,0.00000,False,,,#8A8F98
+underwater hockey,0.10000,1,0.00000,False,,,#8A8F98
+beach sports,0.09091,1,0.00000,False,,,#8A8F98
+water aerobics,0.09091,1,0.00000,False,,,#8A8F98
+physical fitness,0.09091,1,0.00000,False,,,#8A8F98
+Taijutsu,0.09091,1,0.00000,False,,,#8A8F98
+Olympic shooting,0.09091,1,0.00000,False,,,#8A8F98
+Q24961446,0.09091,1,0.00000,False,,,#8A8F98
+Para archery,0.09091,1,0.00000,False,,,#8A8F98
+frontenis,0.08333,1,0.00000,False,,,#8A8F98
+trekking,0.08333,1,0.00000,False,,,#8A8F98
+roundnet,0.07473,1,0.00000,False,,,#8A8F98
+Krav Maga,0.07143,1,0.00000,False,,,#8A8F98
+physical preparedness,0.07143,1,0.00000,False,,,#8A8F98
+Wing Chun,0.07143,1,0.00000,False,,,#8A8F98
+kenpo,0.06667,1,0.00000,False,,,#8A8F98
+wheelchair tennis,0.06667,1,0.00000,False,,,#8A8F98
+Para powerlifting,0.06667,1,0.00000,False,,,#8A8F98
+Wheelchair dancesport,0.06667,1,0.00000,False,,,#8A8F98
+Para canoe,0.06667,1,0.00000,False,,,#8A8F98
+Para judo,0.06667,1,0.00000,False,,,#8A8F98
+canoe sprint,0.06667,1,0.00000,False,,,#8A8F98
+contemporary dance,0.06667,1,0.00000,False,,,#8A8F98
+bullseye shooting,0.06667,1,0.00000,False,,,#8A8F98
+shooting Para sport,0.06667,1,0.00000,False,,,#8A8F98
+Para triathlon,0.06667,1,0.00000,False,,,#8A8F98
+sitting volleyball,0.06667,1,0.00000,False,,,#8A8F98
+pole dance,0.06458,1,0.00000,False,,,#8A8F98
+falconry,0.06250,1,0.00000,False,,,#8A8F98
+teqball,0.06250,1,0.00000,False,,,#8A8F98
+Scrabble,0.05882,1,0.00000,False,,,#8A8F98
+silat,0.05882,1,0.00000,False,,,#8A8F98
+indiaca,0.05882,1,0.00000,False,,,#8A8F98
+Tennikoit,0.05263,1,0.00000,False,,,#8A8F98
+duathlon,0.05000,1,0.00000,False,,,#8A8F98
+Tricking,0.05000,1,0.00000,False,,,#8A8F98
+rackets,0.05000,1,0.00000,False,,,#8A8F98
+Prison Ball,0.05000,1,0.00000,False,,,#8A8F98
+Modern Arnis,0.04545,1,0.00000,False,,,#8A8F98
+Bahn golf,0.04545,1,0.00000,False,,,#8A8F98
+cycle polo,0.04545,1,0.00000,False,,,#8A8F98
+Jugger,0.04348,1,0.00000,False,,,#8A8F98
+Headis,0.04348,1,0.00000,False,,,#8A8F98
+Systema,0.04348,1,0.00000,False,,,#8A8F98
+cheerdance,0.03846,1,0.00000,False,,,#8A8F98
+wheelchair sport,0.03704,1,0.00000,False,,,#8A8F98
+para association football,0.03704,1,0.00000,False,,,#8A8F98
+sjoelen,0.03333,1,0.00000,False,,,#8A8F98
+freerunning,0.03333,1,0.00000,False,,,#8A8F98
+hapkido,0.03125,1,0.00000,False,,,#8A8F98
+Filipino martial arts,0.03125,1,0.00000,False,,,#8A8F98
+slacklining,0.03125,1,0.00000,False,,,#8A8F98
+Q1615495,0.03125,1,0.00000,False,,,#8A8F98
