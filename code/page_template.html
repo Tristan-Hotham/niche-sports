@@ -83,6 +83,7 @@ select{font:500 13px/1 var(--mono);background:var(--card);color:var(--fg);border
 .side h4:first-child{margin-top:2px}
 .lmap{height:620px;border:1px solid var(--border);background:var(--panel);border-radius:2px}
 @media (max-width:600px){.lmap{height:460px}}
+@media (max-width:700px){.sportchips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;scrollbar-width:thin}.sportchips button{flex:0 0 auto}.lmap{height:56vh;min-height:300px;max-height:520px}.mapgrid{gap:8px}.side{max-height:none}}
 .leaflet-container{font:400 12px/1.4 var(--mono);background:var(--panel)}
 .lyrBtn{background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;font:600 12px/1 var(--mono);padding:8px 10px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}
 .lyrBtn[aria-expanded="true"]{background:var(--fg);color:var(--bg)}
@@ -631,6 +632,13 @@ Promise.all([getJSON("data/geo_countries.json"), getJSON("data/geo_uk.json")]).t
   drawSig(); legend1(); setSport(SPORT); setUK("signature");
 });
 document.getElementById("theme").onclick = () => { const r = document.documentElement; r.dataset.theme = isDark() ? "light" : "dark"; [M1, M2, M3].forEach(M => M.setTiles()); legend1(); redraws.forEach(f => f()); };
+
+/* Mobile: after picking a sport, bring the map into view so the result is visible, with its details just below */
+(function(){const mq=window.matchMedia("(max-width:700px)");const show=id=>{if(!mq.matches)return;const el=document.getElementById(id);if(el)setTimeout(()=>el.scrollIntoView({behavior:"smooth",block:"start"}),60);};
+document.getElementById("chips2").addEventListener("click",e=>{if(e.target.closest("button"))show("map2");});
+document.getElementById("chips3").addEventListener("click",e=>{if(e.target.closest("button"))show("map3");});
+document.getElementById("sportSel").addEventListener("change",()=>show("map2"));
+document.getElementById("ukSel").addEventListener("change",()=>show("map3"));})();
 </script>
 </body>
 </html>
