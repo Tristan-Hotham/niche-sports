@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this data or code, please cite it as below."
+title: "Signature Sports: Where the World's Niche Games Are Unusually Popular. Location Quotients of Sports Clubs in Wikidata and OpenStreetMap, by Country, Region and UK County"
+type: dataset
+authors:
+  - family-names: Hotham
+    given-names: Tristan
+    orcid: "https://orcid.org/0000-0003-4931-9349"
+    affiliation: "Independent researcher"
+doi: "10.5281/zenodo.23748256"
+url: "https://maps.tristanhotham.com/niche-sports/"
+repository-code: "https://github.com/Tristan-Hotham/niche-sports"
+license: CC-BY-4.0
+keywords:
+  - "sport geography"
+  - "location quotient"
+  - "Wikidata"
+  - "OpenStreetMap"
+  - "sports clubs"
+  - "regional specialisation"
+  - "Olympic medals"
+  - "Wikipedia pageviews"
+  - "United Kingdom"
+  - "data visualisation"
